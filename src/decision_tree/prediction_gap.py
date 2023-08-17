@@ -7,7 +7,7 @@ class PerturbPredictionGap:
         raise NotImplementedError('')
 
     def prediction_gap_fixed(self, model: tree.Model, data_point, baseline_pred, perturbed_features: set):
-        return model.expected_value(self._compute_cdf(data_point, perturbed_features), baseline_pred)
+        return model.expected_diff_squared(self._compute_cdf(data_point, perturbed_features), baseline_pred)
 
     def pgi(self, model: tree.Model, data_point, baseline_pred, sorted_features: list):
         n = len(sorted_features)
@@ -18,6 +18,17 @@ class PerturbPredictionGap:
 
     def pgu(self, model: tree.Model, data_point, baseline_pred, sorted_features: list):
         return self.pgi(model, data_point, baseline_pred, sorted_features[::-1])
+
+    def prediction_gap_single_f(self, model: tree.Model, data_point, perturbed_feature, f):
+        return model.expected_single_feature(data_point, perturbed_feature,
+                                             self._compute_cdf(data_point, {perturbed_feature})[perturbed_feature],
+                                             f)
+
+    def prediction_gap_single_abs(self, model: tree.Model, data_point, perturbed_feature, baseline):
+        return self.prediction_gap_single_f(model, data_point, perturbed_feature, lambda x: abs(x - baseline))
+
+    def prediction_gap_single_squared(self, model: tree.Model, data_point, perturbed_feature, baseline):
+        return self.prediction_gap_single_f(model, data_point, perturbed_feature, lambda x: (x - baseline) ** 2)
 
 
 class NormalPredictionGap(PerturbPredictionGap):
