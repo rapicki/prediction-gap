@@ -1,3 +1,5 @@
+import functools
+import operator
 import re
 from abc import ABC
 from collections import defaultdict
@@ -22,35 +24,39 @@ class _CurrentPath:
         self.ub = defaultdict(list)
 
     def last_lb(self, feature):
-        print(feature)
-        print(self.lb)
         return self.lb[feature][-1] if feature in self.lb else float('-inf')
 
     def last_ub(self, feature):
-        print(feature)
-        print(self.ub)
         return self.ub[feature][-1] if feature in self.ub else float('inf')
 
     def descend_left(self, feature, t):
-        self.ub[feature].append(min(self.last_ub(feature), t))
+        t = min(self.last_ub(feature), t)
+        self.ub[feature].append(t)
 
     def descend_right(self, feature, t):
-        self.lb[feature].append(max(self.last_lb(feature), t))
+        t = max(self.last_lb(feature), t)
+        self.lb[feature].append(t)
 
     def revert_left(self, feature):
         self.ub[feature].pop()
         if len(self.ub[feature]) == 0:
             self.ub.pop(feature)
-            assert(feature not in self.ub)
 
     def revert_right(self, feature):
         self.lb[feature].pop()
         if len(self.lb[feature]) == 0:
             self.lb.pop(feature)
-            assert (feature not in self.lb)
 
     def current_interval(self, feature):
         return self.last_lb(feature), self.last_ub(feature)
+
+    def prob(self, cdf_dict):
+        features = set(self.lb.keys()).union(set(self.ub.keys()))
+        prob = 1.0
+        for f in features:
+            if f in cdf_dict:
+                prob *= max(0, cdf_dict[f](self.last_ub(f)) - cdf_dict[f](self.last_lb(f)))
+        return prob
 
 
 class Node(ABC):
@@ -80,15 +86,14 @@ class Leaf(Node):
     def eval(self, x):
         return self.val
 
-    def collect_thresholds(self, data_point, perturbed_feature, current_ub, result):
-        prev = result[-1][1] if len(result) > 0 else 0
-        result.append((current_ub, self.val - prev))
+    def collect_thresholds(self, data_point, perturbed_feature, current_lb, result):
+        result.append((current_lb, self.val))
 
 
 def _interval_prob(cdf, interval):
     # we mean a closed-open [a,b) interval
     a, b = interval
-    return max(cdf(b - 1.0e-9) - cdf(a - 1.0e-9), 0.0)
+    return max(cdf(b - 1.0e-12) - cdf(a - 1.0e-12), 0.0)
 
 
 class Split(Node):
@@ -127,17 +132,18 @@ class Split(Node):
         else:
             return self.missing.eval(x)
 
-    def collect_thresholds(self, data_point, perturbed_feature, current_ub, result):
-        if self.feature == perturbed_feature:
-            self.no.collect_thresholds(data_point, perturbed_feature, min(current_ub, self.threshold), result)
-            self.yes.collect_thresholds(data_point, perturbed_feature, current_ub, result)
-        elif self.feature in data_point:
-            if data_point[self.feature] < self.threshold:
-                self.yes.collect_thresholds(data_point, perturbed_feature, current_ub, result)
+    def collect_thresholds(self, data_point, perturbed_feature, current_lb, result):
+        if self.feature in data_point:
+            if self.feature == perturbed_feature:
+                self.yes.collect_thresholds(data_point, perturbed_feature, current_lb, result)
+                self.no.collect_thresholds(data_point, perturbed_feature, max(current_lb, self.threshold), result)
             else:
-                self.no.collect_thresholds(data_point, perturbed_feature, current_ub, result)
+                if data_point[self.feature] < self.threshold:
+                    self.yes.collect_thresholds(data_point, perturbed_feature, current_lb, result)
+                else:
+                    self.no.collect_thresholds(data_point, perturbed_feature, current_lb, result)
         else:
-            self.missing.collect_thresholds(data_point, perturbed_feature, current_ub, result)
+            self.missing.collect_thresholds(data_point, perturbed_feature, current_lb, result)
 
 
 class TreeEnsemble(Model):
@@ -148,9 +154,9 @@ class TreeEnsemble(Model):
         result = baseline ** 2
 
         def contrib_outer(cdd, prob_anc, val):
-            inner_sum = -baseline
+            inner_sum = -baseline * 2.0
             for inner_tree in self.trees:
-                inner_sum += inner_tree.descend(cdd, prob_anc, lambda _a, _b, v: v)
+                inner_sum += inner_tree.descend(cdd, prob_anc, lambda _a, _b, v: v) / len(self.trees)
             return val * inner_sum / len(self.trees)
 
         for tree in self.trees:
@@ -161,22 +167,20 @@ class TreeEnsemble(Model):
         deltas = [(float('inf'), 0)]
         for tree in self.trees:
             tree_deltas = []
-            tree.collect_thresholds(data_point, perturbed_feature, float('inf'), tree_deltas)
+            tree.collect_thresholds(data_point, perturbed_feature, float('-inf'), tree_deltas)
+            for i in range(len(tree_deltas) - 1, 0, -1):
+                tree_deltas[i] = tree_deltas[i][0], tree_deltas[i][1] - tree_deltas[i - 1][1]
             deltas.extend(tree_deltas)
         deltas.sort(key=itemgetter(0))
         aggr, result, prev = 0.0, 0.0, float('-inf')
         for x, d in deltas:
-            aggr += d / len(self.trees)
             result += f(aggr) * (cdf(x) - cdf(prev))
             prev = x
+            aggr += d / len(self.trees)
         return result
 
     def eval(self, x):
-        result = 0.0
-        for tree in self.trees:
-            result += tree.eval(x)
-        result /= len(self.trees)
-        return result
+        return functools.reduce(operator.add, [tree.eval(x) for tree in self.trees], 0) / len(self.trees)
 
 
 def parse_xgboost_dump(dump_file):
