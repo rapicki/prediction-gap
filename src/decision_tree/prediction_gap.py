@@ -39,8 +39,7 @@ class NormalPredictionGap(PerturbPredictionGap):
         cdf_dict = dict()
         for feature, value in data_point.items():
             if feature in perturbed_features:
-                cdf_dict[feature] = lambda x: norm.cdf(x, loc=value, scale=self.stddev)
+                cdf_dict[feature] = lambda x, v = value: norm.cdf(x, loc=v, scale=self.stddev)
             else:
-                # co python robi z przechwytywaniem bez tego t jest powalone
                 cdf_dict[feature] = lambda x, t = value: 0.0 if x < t else 1.0
         return cdf_dict

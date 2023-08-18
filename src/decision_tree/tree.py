@@ -114,11 +114,14 @@ class Split(Node):
                 return 0.0
             prob_anc.descend_left(self.feature, self.threshold)
             prob_left = _interval_prob(cdf_dict[self.feature], prob_anc.current_interval(self.feature)) / cond_prob
-            result = prob_left * self.yes.descend(cdf_dict, prob_anc, leaf_contrib_fun)
+            result = 0.0
+            if prob_left > 1e-12:
+                result += prob_left * self.yes.descend(cdf_dict, prob_anc, leaf_contrib_fun)
             prob_anc.revert_left(self.feature)
-            prob_anc.descend_right(self.feature, self.threshold)
-            result += (1.0 - prob_left) * self.no.descend(cdf_dict, prob_anc, leaf_contrib_fun)
-            prob_anc.revert_right(self.feature)
+            if 1.0 - prob_left > 1e-12:
+                prob_anc.descend_right(self.feature, self.threshold)
+                result += (1.0 - prob_left) * self.no.descend(cdf_dict, prob_anc, leaf_contrib_fun)
+                prob_anc.revert_right(self.feature)
             return result
         else:
             return self.missing.descend(cdf_dict, prob_anc, leaf_contrib_fun)
