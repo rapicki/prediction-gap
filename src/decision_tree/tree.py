@@ -159,8 +159,8 @@ class TreeEnsemble(Model):
         def contrib_outer(cdd, prob_anc, val):
             inner_sum = -baseline * 2.0
             for inner_tree in self.trees:
-                inner_sum += inner_tree.descend(cdd, prob_anc, lambda _a, _b, v: v) / len(self.trees)
-            return val * inner_sum / len(self.trees)
+                inner_sum += inner_tree.descend(cdd, prob_anc, lambda _a, _b, v: v)
+            return val * inner_sum
 
         for tree in self.trees:
             result += tree.descend(cdf_dict, _CurrentPath(), contrib_outer)
@@ -179,11 +179,11 @@ class TreeEnsemble(Model):
         for x, d in deltas:
             result += f(aggr) * (cdf(x) - cdf(prev))
             prev = x
-            aggr += d / len(self.trees)
+            aggr += d
         return result
 
     def eval(self, x):
-        return functools.reduce(operator.add, [tree.eval(x) for tree in self.trees], 0) / len(self.trees)
+        return functools.reduce(operator.add, [tree.eval(x) for tree in self.trees], 0)
 
 
 def parse_xgboost_dump(dump_file):
@@ -192,10 +192,10 @@ def parse_xgboost_dump(dump_file):
     header = re.compile(r"booster\[\d+]:\n")
     node_pattern = re.compile(
         r"\s*(?P<id>\d+):"
-        r"\[(?P<feature>\w+)<(?P<threshold>-?\d+(?:\.\d+)?)]\s*"
+        r"\[(?P<feature>\w+)<(?P<threshold>[^\]]+)]\s*"
         r"yes=(?P<yes>\d+),no=(?P<no>\d+),missing=(?P<missing>\d+)"
     )
-    leaf_pattern = re.compile(r"\s*(?P<id>\d+):leaf=(?P<value>-?\d+(?:\.\d+)?)")
+    leaf_pattern = re.compile(r"\s*(?P<id>\d+):leaf=(?P<value>[^,]+)")
 
     trees = []
 
