@@ -1,9 +1,13 @@
 import functools
+import math
 import operator
 import re
 from abc import ABC
 from collections import defaultdict
 from operator import itemgetter
+import numpy as np
+from pathlib import Path
+import json
 
 
 class Model:
@@ -24,10 +28,10 @@ class _CurrentPath:
         self.ub = defaultdict(list)
 
     def last_lb(self, feature):
-        return self.lb[feature][-1] if feature in self.lb else float('-inf')
+        return self.lb[feature][-1] if feature in self.lb else np.float32('-inf')
 
     def last_ub(self, feature):
-        return self.ub[feature][-1] if feature in self.ub else float('inf')
+        return self.ub[feature][-1] if feature in self.ub else np.float32('inf')
 
     def descend_left(self, feature, t):
         t = min(self.last_ub(feature), t)
@@ -128,7 +132,7 @@ class Split(Node):
 
     def eval(self, x):
         if self.feature in x:
-            if x[self.feature] < self.threshold:
+            if np.float32(x[self.feature]) < np.float32(self.threshold):
                 return self.yes.eval(x)
             else:
                 return self.no.eval(x)
@@ -150,8 +154,26 @@ class Split(Node):
 
 
 class TreeEnsemble(Model):
-    def __init__(self, trees: list):
+    def __init__(self, trees: list, json_file: Path = None):
         self.trees = trees
+        self.json_file = json_file
+        if self.json_file is not None:
+            self.bias = self.get_bias()
+            li = self.get_tree_lists()
+            self.parse_correct_numbers(li)
+
+    def get_tree_lists(self):
+        tree_list = []
+        with open(self.json_file) as f:
+            data = json.load(f)
+            for i in data['learner']['gradient_booster']['model']['trees']:
+                tree_list.append(i['split_conditions'])
+        return tree_list
+
+    def get_bias(self):
+        with open(self.json_file, "r") as fd:
+            model = json.load(fd)
+        return np.float32(model['learner']['learner_model_param']['base_score'])
 
     def expected_diff_squared(self, cdf_dict: dict, baseline):
         result = baseline ** 2
@@ -164,26 +186,74 @@ class TreeEnsemble(Model):
 
         for tree in self.trees:
             result += tree.descend(cdf_dict, _CurrentPath(), contrib_outer)
-        return result
+        return result + self.bias
 
     def expected_single_feature(self, data_point, perturbed_feature, cdf, f):
-        deltas = [(float('inf'), 0)]
+        deltas = [(np.float32('inf'), 0)]
         for tree in self.trees:
             tree_deltas = []
-            tree.collect_thresholds(data_point, perturbed_feature, float('-inf'), tree_deltas)
+            tree.collect_thresholds(data_point, perturbed_feature, np.float32('-inf'), tree_deltas)
             for i in range(len(tree_deltas) - 1, 0, -1):
                 tree_deltas[i] = tree_deltas[i][0], tree_deltas[i][1] - tree_deltas[i - 1][1]
             deltas.extend(tree_deltas)
         deltas.sort(key=itemgetter(0))
-        aggr, result, prev = 0.0, 0.0, float('-inf')
+        aggr, result, prev = 0.0, 0.0, np.float32('-inf')
         for x, d in deltas:
             result += f(aggr) * (cdf(x) - cdf(prev))
             prev = x
             aggr += d
-        return result
+        return result + self.bias
+
+    # Python3 program to illustrate the
+    # Kahan summation algorithm
+
+    # Function to implement the Kahan
+    # summation algorithm
+    def kahanSum(self, fa):
+        sum = np.float32(0)
+
+        # Variable to store the error
+        c = np.float32(0)
+
+        # Loop to iterate over the array
+        for f in fa:
+            y = f - c
+            t = sum + y
+
+            # Algebraically, c is always 0
+            # when t is replaced by its
+            # value from the above expression.
+            # But, when there is a loss,
+            # the higher-order y is cancelled
+            # out by subtracting y from c and
+            # all that remains is the
+            # lower-order error in c
+            c = (t - sum) - y
+            sum = t
+
+        return sum
 
     def eval(self, x):
-        return functools.reduce(operator.add, [tree.eval(x) for tree in self.trees], 0)
+        return functools.reduce(operator.add, [tree.eval(x) for tree in self.trees], np.float32(0)) + self.bias
+
+    def parse_correct_numbers(self, splits_list: list):
+        for tree, splits in zip(self.trees, splits_list):
+            self.traverse_tree_and_correct_numbers(tree, splits)
+
+    def traverse_tree_and_correct_numbers(self, tree: Node, correct_splits: list):
+        nodes_to_visit = [tree]
+        while len(nodes_to_visit) > 0:
+            current_node = nodes_to_visit[0]
+            if isinstance(current_node, Split):
+                current_node.threshold = np.float32(correct_splits[0])
+                if current_node.yes is not None:
+                    nodes_to_visit.append(current_node.yes)
+                if current_node.no is not None:
+                    nodes_to_visit.append(current_node.no)
+            elif isinstance(current_node, Leaf):
+                current_node.val = np.float32(correct_splits[0])
+            correct_splits.pop(0)
+            nodes_to_visit.pop(0)
 
 
 def parse_xgboost_dump(dump_file):
@@ -216,7 +286,7 @@ def parse_xgboost_dump(dump_file):
                 md = match.groupdict()
                 if md['id'] in nodes:
                     raise ValueError("node id error")
-                nodes[md['id']] = Split(md['feature'], float(md['threshold']), nodes[md['yes']], nodes[md['no']],
+                nodes[md['id']] = Split(md['feature'], np.float32(md['threshold']), nodes[md['yes']], nodes[md['no']],
                                         nodes[md['missing']])
                 return nodes[md['id']]
             else:
@@ -224,7 +294,7 @@ def parse_xgboost_dump(dump_file):
                 if match is None:
                     raise ValueError("invalid node format")
                 md = match.groupdict()
-                nodes[md['id']] = Leaf(float(md['value']))
+                nodes[md['id']] = Leaf(np.float32(md['value']))
                 return nodes[md['id']]
 
         trees.append(parse_subtree())
