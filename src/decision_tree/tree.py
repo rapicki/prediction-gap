@@ -8,6 +8,7 @@ from operator import itemgetter
 import numpy as np
 from pathlib import Path
 import json
+import pandas as pd
 
 
 class Model:
@@ -235,6 +236,13 @@ class TreeEnsemble(Model):
 
     def eval(self, x):
         return functools.reduce(operator.add, [tree.eval(x) for tree in self.trees], np.float32(0)) + self.bias
+    
+    def eval_on_multiple_rows(self, df: pd.DataFrame) -> np.array:
+        y = []
+        for i in range(len(df)):
+            x = df.iloc[i, :-1]
+            y.append(self.eval(x))
+        return np.array(y)
 
     def parse_correct_numbers(self, splits_list: list):
         for tree, splits in zip(self.trees, splits_list):
@@ -301,3 +309,7 @@ def parse_xgboost_dump(dump_file):
 
     f.close()
     return TreeEnsemble(trees)
+
+def load_trees(models_path: Path, model_name: str):
+    trees_from_dump = parse_xgboost_dump(models_path / f"{model_name}_dumped.txt")
+    return TreeEnsemble(trees_from_dump.trees, models_path / f"{model_name}_saved.json")
