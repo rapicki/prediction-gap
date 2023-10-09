@@ -8,6 +8,7 @@ from operator import itemgetter
 import numpy as np
 from pathlib import Path
 import json
+import pandas as pd
 
 
 class Model:
@@ -176,6 +177,7 @@ class TreeEnsemble(Model):
         return np.float32(model['learner']['learner_model_param']['base_score'])
 
     def expected_diff_squared(self, cdf_dict: dict, baseline):
+        baseline -= self.bias
         result = baseline ** 2
 
         def contrib_outer(cdd, prob_anc, val):
@@ -186,7 +188,7 @@ class TreeEnsemble(Model):
 
         for tree in self.trees:
             result += tree.descend(cdf_dict, _CurrentPath(), contrib_outer)
-        return result + self.bias
+        return result
 
     def expected_single_feature(self, data_point, perturbed_feature, cdf, f):
         deltas = [(np.float32('inf'), 0)]
@@ -199,10 +201,10 @@ class TreeEnsemble(Model):
         deltas.sort(key=itemgetter(0))
         aggr, result, prev = 0.0, 0.0, np.float32('-inf')
         for x, d in deltas:
-            result += f(aggr) * (cdf(x) - cdf(prev))
+            result += f(aggr + self.bias) * (cdf(x) - cdf(prev))
             prev = x
             aggr += d
-        return result + self.bias
+        return result
 
     # Python3 program to illustrate the
     # Kahan summation algorithm
@@ -235,6 +237,13 @@ class TreeEnsemble(Model):
 
     def eval(self, x):
         return functools.reduce(operator.add, [tree.eval(x) for tree in self.trees], np.float32(0)) + self.bias
+    
+    def eval_on_multiple_rows(self, df: pd.DataFrame) -> np.array:
+        y = []
+        for i in range(len(df)):
+            x = df.iloc[i, :-1]
+            y.append(self.eval(x))
+        return np.array(y)
 
     def parse_correct_numbers(self, splits_list: list):
         for tree, splits in zip(self.trees, splits_list):
@@ -301,3 +310,7 @@ def parse_xgboost_dump(dump_file):
 
     f.close()
     return TreeEnsemble(trees)
+
+def load_trees(models_path: Path, model_name: str):
+    trees_from_dump = parse_xgboost_dump(models_path / f"{model_name}_dumped.txt")
+    return TreeEnsemble(trees_from_dump.trees, models_path / f"{model_name}_saved.json")
