@@ -1,5 +1,6 @@
 from scipy.stats import norm
 import pandas as pd
+import numpy as np
 from typing import Optional
 
 import src.decision_tree.tree as tree
@@ -90,10 +91,14 @@ def prediction_gap_by_random_sampling(trees: TreeEnsemble,
     
     y = trees.eval_on_multiple_rows(data)
     rng = np.random.default_rng(seed=seed)
+    print(f"There are {len(data)} datapoints in the dataset.")
+    print(f"The following {len(perturbed_features)} features are subject to perturbation:")
+    print(perturbed_features)
+    print(f"Starting prediction gap calculation by random sampling with {num_iter} iterations.")
     results = np.zeros(len(data))
     for i in range(num_iter):
         perturbed_y = trees.eval_on_multiple_rows(normal_perturbation(data))
-        results += np.abs(perturbed_y - y)
+        results += (perturbed_y - y) ** 2 if squared else np.abs(perturbed_y - y)
     results /= num_iter
     # return np.mean(results)
     return results
@@ -107,9 +112,14 @@ def prediction_gap_by_exact_calc(predgap: PerturbPredictionGap,
     if not squared:
         raise NotImplementedError('')
     baseline_preds = trees.eval_on_multiple_rows(data)
+    print(f"There are {len(data)} datapoints in the dataset.")
+    print(f"The following {len(perturbed_features)} features are subject to perturbation:")
+    print(perturbed_features)
+    print(f"Starting exact prediction gap calculation.")
     results = []
     for i in range(len(data)):
         x = data.iloc[i, :-1]
         y = baseline_preds[i]
         results.append(predgap.prediction_gap_fixed(trees, x, perturbed_features, y))
+        print(f"Datapoint {i} returned predgap value of {results[-1]}.")
     return results
