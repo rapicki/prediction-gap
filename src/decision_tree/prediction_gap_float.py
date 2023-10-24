@@ -2,6 +2,7 @@ from scipy.stats import norm
 import pandas as pd
 import numpy as np
 from typing import Optional
+from multiprocessing import Pool
 
 import src.decision_tree.tree_float as tree
 from src.decision_tree.tree_float import TreeEnsemble
@@ -11,8 +12,10 @@ class PerturbPredictionGap:
     def _compute_cdf(self, data_point, perturbed_features: set):
         raise NotImplementedError('')
 
-    def prediction_gap_fixed(self, model: tree.Model, data_point, perturbed_features: set, baseline_pred):
-        return model.expected_diff_squared(self._compute_cdf(data_point, perturbed_features), baseline_pred)
+    def prediction_gap_fixed(self, model: tree.Model, data_point, perturbed_features: set, baseline_pred, index: int = 0):
+        result =  model.expected_diff_squared(self._compute_cdf(data_point, perturbed_features), baseline_pred)
+        print(f"Datapoint {index} returned predgap value of {result}.")
+        return result
 
     def pgi(self, model: tree.Model, data_point, baseline_pred, sorted_features: list):
         n = len(sorted_features)
@@ -108,7 +111,8 @@ def prediction_gap_by_exact_calc(predgap: PerturbPredictionGap,
                                  trees: TreeEnsemble,
                                  data: pd.DataFrame,
                                  perturbed_features: set,
-                                 squared: bool = False):
+                                 squared: bool = False,
+                                 processes: int = 4):
     if not squared:
         raise NotImplementedError('')
     baseline_preds = trees.eval_on_multiple_rows(data)
@@ -117,9 +121,17 @@ def prediction_gap_by_exact_calc(predgap: PerturbPredictionGap,
     print(perturbed_features)
     print(f"Starting exact prediction gap calculation.")
     results = []
+    args = []
     for i in range(len(data)):
         x = data.iloc[i, :-1]
         y = baseline_preds[i]
-        results.append(predgap.prediction_gap_fixed(trees, x, perturbed_features, y))
-        print(f"Datapoint {i} returned predgap value of {results[-1]}.")
+        args.append((trees, x, perturbed_features, y, i))
+    pool = Pool(processes=processes)
+    results = sum(pool.starmap(predgap.prediction_gap_fixed, args))
+    # for i in range(len(data)):
+    #     x = data.iloc[i, :-1]
+    #     y = baseline_preds[i]
+    #     results.append(predgap.prediction_gap_fixed(trees, x, perturbed_features, y))
+    #     print(f"Datapoint {i} returned predgap value of {results[-1]}.")
     return results
+ 
