@@ -127,7 +127,7 @@ def prediction_gap_by_exact_calc(predgap: PerturbPredictionGap,
         y = baseline_preds[i]
         args.append((trees, x, perturbed_features, y, i))
     pool = Pool(processes=processes)
-    results = sum(pool.starmap(predgap.prediction_gap_fixed, args))
+    results = np.array(pool.starmap(predgap.prediction_gap_fixed, args))
     # for i in range(len(data)):
     #     x = data.iloc[i, :-1]
     #     y = baseline_preds[i]
