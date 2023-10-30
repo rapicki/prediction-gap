@@ -4,8 +4,8 @@ import numpy as np
 from typing import Optional
 from multiprocessing import Pool
 
-import src.decision_tree.tree as tree
-from src.decision_tree.tree import TreeEnsemble
+import src.decision_tree.tree_float as tree
+from src.decision_tree.tree_float import TreeEnsemble
 
 
 class PerturbPredictionGap:
