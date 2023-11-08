@@ -22,6 +22,4 @@ class ShapWrapper:
         else:
             ranking = ranking.tolist() 
         
-        if len(ranking) == 1:
-            ranking = ranking[0]
         return ranking
