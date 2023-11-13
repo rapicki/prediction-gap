@@ -1,0 +1,784 @@
+booster[0]:
+0:[alcohol<0.119227253] yes=1,no=2,missing=2,gain=150.608353,cover=1148
+	1:[sulphates<-0.10710191] yes=3,no=4,missing=4,gain=24.0063057,cover=716
+		3:[volatile_acidity<1.24120045] yes=7,no=8,missing=8,gain=8.47118378,cover=443
+			7:leaf=-0.0738615096,cover=385
+			8:leaf=-0.156091198,cover=58
+		4:[volatile_acidity<-0.658201516] yes=9,no=10,missing=10,gain=17.2248802,cover=273
+			9:leaf=0.067954354,cover=80
+			10:leaf=-0.041860152,cover=193
+	2:[sulphates<-0.166114986] yes=5,no=6,missing=6,gain=37.3844681,cover=432
+		5:[volatile_acidity<0.375296623] yes=11,no=12,missing=12,gain=10.3864727,cover=159
+			11:leaf=0.0559875853,cover=98
+			12:leaf=-0.0484349839,cover=61
+		6:[alcohol<1.10483336] yes=13,no=14,missing=14,gain=17.0242004,cover=273
+			13:leaf=0.0946237668,cover=159
+			14:leaf=0.196901143,cover=114
+booster[1]:
+0:[alcohol<0.823231637] yes=1,no=2,missing=2,gain=94.7386551,cover=1164
+	1:[volatile_acidity<-0.909592986] yes=3,no=4,missing=4,gain=34.4486237,cover=911
+		3:[alcohol<0.353895366] yes=7,no=8,missing=8,gain=14.4085255,cover=140
+			7:leaf=0.0173332635,cover=98
+			8:leaf=0.156414658,cover=42
+		4:[sulphates<-0.461180359] yes=9,no=10,missing=10,gain=16.1771812,cover=771
+			9:leaf=-0.0844040439,cover=295
+			10:leaf=-0.0247793011,cover=476
+	2:[sulphates<0.187963471] yes=5,no=6,missing=6,gain=11.4687881,cover=253
+		5:[fixed_acidity<-0.987983942] yes=11,no=12,missing=12,gain=5.92191887,cover=139
+			11:leaf=-0.0021774394,cover=36
+			12:leaf=0.0918777213,cover=103
+		6:[density<-0.745559216] yes=13,no=14,missing=14,gain=6.98226166,cover=114
+			13:leaf=0.202001452,cover=59
+			14:leaf=0.0997588187,cover=55
+booster[2]:
+0:[alcohol<-0.397042602] yes=1,no=2,missing=2,gain=66.3840027,cover=1156
+	1:[fixed_acidity<2.45919871] yes=3,no=4,missing=4,gain=6.00526047,cover=496
+		3:[total_sulfur_dioxide<0.0161838848] yes=7,no=8,missing=8,gain=4.08537674,cover=485
+			7:leaf=-0.037475463,cover=229
+			8:leaf=-0.0745323002,cover=256
+		4:[sulphates<0.955133498] yes=9,no=10,missing=10,gain=3.45748115,cover=11
+			9:leaf=0.00976763852,cover=8
+			10:leaf=0.238809705,cover=3
+	2:[sulphates<-0.225128055] yes=5,no=6,missing=6,gain=30.3838844,cover=660
+		5:[volatile_acidity<2.74954915] yes=11,no=12,missing=12,gain=7.97616291,cover=250
+			11:leaf=-0.00548100425,cover=243
+			12:leaf=-0.208475634,cover=7
+		6:[volatile_acidity<-0.546472013] yes=13,no=14,missing=14,gain=13.2934608,cover=410
+			13:leaf=0.114699043,cover=192
+			14:leaf=0.0423117615,cover=218
+booster[3]:
+0:[alcohol<1.10483336] yes=1,no=2,missing=2,gain=47.5368423,cover=1159
+	1:[sulphates<-0.04808883] yes=3,no=4,missing=4,gain=22.9043121,cover=980
+		3:[volatile_acidity<0.71048522] yes=7,no=8,missing=8,gain=11.2058487,cover=581
+			7:leaf=-0.0270591825,cover=419
+			8:leaf=-0.0889778361,cover=162
+		4:[total_sulfur_dioxide<0.137819752] yes=9,no=10,missing=10,gain=22.0171833,cover=399
+			9:leaf=0.0518277586,cover=261
+			10:leaf=-0.0466645472,cover=138
+	2:[sulphates<-0.225128055] yes=5,no=6,missing=6,gain=4.9112587,cover=179
+		5:[volatile_acidity<-0.63026917] yes=11,no=12,missing=12,gain=2.52610755,cover=62
+			11:leaf=0.090902105,cover=27
+			12:leaf=0.00998017006,cover=35
+		6:[fixed_acidity<2.68901086] yes=13,no=14,missing=14,gain=4.98012924,cover=117
+			13:leaf=0.12551254,cover=112
+			14:leaf=-0.0677129775,cover=5
+booster[4]:
+0:[alcohol<0.0722936317] yes=1,no=2,missing=2,gain=35.5469131,cover=1156
+	1:[fixed_acidity<2.45919871] yes=3,no=4,missing=4,gain=6.26690292,cover=673
+		3:[alcohol<-0.490909874] yes=7,no=8,missing=8,gain=5.73208427,cover=658
+			7:leaf=-0.0460460261,cover=455
+			8:leaf=-0.00561397802,cover=203
+		4:[sulphates<0.305989623] yes=9,no=10,missing=10,gain=2.47500491,cover=15
+			9:leaf=0.00360198016,cover=7
+			10:leaf=0.162693575,cover=8
+	2:[sulphates<-0.40216729] yes=5,no=6,missing=6,gain=11.8350201,cover=483
+		5:[volatile_acidity<-0.0436891131] yes=11,no=12,missing=12,gain=5.43265152,cover=123
+			11:leaf=0.0333304368,cover=55
+			12:leaf=-0.0505463444,cover=68
+		6:[total_sulfur_dioxide<1.87113082] yes=13,no=14,missing=14,gain=6.02352715,cover=360
+			13:leaf=0.0626533851,cover=352
+			14:leaf=-0.104214422,cover=8
+booster[5]:
+0:[alcohol<1.10483336] yes=1,no=2,missing=2,gain=23.0528908,cover=1165
+	1:[volatile_acidity<-0.658201516] yes=3,no=4,missing=4,gain=15.291153,cover=982
+		3:[total_sulfur_dioxide<1.11090672] yes=7,no=8,missing=8,gain=8.02847958,cover=236
+			7:leaf=0.0438245907,cover=218
+			8:leaf=-0.0919360444,cover=18
+		4:[volatile_acidity<1.40879476] yes=9,no=10,missing=10,gain=6.01027298,cover=746
+			9:leaf=-0.0190714058,cover=670
+			10:leaf=-0.0781449154,cover=76
+	2:[total_sulfur_dioxide<-0.804858208] yes=5,no=6,missing=6,gain=2.94551086,cover=183
+		5:[sulphates<-0.461180359] yes=11,no=12,missing=12,gain=3.40304852,cover=59
+			11:leaf=0.0380375162,cover=22
+			12:leaf=0.139155015,cover=37
+		6:[fixed_acidity<-1.56251442] yes=13,no=14,missing=14,gain=2.82279158,cover=124
+			13:leaf=0.124000229,cover=16
+			14:leaf=0.0355015323,cover=108
+booster[6]:
+0:[alcohol<-0.490909874] yes=1,no=2,missing=2,gain=17.6595497,cover=1148
+	1:[fixed_acidity<2.45919871] yes=3,no=4,missing=4,gain=3.56673241,cover=458
+		3:[total_sulfur_dioxide<1.59745014] yes=7,no=8,missing=8,gain=2.4072113,cover=449
+			7:leaf=-0.026876241,cover=393
+			8:leaf=-0.0710901543,cover=56
+		4:[residual_sugar<-0.133953333] yes=9,no=10,missing=10,gain=1.23986459,cover=9
+			9:leaf=0.134838596,cover=6
+			10:leaf=-0.0144515513,cover=3
+	2:[sulphates<0.187963471] yes=5,no=6,missing=6,gain=10.6524448,cover=690
+		5:[volatile_acidity<-0.0436891131] yes=11,no=12,missing=12,gain=5.94079065,cover=404
+			11:leaf=0.0270929076,cover=177
+			12:leaf=-0.0216641854,cover=227
+		6:[total_sulfur_dioxide<0.137819752] yes=13,no=14,missing=14,gain=7.75702667,cover=286
+			13:leaf=0.071610108,cover=200
+			14:leaf=-0.000162697936,cover=86
+booster[7]:
+0:[alcohol<0.823231637] yes=1,no=2,missing=2,gain=12.803009,cover=1157
+	1:[volatile_acidity<0.71048522] yes=3,no=4,missing=4,gain=8.08147717,cover=908
+		3:[chlorides<0.223875195] yes=7,no=8,missing=8,gain=9.43830013,cover=705
+			7:leaf=0.00942749996,cover=603
+			8:leaf=-0.0560737364,cover=102
+		4:[pH<0.316751212] yes=9,no=10,missing=10,gain=4.45417309,cover=203
+			9:leaf=-0.0211321469,cover=123
+			10:leaf=-0.0817797482,cover=80
+	2:[chlorides<-0.605019987] yes=5,no=6,missing=6,gain=2.67067051,cover=249
+		5:[density<-0.809160888] yes=11,no=12,missing=12,gain=2.8252399,cover=52
+			11:leaf=0.0181459691,cover=46
+			12:leaf=-0.118047737,cover=6
+		6:[fixed_acidity<2.80391693] yes=13,no=14,missing=14,gain=2.76196194,cover=197
+			13:leaf=0.0541315265,cover=195
+			14:leaf=-0.141523466,cover=2
+booster[8]:
+0:[sulphates<-0.461180359] yes=1,no=2,missing=2,gain=10.1046162,cover=1154
+	1:[alcohol<1.76190412] yes=3,no=4,missing=4,gain=3.41110182,cover=376
+		3:[chlorides<-0.562512517] yes=7,no=8,missing=8,gain=2.20473385,cover=355
+			7:leaf=-0.0831908807,cover=29
+			8:leaf=-0.02623084,cover=326
+		4:[alcohol<1.8557713] yes=9,no=10,missing=10,gain=1.58370423,cover=21
+			9:leaf=0.128909916,cover=6
+			10:leaf=0.0126987398,cover=15
+	2:[total_sulfur_dioxide<0.137819752] yes=5,no=6,missing=6,gain=6.61562681,cover=778
+		5:[volatile_acidity<-0.658201516] yes=11,no=12,missing=12,gain=6.06510258,cover=513
+			11:leaf=0.0551801026,cover=188
+			12:leaf=0.0100830449,cover=325
+		6:[total_sulfur_dioxide<1.87113082] yes=13,no=14,missing=14,gain=3.20445871,cover=265
+			13:leaf=-0.00320649566,cover=228
+			14:leaf=-0.0659550577,cover=37
+booster[9]:
+0:[alcohol<-0.584777117] yes=1,no=2,missing=2,gain=7.19472218,cover=1130
+	1:[citric_acid<1.38145268] yes=3,no=4,missing=4,gain=2.5124898,cover=408
+		3:[density<-0.0406410135] yes=7,no=8,missing=8,gain=2.52573705,cover=384
+			7:leaf=-0.0435132794,cover=103
+			8:leaf=-0.00699700788,cover=281
+		4:[residual_sugar<-0.55964011] yes=9,no=10,missing=10,gain=1.61179209,cover=24
+			9:leaf=0.0432804823,cover=3
+			10:leaf=-0.101563394,cover=21
+	2:[pH<-0.331176609] yes=5,no=6,missing=6,gain=6.11403656,cover=722
+		5:[total_sulfur_dioxide<-0.896085143] yes=11,no=12,missing=12,gain=3.2000227,cover=239
+			11:leaf=0.0846708938,cover=47
+			12:leaf=0.0266363174,cover=192
+		6:[density<-0.623656094] yes=13,no=14,missing=14,gain=6.28220367,cover=483
+			13:leaf=0.0260163192,cover=203
+			14:leaf=-0.0200930368,cover=280
+booster[10]:
+0:[sulphates<-0.697232664] yes=1,no=2,missing=2,gain=6.24832869,cover=1163
+	1:[chlorides<1.73288941] yes=3,no=4,missing=4,gain=2.50069761,cover=216
+		3:[residual_sugar<1.53331983] yes=7,no=8,missing=8,gain=2.05986261,cover=214
+			7:leaf=-0.0316809937,cover=202
+			8:leaf=0.0507969968,cover=12
+		4:leaf=-0.21150589,cover=2
+	2:[total_sulfur_dioxide<1.87113082] yes=5,no=6,missing=6,gain=5.15269089,cover=947
+		5:[chlorides<0.181367755] yes=9,no=10,missing=10,gain=5.71946621,cover=899
+			9:leaf=0.0193198379,cover=726
+			10:leaf=-0.0210590567,cover=173
+		6:[total_sulfur_dioxide<2.54012823] yes=11,no=12,missing=12,gain=0.92828989,cover=48
+			11:leaf=-0.0780725107,cover=28
+			12:leaf=-0.0206911918,cover=20
+booster[11]:
+0:[volatile_acidity<0.375296623] yes=1,no=2,missing=2,gain=5.38278532,cover=1152
+	1:[total_sulfur_dioxide<-0.318314761] yes=3,no=4,missing=4,gain=4.65308285,cover=763
+		3:[fixed_acidity<-0.987983942] yes=7,no=8,missing=8,gain=3.43260622,cover=363
+			7:leaf=-0.0404703505,cover=29
+			8:leaf=0.0303004272,cover=334
+		4:[density<-0.575954854] yes=9,no=10,missing=10,gain=5.08221531,cover=400
+			9:leaf=0.0343241394,cover=92
+			10:leaf=-0.0190089215,cover=308
+	2:[residual_sugar<-0.4532184] yes=5,no=6,missing=6,gain=4.44722271,cover=389
+		5:[citric_acid<-1.34012187] yes=11,no=12,missing=12,gain=2.29199314,cover=69
+			11:leaf=0.00562307378,cover=14
+			12:leaf=-0.0844667777,cover=55
+		6:[citric_acid<1.99765825] yes=13,no=14,missing=14,gain=2.82407951,cover=320
+			13:leaf=-0.0132141383,cover=315
+			14:leaf=0.12536411,cover=5
+booster[12]:
+0:[sulphates<-0.756245732] yes=1,no=2,missing=2,gain=3.42292738,cover=1160
+	1:[volatile_acidity<-1.04925489] yes=3,no=4,missing=4,gain=2.57450557,cover=178
+		3:[residual_sugar<-0.55964011] yes=7,no=8,missing=8,gain=0.939191818,cover=10
+			7:leaf=-0.00695957197,cover=4
+			8:leaf=0.112883888,cover=6
+		4:[chlorides<1.73288941] yes=9,no=10,missing=10,gain=1.61922503,cover=168
+			9:leaf=-0.0286762696,cover=166
+			10:leaf=-0.178048834,cover=2
+	2:[density<-0.279147178] yes=5,no=6,missing=6,gain=3.04860187,cover=982
+		5:[pH<-0.201591045] yes=11,no=12,missing=12,gain=3.26651692,cover=350
+			11:leaf=0.0541777313,cover=82
+			12:leaf=0.00872523617,cover=268
+		6:[fixed_acidity<-0.873077869] yes=13,no=14,missing=14,gain=2.86675835,cover=632
+			13:leaf=-0.0602365844,cover=33
+			14:leaf=-0.000535587664,cover=599
+booster[13]:
+0:[sulphates<0.187963471] yes=1,no=2,missing=2,gain=3.76749635,cover=1151
+	1:[pH<-1.88620341] yes=3,no=4,missing=4,gain=2.82032776,cover=760
+		3:[alcohol<-0.678644359] yes=7,no=8,missing=8,gain=1.81864214,cover=9
+			7:leaf=-0.0249582287,cover=3
+			8:leaf=0.153902233,cover=6
+		4:[alcohol<-1.80505133] yes=9,no=10,missing=10,gain=2.47122765,cover=751
+			9:leaf=-0.231301501,cover=1
+			10:leaf=-0.00859420933,cover=750
+	2:[total_sulfur_dioxide<0.320273548] yes=5,no=6,missing=6,gain=4.31502056,cover=391
+		5:[residual_sugar<1.85258484] yes=11,no=12,missing=12,gain=3.14148903,cover=286
+			11:leaf=0.0241958741,cover=273
+			12:leaf=0.121650301,cover=13
+		6:[free_sulfur_dioxide<3.55029964] yes=13,no=14,missing=14,gain=2.46675801,cover=105
+			13:leaf=-0.0240460373,cover=102
+			14:leaf=0.13630037,cover=3
+booster[14]:
+0:[density<-2.05999327] yes=1,no=2,missing=2,gain=3.18031955,cover=1158
+	1:[sulphates<0.069937326] yes=3,no=4,missing=4,gain=1.04362965,cover=24
+		3:[alcohol<2.32510757] yes=7,no=8,missing=8,gain=1.06361139,cover=16
+			7:leaf=0.0656299666,cover=12
+			8:leaf=-0.0445570946,cover=4
+		4:[volatile_acidity<-0.769931078] yes=9,no=10,missing=10,gain=1.43826699,cover=8
+			9:leaf=-0.0560865402,cover=1
+			10:leaf=0.15578185,cover=7
+	2:[pH<1.80698514] yes=5,no=6,missing=6,gain=2.75211906,cover=1134
+		5:[alcohol<-0.866378844] yes=11,no=12,missing=12,gain=3.43832541,cover=1094
+			11:leaf=-0.0217940845,cover=222
+			12:leaf=0.00603183033,cover=872
+		6:[chlorides<0.181367755] yes=13,no=14,missing=14,gain=1.90412927,cover=40
+			13:leaf=-0.0301432945,cover=33
+			14:leaf=-0.140482828,cover=7
+booster[15]:
+0:[sulphates<0.187963471] yes=1,no=2,missing=2,gain=2.70561814,cover=1147
+	1:[alcohol<-1.80505133] yes=3,no=4,missing=4,gain=1.98910403,cover=760
+		3:leaf=-0.205991939,cover=1
+		4:[volatile_acidity<2.74954915] yes=7,no=8,missing=8,gain=1.76936507,cover=759
+			7:leaf=-0.00488931639,cover=746
+			8:leaf=-0.0766729042,cover=13
+	2:[chlorides<0.181367755] yes=5,no=6,missing=6,gain=3.05672431,cover=387
+		5:[total_sulfur_dioxide<1.81031299] yes=9,no=10,missing=10,gain=3.75090456,cover=300
+			9:leaf=0.0279872417,cover=288
+			10:leaf=-0.082030952,cover=12
+		6:[total_sulfur_dioxide<-1.04812992] yes=11,no=12,missing=12,gain=1.03907967,cover=87
+			11:leaf=0.124280408,cover=1
+			12:leaf=-0.0221553445,cover=86
+booster[16]:
+0:[residual_sugar<-0.595113993] yes=1,no=2,missing=2,gain=2.50281334,cover=1147
+	1:[chlorides<-0.413736463] yes=3,no=4,missing=4,gain=1.82970667,cover=97
+		3:[chlorides<-0.498751342] yes=7,no=8,missing=8,gain=1.91936445,cover=38
+			7:leaf=-0.0159670115,cover=32
+			8:leaf=0.0993475616,cover=6
+		4:[citric_acid<-1.13471997] yes=9,no=10,missing=10,gain=2.80099392,cover=59
+			9:leaf=-0.148725063,cover=9
+			10:leaf=-0.031614814,cover=50
+	2:[density<-0.623656094] yes=5,no=6,missing=6,gain=2.67527556,cover=1050
+		5:[density<-2.30379939] yes=11,no=12,missing=12,gain=1.81381893,cover=227
+			11:leaf=0.106172919,cover=9
+			12:leaf=0.0187651087,cover=218
+		6:[pH<2.00136352] yes=13,no=14,missing=14,gain=2.9825573,cover=823
+			13:leaf=-0.000335998455,cover=812
+			14:leaf=-0.100779392,cover=11
+booster[17]:
+0:[volatile_acidity<-1.1889168] yes=1,no=2,missing=2,gain=2.47923636,cover=1155
+	1:[volatile_acidity<-1.60790253] yes=3,no=4,missing=4,gain=3.40701342,cover=126
+		3:[chlorides<-0.498751342] yes=7,no=8,missing=8,gain=2.71247506,cover=24
+			7:leaf=-0.128375754,cover=8
+			8:leaf=0.00839359127,cover=16
+		4:[fixed_acidity<1.88466823] yes=9,no=10,missing=10,gain=1.5195694,cover=102
+			9:leaf=0.0340513326,cover=94
+			10:leaf=0.121263646,cover=8
+	2:[density<1.26849282] yes=5,no=6,missing=6,gain=2.23862267,cover=1029
+		5:[fixed_acidity<2.22938657] yes=11,no=12,missing=12,gain=2.85664582,cover=924
+			11:leaf=0.000602740969,cover=918
+			12:leaf=-0.127647206,cover=6
+		6:[pH<-2.46933842] yes=13,no=14,missing=14,gain=1.70563936,cover=105
+			13:leaf=-0.159793809,cover=3
+			14:leaf=-0.025753174,cover=102
+booster[18]:
+0:[sulphates<-1.58242881] yes=1,no=2,missing=2,gain=1.82237935,cover=1163
+	1:leaf=-0.136375174,cover=3
+	2:[alcohol<-1.80505133] yes=3,no=4,missing=4,gain=1.65246511,cover=1160
+		3:leaf=-0.182783842,cover=1
+		4:[density<-2.05999327] yes=5,no=6,missing=6,gain=1.4971447,cover=1159
+			5:leaf=0.0475835986,cover=24
+			6:leaf=-0.00189544656,cover=1135
+booster[19]:
+0:[pH<1.80698514] yes=1,no=2,missing=2,gain=1.89522624,cover=1157
+	1:[sulphates<-0.756245732] yes=3,no=4,missing=4,gain=1.4742111,cover=1117
+		3:[total_sulfur_dioxide<0.0161838848] yes=7,no=8,missing=8,gain=1.51665878,cover=175
+			7:leaf=-0.0297437608,cover=108
+			8:leaf=0.00839015003,cover=67
+		4:[citric_acid<1.07334995] yes=9,no=10,missing=10,gain=1.70584369,cover=942
+			9:leaf=0.00926210545,cover=736
+			10:leaf=-0.0112891691,cover=206
+	2:[total_sulfur_dioxide<-1.04812992] yes=5,no=6,missing=6,gain=1.92139459,cover=40
+		5:leaf=0.0921765342,cover=3
+		6:[total_sulfur_dioxide<-0.95690304] yes=11,no=12,missing=12,gain=2.68245697,cover=37
+			11:leaf=-0.178472102,cover=5
+			12:leaf=-0.0310984105,cover=32
+booster[20]:
+0:[total_sulfur_dioxide<1.59745014] yes=1,no=2,missing=2,gain=1.38425362,cover=1165
+	1:[residual_sugar<1.88805878] yes=3,no=4,missing=4,gain=1.93866122,cover=1069
+		3:[density<1.93631005] yes=7,no=8,missing=8,gain=1.86541545,cover=1029
+			7:leaf=0.00356003246,cover=1005
+			8:leaf=-0.051748544,cover=24
+		4:[residual_sugar<2.52658892] yes=9,no=10,missing=10,gain=3.14956284,cover=40
+			9:leaf=0.10923405,cover=17
+			10:leaf=-0.00236412673,cover=23
+	2:[volatile_acidity<-1.24478161] yes=5,no=6,missing=6,gain=1.64461935,cover=96
+		5:[volatile_acidity<-1.71963203] yes=11,no=12,missing=12,gain=0.853717804,cover=7
+			11:leaf=-0.0137104038,cover=3
+			12:leaf=0.117168047,cover=4
+		6:[sulphates<3.07960415] yes=13,no=14,missing=14,gain=1.32357776,cover=89
+			13:leaf=-0.0352671705,cover=83
+			14:leaf=0.0559384786,cover=6
+booster[21]:
+0:[alcohol<-1.80505133] yes=1,no=2,missing=2,gain=1.34973752,cover=1142
+	1:leaf=-0.163732573,cover=1
+	2:[sulphates<-1.58242881] yes=3,no=4,missing=4,gain=1.27464604,cover=1141
+		3:leaf=-0.111991383,cover=3
+		4:[alcohol<1.10483336] yes=5,no=6,missing=6,gain=1.10483193,cover=1138
+			5:leaf=-0.00154497323,cover=964
+			6:leaf=0.0157274753,cover=174
+booster[22]:
+0:[fixed_acidity<4.12533712] yes=1,no=2,missing=2,gain=1.41738009,cover=1138
+	1:[pH<0.446336776] yes=3,no=4,missing=4,gain=1.46029353,cover=1135
+		3:[residual_sugar<-0.807957351] yes=5,no=6,missing=6,gain=1.93564904,cover=777
+			5:leaf=-0.0941450745,cover=7
+			6:leaf=0.00475099683,cover=770
+		4:[volatile_acidity<2.74954915] yes=7,no=8,missing=8,gain=2.3810997,cover=358
+			7:leaf=-0.0091939941,cover=351
+			8:leaf=-0.119618051,cover=7
+	2:leaf=-0.120395444,cover=3
+booster[23]:
+0:[sulphates<-0.579206526] yes=1,no=2,missing=2,gain=1.5148356,cover=1155
+	1:[total_sulfur_dioxide<-0.561586499] yes=3,no=4,missing=4,gain=1.18063951,cover=285
+		3:[residual_sugar<1.53331983] yes=7,no=8,missing=8,gain=1.88591814,cover=98
+			7:leaf=-0.034256395,cover=95
+			8:leaf=0.10667067,cover=3
+		4:[alcohol<0.729364395] yes=9,no=10,missing=10,gain=1.37088597,cover=187
+			9:leaf=-0.00687808264,cover=173
+			10:leaf=0.0561385714,cover=14
+	2:[total_sulfur_dioxide<1.50622332] yes=5,no=6,missing=6,gain=1.60762358,cover=870
+		5:[chlorides<0.223875195] yes=11,no=12,missing=12,gain=1.69595611,cover=805
+			11:leaf=0.0122458702,cover=662
+			12:leaf=-0.0117115239,cover=143
+		6:[fixed_acidity<0.103623874] yes=13,no=14,missing=14,gain=1.21691453,cover=65
+			13:leaf=-0.0464071706,cover=39
+			14:leaf=0.00887767691,cover=26
+booster[24]:
+0:[citric_acid<1.99765825] yes=1,no=2,missing=2,gain=1.09042001,cover=1157
+	1:[citric_acid<1.68955541] yes=3,no=4,missing=4,gain=2.9295547,cover=1125
+		3:[fixed_acidity<-0.815624833] yes=7,no=8,missing=8,gain=1.25550783,cover=1098
+			7:leaf=-0.0143758683,cover=191
+			8:leaf=0.00342507218,cover=907
+		4:[density<1.61830187] yes=9,no=10,missing=10,gain=0.737616062,cover=27
+			9:leaf=-0.0821479186,cover=21
+			10:leaf=-0.00259400788,cover=6
+	2:[sulphates<0.128950402] yes=5,no=6,missing=6,gain=2.42934704,cover=32
+		5:[density<0.0282607675] yes=11,no=12,missing=12,gain=0.887574136,cover=12
+			11:leaf=0.0275829472,cover=5
+			12:leaf=-0.0756900907,cover=7
+		6:[citric_acid<2.61386371] yes=13,no=14,missing=14,gain=2.82690239,cover=20
+			13:leaf=0.102551244,cover=18
+			14:leaf=-0.111503832,cover=2
+booster[25]:
+0:[alcohol<-0.866378844] yes=1,no=2,missing=2,gain=1.35720158,cover=1155
+	1:[pH<1.35343575] yes=3,no=4,missing=4,gain=1.86983907,cover=207
+		3:[residual_sugar<-0.4532184] yes=7,no=8,missing=8,gain=0.995732903,cover=201
+			7:leaf=-0.0425666012,cover=48
+			8:leaf=-0.00970500149,cover=153
+		4:[fixed_acidity<-1.16034305] yes=9,no=10,missing=10,gain=0.960452557,cover=6
+			9:leaf=-0.0534707084,cover=1
+			10:leaf=0.119977951,cover=5
+	2:[pH<-0.395969391] yes=5,no=6,missing=6,gain=2.21373773,cover=948
+		5:[density<-0.925763905] yes=11,no=12,missing=12,gain=2.38167548,cover=301
+			11:leaf=0.0733136386,cover=27
+			12:leaf=0.0119856438,cover=274
+		6:[free_sulfur_dioxide<-0.753084838] yes=13,no=14,missing=14,gain=2.5204103,cover=647
+			13:leaf=-0.0260518473,cover=146
+			14:leaf=0.00372626306,cover=501
+booster[26]:
+0:[pH<2.00136352] yes=1,no=2,missing=2,gain=1.44916284,cover=1157
+	1:[sulphates<0.187963471] yes=3,no=4,missing=4,gain=1.21913254,cover=1138
+		3:[citric_acid<1.68955541] yes=7,no=8,missing=8,gain=1.95267653,cover=757
+			7:leaf=-0.00159365672,cover=727
+			8:leaf=-0.0528511479,cover=30
+		4:[total_sulfur_dioxide<0.137819752] yes=9,no=10,missing=10,gain=1.43476009,cover=381
+			9:leaf=0.0190741289,cover=249
+			10:leaf=-0.00666019553,cover=132
+	2:[sulphates<0.483028859] yes=5,no=6,missing=6,gain=1.90356123,cover=19
+		5:[residual_sugar<-0.4532184] yes=11,no=12,missing=12,gain=0.708696365,cover=14
+			11:leaf=-0.0302839279,cover=6
+			12:leaf=-0.125728264,cover=8
+		6:[citric_acid<-1.23742092] yes=13,no=14,missing=14,gain=0.51475364,cover=5
+			13:leaf=-0.0258417763,cover=2
+			14:leaf=0.0884925127,cover=3
+booster[27]:
+0:[density<-2.05999327] yes=1,no=2,missing=2,gain=1.19435334,cover=1148
+	1:[citric_acid<0.405793905] yes=3,no=4,missing=4,gain=0.45041132,cover=22
+		3:[pH<1.54781401] yes=7,no=8,missing=8,gain=0.509043932,cover=20
+			7:leaf=0.0780026764,cover=12
+			8:leaf=0.0121088242,cover=8
+		4:[fixed_acidity<-1.84977961] yes=9,no=10,missing=10,gain=0.0418293998,cover=2
+			9:leaf=-0.0503114238,cover=1
+			10:leaf=-0.000106763844,cover=1
+	2:[alcohol<-1.80505133] yes=5,no=6,missing=6,gain=1.04264009,cover=1126
+		5:leaf=-0.145875931,cover=1
+		6:[free_sulfur_dioxide<3.55029964] yes=11,no=12,missing=12,gain=0.991332173,cover=1125
+			11:leaf=-0.00183870667,cover=1118
+			12:leaf=0.0688176677,cover=7
+booster[28]:
+0:[citric_acid<1.07334995] yes=1,no=2,missing=2,gain=0.887761354,cover=1166
+	1:[alcohol<-1.28878152] yes=3,no=4,missing=4,gain=1.80461311,cover=945
+		3:[residual_sugar<-0.4532184] yes=7,no=8,missing=8,gain=1.19815707,cover=15
+			7:leaf=-0.00925113354,cover=5
+			8:leaf=0.107102148,cover=10
+		4:[sulphates<-0.756245732] yes=9,no=10,missing=10,gain=1.39044213,cover=930
+			9:leaf=-0.0138268219,cover=171
+			10:leaf=0.00608752901,cover=759
+	2:[free_sulfur_dioxide<1.82894588] yes=5,no=6,missing=6,gain=1.60612488,cover=221
+		5:[pH<-0.395969391] yes=11,no=12,missing=12,gain=2.00974035,cover=207
+			11:leaf=-0.000846128911,cover=137
+			12:leaf=-0.042313721,cover=70
+		6:[volatile_acidity<-1.04925489] yes=13,no=14,missing=14,gain=2.12566519,cover=14
+			13:leaf=0.133435547,cover=6
+			14:leaf=-0.0157563966,cover=8
+booster[29]:
+0:[residual_sugar<-0.595113993] yes=1,no=2,missing=2,gain=1.19246221,cover=1139
+	1:[pH<-1.82141054] yes=3,no=4,missing=4,gain=1.68505847,cover=96
+		3:[fixed_acidity<-0.126188293] yes=7,no=8,missing=8,gain=0.667007327,cover=3
+			7:leaf=-0.0189852715,cover=1
+			8:leaf=0.153170496,cover=2
+		4:[citric_acid<0.713896692] yes=9,no=10,missing=10,gain=1.9506253,cover=93
+			9:leaf=-0.0153839858,cover=80
+			10:leaf=-0.0966234282,cover=13
+	2:[alcohol<-1.80505133] yes=5,no=6,missing=6,gain=0.872057855,cover=1043
+		5:leaf=-0.131203756,cover=1
+		6:[fixed_acidity<-1.56251442] yes=11,no=12,missing=12,gain=0.860957801,cover=1042
+			11:leaf=0.0502520613,cover=13
+			12:leaf=0.000318253529,cover=1029
+booster[30]:
+0:[fixed_acidity<-0.758171797] yes=1,no=2,missing=2,gain=1.37817132,cover=1143
+	1:[total_sulfur_dioxide<-0.987312019] yes=3,no=4,missing=4,gain=1.57430565,cover=215
+		3:[density<-1.51937926] yes=7,no=8,missing=8,gain=2.14272952,cover=20
+			7:leaf=0.0980028436,cover=2
+			8:leaf=-0.0882132351,cover=18
+		4:[chlorides<-0.158691794] yes=9,no=10,missing=10,gain=1.21698761,cover=195
+			9:leaf=0.00272051897,cover=133
+			10:leaf=-0.0310062673,cover=62
+	2:[chlorides<0.223875195] yes=5,no=6,missing=6,gain=1.50947607,cover=928
+		5:[total_sulfur_dioxide<1.59745014] yes=11,no=12,missing=12,gain=1.89066052,cover=769
+			11:leaf=0.0107223867,cover=702
+			12:leaf=-0.0242157411,cover=67
+		6:[volatile_acidity<0.654620469] yes=13,no=14,missing=14,gain=1.36768222,cover=159
+			13:leaf=-0.0238792431,cover=122
+			14:leaf=0.0196048487,cover=37
+booster[31]:
+0:[volatile_acidity<-1.60790253] yes=1,no=2,missing=2,gain=0.851167381,cover=1135
+	1:[sulphates<0.305989623] yes=3,no=4,missing=4,gain=1.44335461,cover=28
+		3:[total_sulfur_dioxide<-0.835267186] yes=7,no=8,missing=8,gain=1.05410075,cover=13
+			7:leaf=0.00448177336,cover=4
+			8:leaf=-0.115914039,cover=9
+		4:[fixed_acidity<-0.183641344] yes=9,no=10,missing=10,gain=0.924061835,cover=15
+			9:leaf=-0.0559972785,cover=5
+			10:leaf=0.0416488573,cover=10
+	2:[density<1.26849282] yes=5,no=6,missing=6,gain=0.937865973,cover=1107
+		5:[pH<-2.40454555] yes=11,no=12,missing=12,gain=1.56310475,cover=999
+			11:leaf=0.0803215802,cover=9
+			12:leaf=0.000849672128,cover=990
+		6:[pH<0.381543994] yes=13,no=14,missing=14,gain=1.38101184,cover=108
+			13:leaf=-0.0081203375,cover=92
+			14:leaf=-0.0702934191,cover=16
+booster[32]:
+0:[fixed_acidity<4.12533712] yes=1,no=2,missing=2,gain=1.10624051,cover=1183
+	1:[sulphates<-0.579206526] yes=3,no=4,missing=4,gain=0.829072535,cover=1180
+		3:[density<0.372769684] yes=5,no=6,missing=6,gain=0.860980392,cover=299
+			5:leaf=-0.00174183142,cover=224
+			6:leaf=-0.0263859183,cover=75
+		4:[citric_acid<1.5355041] yes=7,no=8,missing=8,gain=0.992832243,cover=881
+			7:leaf=0.00612903386,cover=813
+			8:leaf=-0.0188633092,cover=68
+	2:leaf=-0.104264095,cover=3
+booster[33]:
+0:[citric_acid<2.25441051] yes=1,no=2,missing=2,gain=1.17590916,cover=1150
+	1:[sulphates<3.96480036] yes=3,no=4,missing=4,gain=0.826990068,cover=1140
+		3:[sulphates<1.60427737] yes=7,no=8,missing=8,gain=0.916109979,cover=1130
+			7:leaf=-7.94255757e-05,cover=1076
+			8:leaf=-0.0265430212,cover=54
+		4:[fixed_acidity<-0.241094396] yes=9,no=10,missing=10,gain=0.904965937,cover=10
+			9:leaf=-0.0312027689,cover=3
+			10:leaf=0.0894917995,cover=7
+	2:[chlorides<0.797725677] yes=5,no=6,missing=6,gain=1.61099458,cover=10
+		5:[total_sulfur_dioxide<-0.531177521] yes=11,no=12,missing=12,gain=0.223107576,cover=8
+			11:leaf=0.040073704,cover=3
+			12:leaf=0.127814099,cover=5
+		6:leaf=-0.0712049231,cover=2
+booster[34]:
+0:[alcohol<-1.80505133] yes=1,no=2,missing=2,gain=0.6666224,cover=1152
+	1:leaf=-0.115488388,cover=1
+	2:[fixed_acidity<1.42504394] yes=3,no=4,missing=4,gain=0.678370595,cover=1151
+		3:[fixed_acidity<0.965419531] yes=5,no=6,missing=6,gain=2.00632596,cover=1043
+			5:leaf=-0.00102997792,cover=955
+			6:leaf=0.0303658731,cover=88
+		4:[sulphates<-0.166114986] yes=7,no=8,missing=8,gain=2.99061394,cover=108
+			7:leaf=-0.0687011555,cover=29
+			8:leaf=0.00541310804,cover=79
+booster[35]:
+0:[chlorides<-0.116184354] yes=1,no=2,missing=2,gain=1.23537898,cover=1159
+	1:[volatile_acidity<1.57638907] yes=3,no=4,missing=4,gain=1.13161075,cover=670
+		3:[volatile_acidity<1.43672717] yes=7,no=8,missing=8,gain=1.15497136,cover=637
+			7:leaf=-0.00677484274,cover=631
+			8:leaf=-0.0885149688,cover=6
+		4:[free_sulfur_dioxide<-0.992161751] yes=9,no=10,missing=10,gain=4.04615307,cover=33
+			9:leaf=-0.107436575,cover=6
+			10:leaf=0.0630184561,cover=27
+	2:[volatile_acidity<1.54845667] yes=5,no=6,missing=6,gain=1.89452124,cover=489
+		5:[alcohol<-0.584777117] yes=11,no=12,missing=12,gain=1.06318212,cover=455
+			11:leaf=-0.000132095811,cover=199
+			12:leaf=0.0193398111,cover=256
+		6:[chlorides<-0.0524231903] yes=13,no=14,missing=14,gain=1.06712937,cover=34
+			13:leaf=0.0347790718,cover=6
+			14:leaf=-0.053604871,cover=28
+booster[36]:
+0:[density<-0.279147178] yes=1,no=2,missing=2,gain=0.924621344,cover=1151
+	1:[total_sulfur_dioxide<-1.07853889] yes=3,no=4,missing=4,gain=1.34898949,cover=436
+		3:[volatile_acidity<0.26356709] yes=7,no=8,missing=8,gain=0.987167239,cover=27
+			7:leaf=0.0657367632,cover=23
+			8:leaf=-0.0349041373,cover=4
+		4:[citric_acid<-0.415813506] yes=9,no=10,missing=10,gain=1.66615856,cover=409
+			9:leaf=0.0172247794,cover=208
+			10:leaf=-0.00825129356,cover=201
+	2:[density<-0.204945251] yes=5,no=6,missing=6,gain=1.38998461,cover=715
+		5:[alcohol<0.541629851] yes=11,no=12,missing=12,gain=0.891112804,cover=39
+			11:leaf=-0.0529570654,cover=33
+			12:leaf=0.0271238182,cover=6
+		6:[chlorides<-0.605019987] yes=13,no=14,missing=14,gain=1.14680982,cover=676
+			13:leaf=0.0569421165,cover=12
+			14:leaf=-0.00304043805,cover=664
+booster[37]:
+0:[free_sulfur_dioxide<1.35079205] yes=1,no=2,missing=2,gain=0.90996027,cover=1146
+	1:[fixed_acidity<-0.873077869] yes=3,no=4,missing=4,gain=1.02409196,cover=1021
+		3:[free_sulfur_dioxide<-0.0836694464] yes=7,no=8,missing=8,gain=1.52554107,cover=148
+			7:leaf=-0.0390968509,cover=72
+			8:leaf=0.00136823289,cover=76
+		4:[volatile_acidity<1.74398339] yes=9,no=10,missing=10,gain=2.06073856,cover=873
+			9:leaf=0.0013223656,cover=844
+			10:leaf=-0.0520181432,cover=29
+	2:[volatile_acidity<-1.30064631] yes=5,no=6,missing=6,gain=1.62415743,cover=125
+		5:[volatile_acidity<-1.71963203] yes=11,no=12,missing=12,gain=0.837312222,cover=12
+			11:leaf=0.0145146539,cover=5
+			12:leaf=0.122142099,cover=7
+		6:[chlorides<-0.456243902] yes=13,no=14,missing=14,gain=1.30566776,cover=113
+			13:leaf=0.0535289422,cover=19
+			14:leaf=-0.00272169919,cover=94
+booster[38]:
+0:[volatile_acidity<-1.60790253] yes=1,no=2,missing=2,gain=0.737636268,cover=1169
+	1:[chlorides<-0.498751342] yes=3,no=4,missing=4,gain=0.932083905,cover=26
+		3:[density<-1.72078443] yes=7,no=8,missing=8,gain=0.755441189,cover=9
+			7:leaf=0.00217993255,cover=3
+			8:leaf=-0.117061637,cover=6
+		4:[chlorides<-0.222452968] yes=9,no=10,missing=10,gain=0.873690307,cover=17
+			9:leaf=0.0219637882,cover=13
+			10:leaf=-0.075451009,cover=4
+	2:[residual_sugar<-0.878905177] yes=5,no=6,missing=6,gain=0.827103019,cover=1143
+		5:[sulphates<-1.05131114] yes=11,no=12,missing=12,gain=0.568420768,cover=6
+			11:leaf=0.161226988,cover=1
+			12:leaf=0.027192561,cover=5
+		6:[fixed_acidity<-0.987983942] yes=13,no=14,missing=14,gain=0.841559649,cover=1137
+			13:leaf=-0.0158098638,cover=114
+			14:leaf=0.00223428966,cover=1023
+booster[39]:
+0:[density<-2.05999327] yes=1,no=2,missing=2,gain=0.749212205,cover=1153
+	1:[residual_sugar<-0.346796721] yes=3,no=4,missing=4,gain=0.481055558,cover=23
+		3:[residual_sugar<-0.737009585] yes=7,no=8,missing=8,gain=0.708601832,cover=13
+			7:leaf=0.0110044479,cover=7
+			8:leaf=0.102786534,cover=6
+		4:[pH<-0.266383827] yes=9,no=10,missing=10,gain=0.48699519,cover=10
+			9:leaf=0.0699913055,cover=2
+			10:leaf=-0.0230555329,cover=8
+	2:[total_sulfur_dioxide<-1.13935685] yes=5,no=6,missing=6,gain=1.00222766,cover=1130
+		5:[chlorides<-0.753796041] yes=11,no=12,missing=12,gain=0.6774863,cover=12
+			11:leaf=0.0605545528,cover=1
+			12:leaf=-0.0720296875,cover=11
+		6:[total_sulfur_dioxide<-1.07853889] yes=13,no=14,missing=14,gain=1.26790631,cover=1118
+			13:leaf=0.0385689847,cover=30
+			14:leaf=-0.00245097489,cover=1088
+booster[40]:
+0:[citric_acid<2.6652143] yes=1,no=2,missing=2,gain=0.657022893,cover=1150
+	1:[citric_acid<2.25441051] yes=3,no=4,missing=4,gain=1.27562976,cover=1148
+		3:[fixed_acidity<4.12533712] yes=5,no=6,missing=6,gain=0.840307355,cover=1139
+			5:leaf=-0.000205529577,cover=1136
+			6:leaf=-0.0920352936,cover=3
+		4:[density<1.03528678] yes=7,no=8,missing=8,gain=0.381308079,cover=9
+			7:leaf=0.018192634,cover=4
+			8:leaf=0.103533842,cover=5
+	2:leaf=-0.0936226174,cover=2
+booster[41]:
+0:[citric_acid<-0.415813506] yes=1,no=2,missing=2,gain=0.730749428,cover=1149
+	1:[volatile_acidity<0.766349971] yes=3,no=4,missing=4,gain=1.59800136,cover=411
+		3:[total_sulfur_dioxide<-0.196678892] yes=7,no=8,missing=8,gain=2.31514096,cover=268
+			7:leaf=0.0335110836,cover=155
+			8:leaf=-0.00404826552,cover=113
+		4:[sulphates<-0.166114986] yes=9,no=10,missing=10,gain=1.27914751,cover=143
+			9:leaf=0.00406240905,cover=100
+			10:leaf=-0.0368245356,cover=43
+	2:[pH<-0.201591045] yes=5,no=6,missing=6,gain=1.97676754,cover=738
+		5:[fixed_acidity<-0.0687352568] yes=11,no=12,missing=12,gain=1.33528757,cover=410
+			11:leaf=0.0315000154,cover=74
+			12:leaf=0.00197836431,cover=336
+		6:[pH<-0.136798263] yes=13,no=14,missing=14,gain=1.44884586,cover=328
+			13:leaf=-0.0597507171,cover=24
+			14:leaf=-0.00959146302,cover=304
+booster[42]:
+0:[free_sulfur_dioxide<-0.992161751] yes=1,no=2,missing=2,gain=0.657417417,cover=1151
+	1:[sulphates<1.30921197] yes=3,no=4,missing=4,gain=1.85829115,cover=138
+		3:[volatile_acidity<1.15740335] yes=7,no=8,missing=8,gain=1.42452562,cover=132
+			7:leaf=-0.01275938,cover=119
+			8:leaf=-0.0804092735,cover=13
+		4:[fixed_acidity<-0.126188293] yes=9,no=10,missing=10,gain=1.02791905,cover=6
+			9:leaf=0.134897634,cover=4
+			10:leaf=-0.0243901256,cover=2
+	2:[total_sulfur_dioxide<-0.804858208] yes=5,no=6,missing=6,gain=0.743093431,cover=1013
+		5:[pH<1.35343575] yes=11,no=12,missing=12,gain=1.61016941,cover=122
+			11:leaf=0.0218083765,cover=111
+			12:leaf=-0.0554017834,cover=11
+		6:[residual_sugar<0.965737462] yes=13,no=14,missing=14,gain=1.05115867,cover=891
+			13:leaf=-4.22448466e-06,cover=814
+			14:leaf=-0.0243087504,cover=77
+booster[43]:
+0:[fixed_acidity<1.88466823] yes=1,no=2,missing=2,gain=0.669642508,cover=1136
+	1:[density<1.26849282] yes=3,no=4,missing=4,gain=0.959613383,cover=1068
+		3:[density<0.823281288] yes=7,no=8,missing=8,gain=1.1737268,cover=1003
+			7:leaf=-0.00207065931,cover=914
+			8:leaf=0.0218660664,cover=89
+		4:[free_sulfur_dioxide<-0.992161751] yes=9,no=10,missing=10,gain=1.11587667,cover=65
+			9:leaf=-0.0904202685,cover=8
+			10:leaf=-0.0142170284,cover=57
+	2:[sulphates<-0.461180359] yes=5,no=6,missing=6,gain=1.88502979,cover=68
+		5:[sulphates<-0.520193458] yes=11,no=12,missing=12,gain=1.79559064,cover=11
+			11:leaf=0.0102486489,cover=7
+			12:leaf=-0.145342663,cover=4
+		6:[fixed_acidity<2.22938657] yes=13,no=14,missing=14,gain=1.15062022,cover=57
+			13:leaf=0.0659506097,cover=24
+			14:leaf=0.00875351019,cover=33
+booster[44]:
+0:[residual_sugar<1.46237206] yes=1,no=2,missing=2,gain=0.691271305,cover=1142
+	1:[residual_sugar<1.17858088] yes=3,no=4,missing=4,gain=1.69570231,cover=1066
+		3:[citric_acid<1.58685458] yes=7,no=8,missing=8,gain=0.759211421,cover=1050
+			7:leaf=0.00197819341,cover=985
+			8:leaf=-0.0201788228,cover=65
+		4:[total_sulfur_dioxide<-0.683222353] yes=9,no=10,missing=10,gain=0.387947202,cover=16
+			9:leaf=-0.0961686149,cover=7
+			10:leaf=-0.030310927,cover=9
+	2:[total_sulfur_dioxide<0.928452909] yes=5,no=6,missing=6,gain=1.13971317,cover=76
+		5:[sulphates<1.19118583] yes=11,no=12,missing=12,gain=1.74116588,cover=49
+			11:leaf=0.0472712442,cover=46
+			12:leaf=-0.0915086269,cover=3
+		6:[free_sulfur_dioxide<0.203222856] yes=13,no=14,missing=14,gain=1.26066279,cover=27
+			13:leaf=-0.117449142,cover=3
+			14:leaf=0.00368961738,cover=24
+booster[45]:
+0:[total_sulfur_dioxide<-1.13935685] yes=1,no=2,missing=2,gain=0.582565129,cover=1155
+	1:[sulphates<-0.579206526] yes=3,no=4,missing=4,gain=0.792611599,cover=15
+		3:[sulphates<-0.815258801] yes=7,no=8,missing=8,gain=0.772355437,cover=9
+			7:leaf=-0.0464763157,cover=5
+			8:leaf=0.0599630736,cover=4
+		4:[volatile_acidity<-1.60790253] yes=9,no=10,missing=10,gain=0.0702780485,cover=6
+			9:leaf=-0.0168081764,cover=1
+			10:leaf=-0.096376583,cover=5
+	2:[total_sulfur_dioxide<-1.07853889] yes=5,no=6,missing=6,gain=0.512949705,cover=1140
+		5:[citric_acid<1.38145268] yes=11,no=12,missing=12,gain=1.53388596,cover=31
+			11:leaf=0.0393712372,cover=29
+			12:leaf=-0.11144644,cover=2
+		6:[citric_acid<-0.415813506] yes=13,no=14,missing=14,gain=0.527995408,cover=1109
+			13:leaf=0.00636878377,cover=419
+			14:leaf=-0.0026229748,cover=690
+booster[46]:
+0:[fixed_acidity<-0.126188293] yes=1,no=2,missing=2,gain=1.17487609,cover=1154
+	1:[residual_sugar<-0.382270604] yes=3,no=4,missing=4,gain=1.1283747,cover=602
+		3:[volatile_acidity<0.0121756541] yes=7,no=8,missing=8,gain=1.02940106,cover=211
+			7:leaf=0.00993536878,cover=89
+			8:leaf=-0.0182257742,cover=122
+		4:[residual_sugar<-0.0275316481] yes=9,no=10,missing=10,gain=1.95373607,cover=391
+			9:leaf=0.0227010716,cover=244
+			10:leaf=-0.0064281146,cover=147
+	2:[pH<0.25195843] yes=5,no=6,missing=6,gain=1.25801396,cover=552
+		5:[chlorides<2.66805315] yes=11,no=12,missing=12,gain=0.901676118,cover=471
+			11:leaf=-0.00514474045,cover=453
+			12:leaf=0.0393336602,cover=18
+		6:[residual_sugar<0.398155123] yes=13,no=14,missing=14,gain=2.20483136,cover=81
+			13:leaf=-0.0426596403,cover=71
+			14:leaf=0.0539685786,cover=10
+booster[47]:
+0:[residual_sugar<1.46237206] yes=1,no=2,missing=2,gain=0.645653605,cover=1180
+	1:[residual_sugar<1.17858088] yes=3,no=4,missing=4,gain=1.47013676,cover=1106
+		3:[pH<-2.08058167] yes=7,no=8,missing=8,gain=0.801215231,cover=1090
+			7:leaf=0.0382880792,cover=19
+			8:leaf=-0.00211517652,cover=1071
+		4:[density<0.754379511] yes=9,no=10,missing=10,gain=0.446929216,cover=16
+			9:leaf=-0.0880855247,cover=9
+			10:leaf=-0.0187744256,cover=7
+	2:[sulphates<1.01414657] yes=5,no=6,missing=6,gain=1.26813817,cover=74
+		5:[residual_sugar<2.52658892] yes=11,no=12,missing=12,gain=1.2798202,cover=64
+			11:leaf=0.0533068366,cover=34
+			12:leaf=-0.00289596757,cover=30
+		6:[free_sulfur_dioxide<0.681376696] yes=13,no=14,missing=14,gain=0.950884581,cover=10
+			13:leaf=-0.0912464187,cover=6
+			14:leaf=0.0258634388,cover=4
+booster[48]:
+0:[residual_sugar<-0.595113993] yes=1,no=2,missing=2,gain=0.573287487,cover=1148
+	1:[chlorides<-0.222452968] yes=3,no=4,missing=4,gain=1.28056526,cover=98
+		3:[fixed_acidity<-0.643265724] yes=7,no=8,missing=8,gain=0.840508938,cover=63
+			7:leaf=-0.0232159775,cover=27
+			8:leaf=0.0227180272,cover=36
+		4:[pH<-1.49744666] yes=9,no=10,missing=10,gain=1.07504201,cover=35
+			9:leaf=0.0742154121,cover=2
+			10:leaf=-0.0534176901,cover=33
+	2:[fixed_acidity<-1.56251442] yes=5,no=6,missing=6,gain=0.770358324,cover=1050
+		5:[residual_sugar<-0.346796721] yes=11,no=12,missing=12,gain=0.446002781,cover=12
+			11:leaf=0.0748462379,cover=8
+			12:leaf=-0.0043770601,cover=4
+		6:[alcohol<2.32510757] yes=13,no=14,missing=14,gain=0.656534255,cover=1038
+			13:leaf=0.00182542764,cover=1020
+			14:leaf=-0.0356974751,cover=18
+booster[49]:
+0:[chlorides<-0.605019987] yes=1,no=2,missing=2,gain=0.852910817,cover=1147
+	1:[residual_sugar<-0.204901129] yes=3,no=4,missing=4,gain=1.57419348,cover=88
+		3:[total_sulfur_dioxide<-0.713631332] yes=7,no=8,missing=8,gain=0.985297978,cover=67
+			7:leaf=-0.0385618322,cover=21
+			8:leaf=0.0127303852,cover=46
+		4:[citric_acid<0.508494794] yes=9,no=10,missing=10,gain=2.05220437,cover=21
+			9:leaf=-0.107258379,cover=14
+			10:leaf=0.0212627649,cover=7
+	2:[sulphates<-1.11032426] yes=5,no=6,missing=6,gain=0.939324975,cover=1059
+		5:[total_sulfur_dioxide<0.593954265] yes=11,no=12,missing=12,gain=0.514868796,cover=40
+			11:leaf=-0.0393830352,cover=32
+			12:leaf=0.0155965388,cover=8
+		6:[chlorides<-0.583766222] yes=13,no=14,missing=14,gain=0.741004288,cover=1019
+			13:leaf=0.0542327836,cover=10
+			14:leaf=0.00203576009,cover=1009
+booster[50]:
+0:[citric_acid<2.6652143] yes=1,no=2,missing=2,gain=0.54377377,cover=1151
+	1:[citric_acid<2.25441051] yes=3,no=4,missing=4,gain=0.815661907,cover=1149
+		3:[free_sulfur_dioxide<3.55029964] yes=5,no=6,missing=6,gain=0.512066424,cover=1141
+			5:leaf=6.33059535e-05,cover=1134
+			6:leaf=0.0508412607,cover=7
+		4:[residual_sugar<-0.4532184] yes=7,no=8,missing=8,gain=0.347947896,cover=8
+			7:leaf=-0.0282919891,cover=1
+			8:leaf=0.0755471736,cover=7
+	2:leaf=-0.0843681619,cover=2
+booster[51]:
+0:[volatile_acidity<-1.60790253] yes=1,no=2,missing=2,gain=0.466180444,cover=1162
+	1:[sulphates<0.305989623] yes=3,no=4,missing=4,gain=1.04632354,cover=28
+		3:[density<-1.72078443] yes=7,no=8,missing=8,gain=0.608359218,cover=13
+			7:leaf=-0.00627047196,cover=5
+			8:leaf=-0.094618611,cover=8
+		4:[fixed_acidity<-0.183641344] yes=9,no=10,missing=10,gain=0.546259344,cover=15
+			9:leaf=-0.0375307426,cover=5
+			10:leaf=0.0377168842,cover=10
+	2:[chlorides<-0.434990197] yes=5,no=6,missing=6,gain=0.609894872,cover=1134
+		5:[total_sulfur_dioxide<-0.774449289] yes=11,no=12,missing=12,gain=1.17460418,cover=190
+			11:leaf=-0.0100936787,cover=64
+			12:leaf=0.0230129026,cover=126
+		6:[residual_sugar<-0.807957351] yes=13,no=14,missing=14,gain=1.37395942,cover=944
+			13:leaf=-0.105088554,cover=4
+			14:leaf=3.10692594e-05,cover=940
+booster[52]:
+0:[alcohol<-1.80505133] yes=1,no=2,missing=2,gain=0.432395816,cover=1173
+	1:leaf=-0.0931972787,cover=1
+	2:[chlorides<-0.116184354] yes=3,no=4,missing=4,gain=0.428010166,cover=1172
+		3:[volatile_acidity<1.54845667] yes=5,no=6,missing=6,gain=0.8621158,cover=670
+			5:leaf=-0.00517883943,cover=633
+			6:leaf=0.0258406736,cover=37
+		4:[alcohol<0.823231637] yes=7,no=8,missing=8,gain=1.12170458,cover=502
+			7:leaf=0.000363652653,cover=429
+			8:leaf=0.0270275231,cover=73
