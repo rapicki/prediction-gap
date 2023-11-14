@@ -37,6 +37,29 @@ class PerturbPredictionGap:
 
     def prediction_gap_single_squared(self, model: tree.Model, data_point, perturbed_feature, baseline):
         return self.prediction_gap_single_f(model, data_point, perturbed_feature, lambda x: (x - baseline) ** 2)
+    
+    def rank_features(self, model: tree.Model, data_point: pd.Series) -> list:
+        """ Returns a list of features in order from most to least important.
+            
+            data_point should be a row from a dataframe, without the last (predicted) variable,
+            e.g. data_point = data.iloc[i, :-1] should be good.
+        """
+        curr_features = set(data_point.index)
+        ranked_features = []
+        baseline = model.eval(data_point)
+        while len(curr_features) > 1:
+            predgap_dict = {}
+            for feature in curr_features:
+                tmp = self.prediction_gap_fixed(model, data_point, set(ranked_features) | {feature}, baseline)
+                predgap_dict[feature] = tmp
+                print(feature, tmp)
+            best_feature = max(predgap_dict, key=predgap_dict.get) # this is the current feature with max predgap
+            ranked_features.append(best_feature)
+            print(f"Rank {len(ranked_features)}: {best_feature}.")
+            curr_features -= {best_feature}
+        ranked_features.append(list(curr_features)[0]) # this appends the last (and thus lowest ranked) feature
+        return ranked_features
+
 
 
 class NormalPredictionGap(PerturbPredictionGap):
@@ -84,7 +107,7 @@ def prediction_gap_by_random_sampling(trees: TreeEnsemble,
                                       stddev: float = 1.0,
                                       squared: bool = False,
                                       seed: Optional[int] = None,
-                                      num_iter: int = 100) -> float:
+                                      num_iter: int = 100) -> np.array:
     
     def normal_perturbation(df: pd.DataFrame):
         perturbed_df = df.copy()
@@ -105,6 +128,54 @@ def prediction_gap_by_random_sampling(trees: TreeEnsemble,
     results /= num_iter
     # return np.mean(results)
     return results
+
+
+def prediction_gap_by_random_sampling_single_datapoint(trees: TreeEnsemble,
+                                                       data_point: pd.Series,
+                                                       perturbed_features: set,
+                                                       stddev: float = 1.0,
+                                                       squared: bool = False,
+                                                       seed: Optional[int] = None,
+                                                       num_iter: int = 100) -> float:
+    
+    def normal_perturbation(dp: pd.Series):
+        perturbed_dp = dp.copy()
+        perturbed_dp[list(perturbed_features)] += rng.normal(loc=0.0, scale=stddev,
+                                                      size=len(perturbed_features))
+        return perturbed_dp
+    
+    y = trees.eval(data_point)
+    rng = np.random.default_rng(seed=seed)
+    result = 0.0
+    for i in range(num_iter):
+        perturbed_y = trees.eval(normal_perturbation(data_point))
+        result += (perturbed_y - y) ** 2 if squared else np.abs(perturbed_y - y)
+    result /= num_iter
+    return result
+
+
+def rank_features_by_random(trees: TreeEnsemble,
+                            data_point: pd.Series,
+                            stddev: float = 1.0,
+                            seed: Optional[int] = None,
+                            num_iter: int = 100) -> list:
+    
+    curr_features = set(data_point.index)
+    ranked_features = []
+    baseline = trees.eval(data_point)
+    while len(curr_features) > 1:
+        predgap_dict = {}
+        for feature in curr_features:
+            tmp = prediction_gap_by_random_sampling_single_datapoint(
+                trees, data_point, set(ranked_features) | {feature}, stddev=stddev, squared=True, seed=seed, num_iter=num_iter)
+            predgap_dict[feature] = tmp
+            print(feature, tmp)
+        best_feature = max(predgap_dict, key=predgap_dict.get) # this is the current feature with max predgap
+        ranked_features.append(best_feature)
+        print(f"Rank {len(ranked_features)}: {best_feature}.")
+        curr_features -= {best_feature}
+    ranked_features.append(list(curr_features)[0]) # this appends the last (and thus lowest ranked) feature
+    return ranked_features
 
 
 def prediction_gap_by_exact_calc(predgap: PerturbPredictionGap,
@@ -134,4 +205,3 @@ def prediction_gap_by_exact_calc(predgap: PerturbPredictionGap,
     #     results.append(predgap.prediction_gap_fixed(trees, x, perturbed_features, y))
     #     print(f"Datapoint {i} returned predgap value of {results[-1]}.")
     return results
- 
