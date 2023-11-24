@@ -157,9 +157,10 @@ def prediction_gap_by_random_sampling_single_datapoint(trees: TreeEnsemble,
 def rank_features_by_random(trees: TreeEnsemble,
                             data_point: pd.Series,
                             stddev: float = 1.0,
+                            num_iter: int = 100,
                             seed: Optional[int] = None,
-                            num_iter: int = 100) -> list:
-    
+                            ) -> list:
+   
     curr_features = set(data_point.index)
     ranked_features = []
     baseline = trees.eval(data_point)

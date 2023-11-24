@@ -5,17 +5,15 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 import json
-
+import xgboost as xgb
 from multiprocessing import Pool
 
 from src.decision_tree.tree import load_trees
 from src.decision_tree.prediction_gap import (
     NormalPredictionGap,
-    prediction_gap_on_single_feature_perturbation,
-    prediction_gap_by_random_sampling,
-    prediction_gap_by_exact_calc,
     rank_features_by_random,
 )
+from src.decision_tree.shap_wrapper import ShapWrapper
 
 def calculate_rankings(stddev: float, proc_number: int, num_iter: int):
     
@@ -27,26 +25,33 @@ def calculate_rankings(stddev: float, proc_number: int, num_iter: int):
     wine_trees = load_trees(models_path, wine_model_name)
     wine_data = pd.read_csv(wine_test_data_path)
     predgap = NormalPredictionGap(stddev)
-    points = []
+    
+    model_xgb = xgb.Booster()
+    model_xgb.load_model(models_path/(wine_model_name + "_saved.json"))
 
-    for i in range(0, 2):#len(wine_data)):
+    
+    points = []
+    for i in range(0, len(wine_data)):
         points.append((wine_trees, wine_data.iloc[i, :-1]))    
-    pool = Pool(processes=proc_num)
+    pool = Pool(processes=proc_number)
     results = np.array(pool.starmap(predgap.rank_features, points))
     np.save(results_path / ("wine" + "_exact_ranking.npy"), results)
  
     points = []
-    for i in range(0, 2):# len(wine_data)):
+    for i in range(0, len(wine_data)):
         points.append((wine_trees, wine_data.iloc[i, :-1], stddev, num_iter))    
-    pool = Pool(processes=proc_num)
+    pool = Pool(processes=proc_number)
     results = np.array(pool.starmap(rank_features_by_random, points))
     np.save(results_path / ("wine" + f"_approx_ranking_{num_iter}_iter.npy"), results)
 
-
+    sh = ShapWrapper()
+    X = wine_data.loc[:, wine_data.columns != 'quality']
+    results = sh.get_shap_ranking(model_xgb, X)
+    np.save(results_path / ("wine" + f"_shap_ranking.npy"), results)
 
 
 if __name__ == "__main__":
     stdev = 0.3
     proc_num = 2
-    num_iter = 100
+    num_iter = 1000
     calculate_rankings(stdev, proc_num, num_iter)
