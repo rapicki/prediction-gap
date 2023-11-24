@@ -35,7 +35,7 @@ def rank_features_by_random_timer_wrapper(*args):
 def calculate_rankings(stddev: float, proc_number: int, num_iter: list[int], number_of_samples: int):
     
 
-    models_path = Path("/home/mateusz/Documents/tmp/prediction-gap/models")
+    models_path = Path("models")
     data_path = Path("data")
     wine_model_name = "winequality_red"
     wine_test_data_path = data_path / "wine_quality/test_winequality_red_scaled.csv"
