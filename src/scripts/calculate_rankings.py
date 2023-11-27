@@ -53,5 +53,5 @@ def calculate_rankings(stddev: float, proc_number: int, num_iter: int):
 if __name__ == "__main__":
     stdev = 0.3
     proc_num = 2
-    num_iter = 1000
+    num_iter = 4000
     calculate_rankings(stdev, proc_num, num_iter)

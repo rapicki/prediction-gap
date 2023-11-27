@@ -46,9 +46,9 @@ def calculate_rankings(stddev: float, proc_number: int,
 
 if __name__ == "__main__":
     rankings_names = ["wine_exact_ranking.npy", "wine_shap_ranking.npy",
-            "wine_approx_ranking_1000_iter.npy"]
+            "wine_approx_ranking_4000_iter.npy"]
     pgi_file_names = ["pgi_wine_exact_ranking.npy", "pgi_wine_shap_ranking.npy",
-            "pgi_wine_approx_ranking_1000_iter.npy"
+            "pgi_wine_approx_ranking_4000_iter.npy"
             ]
     stdev = 0.3
     proc_num = 20
