@@ -33,7 +33,7 @@ def calculate_rankings(stddev: float, proc_number: int,
     for rnk, pgi in zip(ranking_names, pgi_names):
         ranking = np.load(results_path/rnk)
         points = [] 
-        for i in range(0, 3):#len(wine_data)):
+        for i in range(0, len(wine_data)):
             data_point = wine_data.iloc[0, :]
             baseline_pred = wine_trees.eval(data_point)
 
@@ -45,6 +45,7 @@ def calculate_rankings(stddev: float, proc_number: int,
         np.save((results_path / pgi), results)
 
 if __name__ == "__main__":
+    '''
     rankings_names = ["wine_exact_ranking.npy", "wine_shap_ranking.npy",
             "wine_approx_ranking_4000_iter.npy"]
     pgi_file_names = ["pgi_wine_exact_ranking.npy", "pgi_wine_shap_ranking.npy",
@@ -53,3 +54,34 @@ if __name__ == "__main__":
     stdev = 0.3
     proc_num = 20
     calculate_rankings(stdev, proc_num, rankings_names, pgi_file_names)
+    proc_num = 20
+    stddevs = [0.01, 0.03, 0.1, 0.3]
+    names = []
+    for s1 in stddevs:
+        ranking_names = []
+        pgi_file_names = []
+        for s2 in stddevs:
+            ranking_name = f'wine_exact_ranking_std_{s2}.npy'
+            pgi_file_name = f'pgi_wine_exact_ranking_std_{s2}_pgi_std_{s1}.npy'
+            ranking_names.append(ranking_name)
+            pgi_file_names.append(pgi_file_name)
+        names.append([ranking_names, pgi_file_names]) 
+
+    for s, n in zip(stddevs, names):
+        calculate_rankings(s, proc_num, n[0], n[1])
+
+    '''
+    proc_num = 20
+    stddevs = [0.01, 0.03, 0.1, 0.3]
+    names = []
+    for s1 in stddevs:
+        ranking_names = []
+        pgi_file_names = []
+        ranking_name = f'wine_approx_ranking_4000_iter.npy'
+        pgi_file_name = f'pgi_wine_approx_ranking_4000_pgi_std_{s1}.npy'
+        ranking_names.append(ranking_name)
+        pgi_file_names.append(pgi_file_name)
+        names.append([ranking_names, pgi_file_names]) 
+
+    for s, n in zip(stddevs, names):
+        calculate_rankings(s, proc_num, n[0], n[1])

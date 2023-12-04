@@ -15,7 +15,8 @@ from src.decision_tree.prediction_gap import (
 )
 from src.decision_tree.shap_wrapper import ShapWrapper
 
-def calculate_rankings(stddev: float, proc_number: int, num_iter: int):
+def calculate_rankings(stddev: float, proc_number: int, num_iter: int = 100, 
+                       ranking_types: list[str] = ['exact', 'approx', 'shap']):
     
     models_path = Path("models")
     data_path = Path("data")
@@ -29,29 +30,32 @@ def calculate_rankings(stddev: float, proc_number: int, num_iter: int):
     model_xgb = xgb.Booster()
     model_xgb.load_model(models_path/(wine_model_name + "_saved.json"))
 
-    
-    points = []
-    for i in range(0, len(wine_data)):
-        points.append((wine_trees, wine_data.iloc[i, :-1]))    
-    pool = Pool(processes=proc_number)
-    results = np.array(pool.starmap(predgap.rank_features, points))
-    np.save(results_path / ("wine" + "_exact_ranking.npy"), results)
- 
-    points = []
-    for i in range(0, len(wine_data)):
-        points.append((wine_trees, wine_data.iloc[i, :-1], stddev, num_iter))    
-    pool = Pool(processes=proc_number)
-    results = np.array(pool.starmap(rank_features_by_random, points))
-    np.save(results_path / ("wine" + f"_approx_ranking_{num_iter}_iter.npy"), results)
-
-    sh = ShapWrapper()
-    X = wine_data.loc[:, wine_data.columns != 'quality']
-    results = sh.get_shap_ranking(model_xgb, X)
-    np.save(results_path / ("wine" + f"_shap_ranking.npy"), results)
+    if "exact" in ranking_types: 
+        points = []
+        for i in range(0, len(wine_data)):
+            points.append((wine_trees, wine_data.iloc[i, :-1]))    
+        pool = Pool(processes=proc_number)
+        results = np.array(pool.starmap(predgap.rank_features, points))
+        np.save(results_path / (f'wine" + "_exact_ranking_std_{stddev}.npy'), results)
+    if "approx" in ranking_types:
+        points = []
+        for i in range(0, len(wine_data)):
+            points.append((wine_trees, wine_data.iloc[i, :-1], stddev, num_iter))    
+        pool = Pool(processes=proc_number)
+        results = np.array(pool.starmap(rank_features_by_random, points))
+        np.save(results_path / ("wine" + f"_approx_ranking_{num_iter}_iter.npy"), results)
+    if "approx" in ranking_types:
+        sh = ShapWrapper()
+        X = wine_data.loc[:, wine_data.columns != 'quality']
+        results = sh.get_shap_ranking(model_xgb, X)
+        np.save(results_path / ("wine" + f"_shap_ranking.npy"), results)
 
 
 if __name__ == "__main__":
-    stdev = 0.3
+    stdev = [0.01, 0.03, 0.1, 0.3]
     proc_num = 2
     num_iter = 4000
-    calculate_rankings(stdev, proc_num, num_iter)
+    ranking_type = ['exact']
+    for i in stdev:
+        calculate_rankings(i, proc_num, num_iter, ranking_type)
+
