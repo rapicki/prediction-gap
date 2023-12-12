@@ -1,5 +1,4 @@
 import functools
-import math
 import operator
 import re
 from abc import ABC
