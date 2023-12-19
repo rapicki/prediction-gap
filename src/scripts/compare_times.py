@@ -1,18 +1,17 @@
 import os
-from pathlib import Path
-import pandas as pd
-import numpy as np
-import xgboost as xgb
+import random
 from multiprocessing import Pool
+from pathlib import Path
 
-from src.decision_tree.tree import load_trees
+import numpy as np
+import pandas as pd
+import xgboost as xgb
 from src.decision_tree.prediction_gap import (
+    NormalPredictionGap,
     prediction_gap_by_exact_calc_single_datapoint,
     prediction_gap_by_random_sampling_single_datapoint,
-    NormalPredictionGap,
 )
-import random
-
+from src.decision_tree.tree import load_trees
 
 while "notebooks" in os.getcwd():
     os.chdir("../")
@@ -32,8 +31,8 @@ def test_differences_between_approx_and_exact(stddev: float, iterations: int):
     predgap = NormalPredictionGap(stddev)
 
     random_point = random.sample(range(0, len(wine_data)), 1)[0]
-    all_features = list(wine_data.columns.values)
-    random_features = random.sample(all_features, random.randint(0, len(all_features)))
+    all_features = list(wine_data.columns.values)[:-1]
+    random_features = random.sample(all_features, random.randint(1, len(all_features)))
     tmp = prediction_gap_by_random_sampling_single_datapoint(
         trees=wine_trees,
         data_point=wine_data.iloc[random_point, :],
@@ -74,9 +73,9 @@ def run_experiment(
 
 if __name__ == "__main__":
     results_path = Path("results/precision/")
-    proc_number = 30
+    proc_number = 1
     stdev = 0.3
-    iterations = [500, 1000, 2000, 4000, 8000, 10000]
+    iterations = [10, 20, 30]  # [500, 1000, 2000, 4000, 8000, 10000]
     models_path = Path("models")
     for i in iterations:
-        run_experiment(i, 200, stdev, results_path, proc_number)
+        run_experiment(i, 2, stdev, results_path, proc_number)
