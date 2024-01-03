@@ -17,7 +17,9 @@ while "notebooks" in os.getcwd():
     os.chdir("../")
 
 
-def test_differences_between_approx_and_exact(stddev: float, iterations: int):
+def test_differences_between_approx_and_exact(
+    stddev: float, iterations: int, point_ind: int, random_features: list[int]
+):
     models_path = Path("models")
     data_path = Path("data")
     wine_model_name = "winequality_red"
@@ -30,12 +32,11 @@ def test_differences_between_approx_and_exact(stddev: float, iterations: int):
 
     predgap = NormalPredictionGap(stddev)
 
-    random_point = random.sample(range(0, len(wine_data)), 1)[0]
-    all_features = list(wine_data.columns.values)[:-1]
-    random_features = random.sample(all_features, random.randint(1, len(all_features)))
+    random_point = wine_data.iloc[[point_ind], :]
+
     tmp = prediction_gap_by_random_sampling_single_datapoint(
         trees=wine_trees,
-        data_point=wine_data.iloc[random_point, :],
+        data_point=random_point,
         perturbed_features=set(random_features),
         stddev=stddev,
         squared=True,
@@ -45,23 +46,38 @@ def test_differences_between_approx_and_exact(stddev: float, iterations: int):
     tmp2 = prediction_gap_by_exact_calc_single_datapoint(
         predgap=predgap,
         trees=wine_trees,
-        data=wine_data.iloc[[random_point], :],
+        data=random_point,
         perturbed_features=set(random_features),
         squared=True,
     )
     return [tmp, tmp2[0], len(random_features)]
 
 
+def sample_indices_and_subsets(number: int):
+    data_path = Path("data")
+    wine_test_data_path = data_path / "wine_quality/test_winequality_red_scaled.csv"
+    wine_data = pd.read_csv(wine_test_data_path)
+
+    all_features = list(wine_data.columns.values)[:-1]
+    samples = []
+    for _ in range(number):
+        random_features = random.sample(
+            all_features, random.randint(1, len(all_features))
+        )
+        random_point = random.sample(range(0, len(wine_data)), 1)[0]
+        samples.append((random_features, random_point))
+    return samples
+
+
 def run_experiment(
-    iterations: int, samples: int, stddev: float, results_path: Path, proc_number: int
+    iterations: int, stddev: float, results_path: Path, proc_number: int, samples: list
 ):
     args = []
-    for _ in range(0, samples):
-        args.append((stddev, iterations))
+    for subset, point in samples:
+        args.append((stddev, iterations, point, subset))
 
     pool = Pool(processes=proc_number)
     results = np.array(pool.starmap(test_differences_between_approx_and_exact, args))
-    print(results)
     np.save(
         (
             results_path
@@ -73,9 +89,10 @@ def run_experiment(
 
 if __name__ == "__main__":
     results_path = Path("results/precision/")
-    proc_number = 1
+    proc_number = 10
     stdev = 0.3
-    iterations = [10, 20, 30]  # [500, 1000, 2000, 4000, 8000, 10000]
+    iterations = [10, 50, 100, 500, 1000, 2000, 4000, 8000, 10000]
     models_path = Path("models")
+    samples = sample_indices_and_subsets(10000)
     for i in iterations:
-        run_experiment(i, 2, stdev, results_path, proc_number)
+        run_experiment(i, stdev, results_path, proc_number, samples)
