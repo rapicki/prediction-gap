@@ -3,8 +3,9 @@ from typing import Optional
 
 import numpy as np
 import pandas as pd
-import src.decision_tree.tree_float as tree
 from scipy.stats import norm
+
+import src.decision_tree.tree_float as tree
 from src.decision_tree.tree_float import TreeEnsemble
 
 

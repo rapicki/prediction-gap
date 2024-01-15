@@ -1,39 +1,40 @@
 import os
 import random
+import time
 from multiprocessing import Pool
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import xgboost as xgb
+
 from src.decision_tree.prediction_gap import (
     NormalPredictionGap,
     prediction_gap_by_exact_calc_single_datapoint,
     prediction_gap_by_random_sampling_single_datapoint,
 )
-from src.decision_tree.tree import load_trees
+from src.scripts.utils import get_models_dirs
 
 while "notebooks" in os.getcwd():
     os.chdir("../")
 
 
 def test_differences_between_approx_and_exact(
-    stddev: float, iterations: int, point_ind: int, random_features: list[int]
+    stddev: float,
+    model_path: str,
+    data_path: str,
+    results_path: str,
+    iterations: int,
+    point_ind: int,
+    random_features: list[int],
 ):
-    models_path = Path("models")
-    data_path = Path("data")
-    wine_model_name = "winequality_red"
-    wine_test_data_path = data_path / "wine_quality/test_winequality_red_scaled.csv"
-    wine_trees = load_trees(models_path, wine_model_name)
-    wine_data = pd.read_csv(wine_test_data_path)
-
-    model_xgb = xgb.Booster()
-    model_xgb.load_model(models_path / (wine_model_name + "_saved.json"))
+    wine_trees, wine_data, results_path, model_xgb = get_models_dirs(
+        model_path, data_path, results_path
+    )
 
     predgap = NormalPredictionGap(stddev)
 
     random_point = wine_data.iloc[[point_ind], :]
-
+    t1 = time.time()
     tmp = prediction_gap_by_random_sampling_single_datapoint(
         trees=wine_trees,
         data_point=random_point,
@@ -42,7 +43,9 @@ def test_differences_between_approx_and_exact(
         squared=True,
         num_iter=iterations,
     )
+    t1 = time.time() - t1
 
+    t2 = time.time()
     tmp2 = prediction_gap_by_exact_calc_single_datapoint(
         predgap=predgap,
         trees=wine_trees,
@@ -50,13 +53,12 @@ def test_differences_between_approx_and_exact(
         perturbed_features=set(random_features),
         squared=True,
     )
-    return [tmp, tmp2[0], len(random_features)]
+    t2 = time.time() - t2
+    return [tmp, tmp2[0], len(random_features), t1, t2]
 
 
-def sample_indices_and_subsets(number: int):
-    data_path = Path("data")
-    wine_test_data_path = data_path / "wine_quality/test_winequality_red_scaled.csv"
-    wine_data = pd.read_csv(wine_test_data_path)
+def sample_indices_and_subsets(number: int, file: str):
+    wine_data = pd.read_csv(file)
 
     all_features = list(wine_data.columns.values)[:-1]
     samples = []
@@ -70,14 +72,22 @@ def sample_indices_and_subsets(number: int):
 
 
 def run_experiment(
-    iterations: int, stddev: float, results_path: Path, proc_number: int, samples: list
+    iterations: int,
+    stddev: float,
+    results_path: str,
+    model_path: str,
+    data_path: str,
+    proc_number: int,
+    samples: list,
 ):
     args = []
     for subset, point in samples:
-        args.append((stddev, iterations, point, subset))
-
+        args.append(
+            (stddev, model_path, data_path, results_path, iterations, point, subset)
+        )
     pool = Pool(processes=proc_number)
     results = np.array(pool.starmap(test_differences_between_approx_and_exact, args))
+    results_path = Path(results_path)
     np.save(
         (
             results_path
@@ -87,7 +97,21 @@ def run_experiment(
     )
 
 
-if __name__ == "__main__":
+def compare_times_main(args):
+    stddevs = [float(i) for i in args.stddev_list.split(",")]
+    iterations = [int(i) for i in args.iterations_list.split(",")]
+    result_path = args.results_dir
+    proc_num = args.proc_num
+    data_path = args.data
+    model_path = args.model
+    samples = args.samples
+    samples = sample_indices_and_subsets(samples, data_path)
+    for s in stddevs:
+        for i in iterations:
+            run_experiment(i, s, result_path, model_path, data_path, proc_num, samples)
+
+
+"""if __name__ == "__main__":
     results_path = Path("results/precision/")
     proc_number = 10
     stdev = 0.3
@@ -95,4 +119,4 @@ if __name__ == "__main__":
     models_path = Path("models")
     samples = sample_indices_and_subsets(10000)
     for i in iterations:
-        run_experiment(i, stdev, results_path, proc_number, samples)
+        run_experiment(i, stdev, results_path, proc_number, samples)"""

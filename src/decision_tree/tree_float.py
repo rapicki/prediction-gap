@@ -1,25 +1,26 @@
 import functools
+import json
 import operator
 import re
 from abc import ABC
 from collections import defaultdict
 from operator import itemgetter
-import numpy as np
 from pathlib import Path
-import json
+
+import numpy as np
 import pandas as pd
 
 
 class Model:
     # cdf_dict is of type feature -> cumulative distribution function
     def expected_diff_squared(self, cdf_dict: dict, baseline):
-        raise NotImplementedError('')
+        raise NotImplementedError("")
 
     def expected_single_feature(self, data_point, perturbed_feature, cdf, f):
-        raise NotImplementedError('')
+        raise NotImplementedError("")
 
     def eval(self, x):
-        raise NotImplementedError('')
+        raise NotImplementedError("")
 
 
 class _CurrentPath:
@@ -28,10 +29,10 @@ class _CurrentPath:
         self.ub = defaultdict(list)
 
     def last_lb(self, feature):
-        return self.lb[feature][-1] if feature in self.lb else float('-inf')
+        return self.lb[feature][-1] if feature in self.lb else float("-inf")
 
     def last_ub(self, feature):
-        return self.ub[feature][-1] if feature in self.ub else float('inf')
+        return self.ub[feature][-1] if feature in self.ub else float("inf")
 
     def descend_left(self, feature, t):
         t = min(self.last_ub(feature), t)
@@ -59,22 +60,24 @@ class _CurrentPath:
         prob = 1.0
         for f in features:
             if f in cdf_dict:
-                prob *= max(0, cdf_dict[f](self.last_ub(f)) - cdf_dict[f](self.last_lb(f)))
+                prob *= max(
+                    0, cdf_dict[f](self.last_ub(f)) - cdf_dict[f](self.last_lb(f))
+                )
         return prob
 
 
 class Node(ABC):
     def is_leaf(self):
-        raise NotImplementedError('')
+        raise NotImplementedError("")
 
     def descend(self, cdf_dict: dict, prob_anc: _CurrentPath, leaf_contrib_fun):
-        raise NotImplementedError('')
+        raise NotImplementedError("")
 
     def collect_thresholds(self, data_point, perturbed_feature, current_ub, result):
-        raise NotImplementedError('')
+        raise NotImplementedError("")
 
     def eval(self, x):
-        raise NotImplementedError('')
+        raise NotImplementedError("")
 
 
 class Leaf(Node):
@@ -113,18 +116,29 @@ class Split(Node):
 
     def descend(self, cdf_dict: dict, prob_anc: _CurrentPath, leaf_contrib_fun):
         if self.feature in cdf_dict:
-            cond_prob = _interval_prob(cdf_dict[self.feature], prob_anc.current_interval(self.feature))
+            cond_prob = _interval_prob(
+                cdf_dict[self.feature], prob_anc.current_interval(self.feature)
+            )
             if cond_prob == 0.0:
                 return 0.0
             prob_anc.descend_left(self.feature, self.threshold)
-            prob_left = _interval_prob(cdf_dict[self.feature], prob_anc.current_interval(self.feature)) / cond_prob
+            prob_left = (
+                _interval_prob(
+                    cdf_dict[self.feature], prob_anc.current_interval(self.feature)
+                )
+                / cond_prob
+            )
             result = 0.0
             if prob_left > 1e-12:
-                result += prob_left * self.yes.descend(cdf_dict, prob_anc, leaf_contrib_fun)
+                result += prob_left * self.yes.descend(
+                    cdf_dict, prob_anc, leaf_contrib_fun
+                )
             prob_anc.revert_left(self.feature)
             if 1.0 - prob_left > 1e-12:
                 prob_anc.descend_right(self.feature, self.threshold)
-                result += (1.0 - prob_left) * self.no.descend(cdf_dict, prob_anc, leaf_contrib_fun)
+                result += (1.0 - prob_left) * self.no.descend(
+                    cdf_dict, prob_anc, leaf_contrib_fun
+                )
                 prob_anc.revert_right(self.feature)
             return result
         else:
@@ -142,15 +156,28 @@ class Split(Node):
     def collect_thresholds(self, data_point, perturbed_feature, current_lb, result):
         if self.feature in data_point:
             if self.feature == perturbed_feature:
-                self.yes.collect_thresholds(data_point, perturbed_feature, current_lb, result)
-                self.no.collect_thresholds(data_point, perturbed_feature, max(current_lb, self.threshold), result)
+                self.yes.collect_thresholds(
+                    data_point, perturbed_feature, current_lb, result
+                )
+                self.no.collect_thresholds(
+                    data_point,
+                    perturbed_feature,
+                    max(current_lb, self.threshold),
+                    result,
+                )
             else:
                 if data_point[self.feature] < self.threshold:
-                    self.yes.collect_thresholds(data_point, perturbed_feature, current_lb, result)
+                    self.yes.collect_thresholds(
+                        data_point, perturbed_feature, current_lb, result
+                    )
                 else:
-                    self.no.collect_thresholds(data_point, perturbed_feature, current_lb, result)
+                    self.no.collect_thresholds(
+                        data_point, perturbed_feature, current_lb, result
+                    )
         else:
-            self.missing.collect_thresholds(data_point, perturbed_feature, current_lb, result)
+            self.missing.collect_thresholds(
+                data_point, perturbed_feature, current_lb, result
+            )
 
 
 class TreeEnsemble(Model):
@@ -166,18 +193,18 @@ class TreeEnsemble(Model):
         tree_list = []
         with open(self.json_file) as f:
             data = json.load(f)
-            for i in data['learner']['gradient_booster']['model']['trees']:
-                tree_list.append(i['split_conditions'])
+            for i in data["learner"]["gradient_booster"]["model"]["trees"]:
+                tree_list.append(i["split_conditions"])
         return tree_list
 
     def get_bias(self):
         with open(self.json_file, "r") as fd:
             model = json.load(fd)
-        return float(model['learner']['learner_model_param']['base_score'])
+        return float(model["learner"]["learner_model_param"]["base_score"])
 
     def expected_diff_squared(self, cdf_dict: dict, baseline):
         baseline -= self.bias
-        result = baseline ** 2
+        result = baseline**2
 
         def contrib_outer(cdd, prob_anc, val):
             inner_sum = -baseline * 2.0
@@ -190,15 +217,20 @@ class TreeEnsemble(Model):
         return result
 
     def expected_single_feature(self, data_point, perturbed_feature, cdf, f):
-        deltas = [(float('inf'), 0)]
+        deltas = [(float("inf"), 0)]
         for tree in self.trees:
             tree_deltas = []
-            tree.collect_thresholds(data_point, perturbed_feature, float('-inf'), tree_deltas)
+            tree.collect_thresholds(
+                data_point, perturbed_feature, float("-inf"), tree_deltas
+            )
             for i in range(len(tree_deltas) - 1, 0, -1):
-                tree_deltas[i] = tree_deltas[i][0], tree_deltas[i][1] - tree_deltas[i - 1][1]
+                tree_deltas[i] = (
+                    tree_deltas[i][0],
+                    tree_deltas[i][1] - tree_deltas[i - 1][1],
+                )
             deltas.extend(tree_deltas)
         deltas.sort(key=itemgetter(0))
-        aggr, result, prev = 0.0, 0.0, float('-inf')
+        aggr, result, prev = 0.0, 0.0, float("-inf")
         for x, d in deltas:
             result += f(aggr + self.bias) * (cdf(x) - cdf(prev))
             prev = x
@@ -235,8 +267,13 @@ class TreeEnsemble(Model):
         return sum
 
     def eval(self, x):
-        return functools.reduce(operator.add, [tree.eval(x) for tree in self.trees], float(0)) + self.bias
-    
+        return (
+            functools.reduce(
+                operator.add, [tree.eval(x) for tree in self.trees], float(0)
+            )
+            + self.bias
+        )
+
     def eval_on_multiple_rows(self, df: pd.DataFrame) -> np.array:
         y = []
         for i in range(len(df)):
@@ -292,23 +329,29 @@ def parse_xgboost_dump(dump_file):
                 parse_subtree()
                 parse_subtree()
                 md = match.groupdict()
-                if md['id'] in nodes:
+                if md["id"] in nodes:
                     raise ValueError("node id error")
-                nodes[md['id']] = Split(md['feature'], float(md['threshold']), nodes[md['yes']], nodes[md['no']],
-                                        nodes[md['missing']])
-                return nodes[md['id']]
+                nodes[md["id"]] = Split(
+                    md["feature"],
+                    float(md["threshold"]),
+                    nodes[md["yes"]],
+                    nodes[md["no"]],
+                    nodes[md["missing"]],
+                )
+                return nodes[md["id"]]
             else:
                 match = leaf_pattern.match(line)
                 if match is None:
                     raise ValueError("invalid node format")
                 md = match.groupdict()
-                nodes[md['id']] = Leaf(float(md['value']))
-                return nodes[md['id']]
+                nodes[md["id"]] = Leaf(float(md["value"]))
+                return nodes[md["id"]]
 
         trees.append(parse_subtree())
 
     f.close()
     return TreeEnsemble(trees)
+
 
 def load_trees(models_path: Path, model_name: str):
     trees_from_dump = parse_xgboost_dump(models_path / f"{model_name}_dumped.txt")

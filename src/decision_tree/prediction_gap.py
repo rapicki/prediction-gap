@@ -3,8 +3,9 @@ from typing import Optional
 
 import numpy as np
 import pandas as pd
-import src.decision_tree.tree as tree
 from scipy.stats import norm
+
+import src.decision_tree.tree as tree
 from src.decision_tree.tree import TreeEnsemble
 
 
@@ -220,7 +221,6 @@ def rank_features_by_random(
 ) -> list:
     curr_features = set(data_point.index)
     ranked_features = []
-    baseline = trees.eval(data_point)
     while len(curr_features) > 1:
         predgap_dict = {}
         for feature in curr_features:
@@ -297,7 +297,6 @@ def prediction_gap_by_exact_calc_single_datapoint(
     print(perturbed_features)
     print("Starting exact prediction gap calculation.")
     results = []
-    args = []
     for i in range(len(data)):
         x = data.iloc[i, :-1]
         y = baseline_preds[i]
