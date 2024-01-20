@@ -56,8 +56,9 @@ def parse_args(args=None):
     return parser.parse_args(args=args)
 
 
-if __name__ == "__main__":
-    args = parse_args()
+#if __name__ == "__main__":
+def main(args=None):
+    args = parse_args(args)
     experiment_type = args.experiment_type
     if experiment_type == "pgi":
         calculate_pgi_main(args)

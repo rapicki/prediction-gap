@@ -6,7 +6,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-
 from src.decision_tree.prediction_gap import (
     NormalPredictionGap,
     prediction_gap_by_exact_calc_single_datapoint,
@@ -61,13 +60,13 @@ def sample_indices_and_subsets(number: int, file: str):
     wine_data = pd.read_csv(file)
 
     all_features = list(wine_data.columns.values)[:-1]
+    featue_number = len(all_features)
     samples = []
-    for _ in range(number):
-        random_features = random.sample(
-            all_features, random.randint(1, len(all_features))
-        )
-        random_point = random.sample(range(0, len(wine_data)), 1)[0]
-        samples.append((random_features, random_point))
+    for i in range(1, featue_number + 1):
+        for _ in range(number // featue_number):
+            random_features = random.sample(all_features, i)
+            random_point = random.sample(range(0, len(wine_data)), 1)[0]
+            samples.append((random_features, random_point))
     return samples
 
 
