@@ -43,7 +43,11 @@ def calculate_rankings(
             points.append((wine_trees, wine_data.iloc[i, :-1], stddev, num_iter))
         pool = Pool(processes=proc_number)
         results = np.array(pool.starmap(rank_features_by_random, points))
-        np.save(results_path / (f"{name}_approx_ranking_{num_iter}_iter.npy"), results)
+        np.save(
+            results_path
+            / (f"{name}_approx_ranking_{num_iter}_iter_{stddev}_stddev.npy"),
+            results,
+        )
 
     if "shap" in ranking_types:
         sh = ShapWrapper()

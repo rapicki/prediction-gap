@@ -49,7 +49,7 @@ def calculate_rankings(
 
 
 def calculate_pgi_main(args):
-    stddevs = [float(i) for i in args.stddev_list.split(",")]
+    stddev = args.stddev
     result_path = args.results_dir
     proc_num = args.proc_num
     data_path = args.data
@@ -60,29 +60,24 @@ def calculate_pgi_main(args):
     slash_indx = ranking_file.rfind("/")
     dot_indx = ranking_file.rfind(".")
     ranking_name = ranking_file[slash_indx + 1 : dot_indx]
-    names = []
-    for s1 in stddevs:
-        s_names = []
-        for k in range(1, features_number + 1):
-            pgi_file_names = []
-            pgi_file_name = f"{ranking_name}_pgi_std_{s1}_topk_{k}.npy"
-            pgi_file_names.append(pgi_file_name)
-            s_names.append(pgi_file_names)
-        names.append(s_names)
+    name = []
+    for k in range(1, features_number + 1):
+        pgi_file_names = []
+        pgi_file_name = f"{ranking_name}_pgi_std_{stddev}_topk_{k}.npy"
+        pgi_file_names.append(pgi_file_name)
+        name.append(pgi_file_names)
 
-    for s, name in zip(stddevs, names):
-        for k, n in zip(range(1, features_number + 1), name):
-            print(n)
-            calculate_rankings(
-                s,
-                proc_num,
-                ranking_file,
-                n,
-                model_path,
-                data_path,
-                result_path,
-                top_k=k,
-            )
+    for k, n in zip(range(1, features_number + 1), name):
+        calculate_rankings(
+            stddev,
+            proc_num,
+            ranking_file,
+            n,
+            model_path,
+            data_path,
+            result_path,
+            top_k=k,
+        )
 
 
 """if __name__ == "__main__":

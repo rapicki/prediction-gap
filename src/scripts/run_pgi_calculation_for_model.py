@@ -1,22 +1,22 @@
 from src.scripts.run_experiment import main
 
 if __name__ == "__main__":
-    experiment_type = "compare"
-    stddev_list = "0.01,0.03,0.1,0.3"
-    iterations = "100,500,1000,1500,2000,3000,4000,5000,6000,7000,8000,9000,10000,15000"
-    result_path = "test_results/time/"
+    experiment_type = "pgi"
+    stddev = "0.01"
+    result_path = "results/wine_model/pgi/"
     data_path = "data/wine_quality/test_winequality_red_scaled.csv"
     model_path = "models/winequality_red_saved.json"
-    proc_num = "5"
-    samples = "15"
+    proc_num = "10"
+    features_number = "11"
+    ranking_file = (
+        "results/wine_model/ranking/wine_approx_ranking_10_iter_0.1_stddev.npy"
+    )
 
     experiment_args = [
         "--experiment-type",
         experiment_type,
-        "--stddev-list",
-        stddev_list,
-        "--iterations-list",
-        iterations,
+        "--stddev",
+        stddev,
         "--results-dir",
         result_path,
         "--data",
@@ -25,8 +25,10 @@ if __name__ == "__main__":
         model_path,
         "--proc-num",
         proc_num,
-        "--samples",
-        samples,
+        "--features-number",
+        features_number,
+        "--ranking-file",
+        ranking_file,
     ]
 
     main(experiment_args)
