@@ -33,6 +33,8 @@ def test_differences_between_approx_and_exact(
     predgap = NormalPredictionGap(stddev)
 
     random_point = wine_data.iloc[[point_ind], :]
+    # random_point['sulphates'] += 0.01
+    print(random_point)
     t1 = time.time()
     tmp = prediction_gap_by_random_sampling_single_datapoint(
         trees=wine_trees,
@@ -67,6 +69,15 @@ def sample_indices_and_subsets(number: int, file: str):
             random_features = random.sample(all_features, i)
             random_point = random.sample(range(0, len(wine_data)), 1)[0]
             samples.append((random_features, random_point))
+
+    """if number == 1:
+        random_features = ["chlorides"]  # random.sample(all_features, 1)
+        random_point = 252#random.sample(range(0, len(wine_data)), 1)[0]
+        samples.append((random_features, random_point))
+    
+    print(samples)
+    for i in range(0, featue_number):
+        print(wine_data.iloc[[random_point], i])"""
     return samples
 
 

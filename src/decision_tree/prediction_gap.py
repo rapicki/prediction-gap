@@ -21,7 +21,7 @@ class PerturbPredictionGap:
                     x, loc=v, scale=self.stddev
                 )
             else:
-                cdf_dict[feature] = lambda x, t=value: 0.0 if x < t else 1.0
+                cdf_dict[feature] = lambda x, t=np.float32(value): 0.0 if x < t else 1.0
         return cdf_dict
 
     def prediction_gap_fixed(
@@ -116,7 +116,7 @@ class NormalPredictionGap(PerturbPredictionGap):
                     x, loc=v, scale=self.stddev
                 )
             else:
-                cdf_dict[feature] = lambda x, t=value: 0.0 if x < t else 1.0
+                cdf_dict[feature] = lambda x, t=np.float32(value): 0.0 if x < t else 1.0
         return cdf_dict
 
 
@@ -303,7 +303,7 @@ def prediction_gap_by_exact_calc_single_datapoint(
         r = predgap.prediction_gap_fixed(trees, x, perturbed_features, y, i)
         results.append(r)
     # for i in range(len(data)):
-    #     x = data.iloc[i, :-1]
+   #     x = data.iloc[i, :-1]
     #     y = baseline_preds[i]
     #     results.append(predgap.prediction_gap_fixed(trees, x, perturbed_features, y))
     #     print(f"Datapoint {i} returned predgap value of {results[-1]}.")

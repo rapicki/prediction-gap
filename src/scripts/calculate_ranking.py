@@ -51,7 +51,11 @@ def calculate_rankings(
 
     if "shap" in ranking_types:
         sh = ShapWrapper()
-        X = wine_data.loc[:, wine_data.columns != "quality"]
+        if "quality" in wine_data.columns:
+            X = wine_data.loc[:, wine_data.columns != "quality"]
+        elif "median_house_value":
+            X = wine_data.loc[:, wine_data.columns != "median_house_value"]
+
         results = sh.get_shap_ranking(model_xgb, X)
         np.save(results_path / (f"{name}_shap_ranking.npy"), results)
 
