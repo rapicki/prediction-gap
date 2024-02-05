@@ -1,6 +1,5 @@
 import os
 from multiprocessing import Pool
-from pathlib import Path
 
 import numpy as np
 
@@ -40,12 +39,12 @@ def calculate_rankings(
                 (
                     wine_trees,
                     wine_data.iloc[i, :-1],
-                    set(ranking[i].tolist()[0:top_k]),
                     baseline_pred,
+                    ranking[i].tolist()[0:top_k],
                 )
             )
         pool = Pool(processes=proc_number)
-        results = np.array(pool.starmap(predgap.prediction_gap_fixed, points))
+        results = np.array(pool.starmap(predgap.pgi, points))
         np.save((results_path / pgi), results)
 
 
@@ -62,11 +61,9 @@ def calculate_pgi_main(args):
     dot_indx = ranking_file.rfind(".")
     ranking_name = ranking_file[slash_indx + 1 : dot_indx]
     name = []
-    pgi_path = Path(result_path) / ranking_name
-    pgi_path.mkdir(parents=True, exist_ok=True)
     for k in range(1, features_number + 1):
         pgi_file_names = []
-        pgi_file_name = f"{ranking_name}/pgi_std_{stddev}_topk_{k}.npy"
+        pgi_file_name = f"{ranking_name}_pgi_std_{stddev}_topk_{k}.npy"
         pgi_file_names.append(pgi_file_name)
         name.append(pgi_file_names)
 

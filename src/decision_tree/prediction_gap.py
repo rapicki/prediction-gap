@@ -35,7 +35,7 @@ class PerturbPredictionGap:
         result = model.expected_diff_squared(
             self._compute_cdf(data_point, perturbed_features), baseline_pred
         )
-        # print(f"Datapoint {index} returned predgap value of {result}.")
+        print(f"Datapoint {index} returned predgap value of {result}.")
         return result
 
     def pgi(self, model: tree.Model, data_point, baseline_pred, sorted_features: list):
@@ -91,17 +91,16 @@ class PerturbPredictionGap:
                     model, data_point, set(ranked_features) | {feature}, baseline
                 )
                 predgap_dict[feature] = tmp
-                # print(feature, tmp)
+                print(feature, tmp)
             best_feature = max(
                 predgap_dict, key=predgap_dict.get
             )  # this is the current feature with max predgap
             ranked_features.append(best_feature)
-            # print(f"Rank {len(ranked_features)}: {best_feature}.")
+            print(f"Rank {len(ranked_features)}: {best_feature}.")
             curr_features -= {best_feature}
         ranked_features.append(
             list(curr_features)[0]
         )  # this appends the last (and thus lowest ranked) feature
-        print(ranked_features)
         return ranked_features
 
 
@@ -235,17 +234,16 @@ def rank_features_by_random(
                 num_iter=num_iter,
             )
             predgap_dict[feature] = tmp
-            # print(feature, tmp)
+            print(feature, tmp)
         best_feature = max(
             predgap_dict, key=predgap_dict.get
         )  # this is the current feature with max predgap
         ranked_features.append(best_feature)
-        # print(f"Rank {len(ranked_features)}: {best_feature}.")
+        print(f"Rank {len(ranked_features)}: {best_feature}.")
         curr_features -= {best_feature}
     ranked_features.append(
         list(curr_features)[0]
     )  # this appends the last (and thus lowest ranked) feature
-    print(ranked_features)
     return ranked_features
 
 
