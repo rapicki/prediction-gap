@@ -1,0 +1,12 @@
+,entropy
+wine_shap_ranking,2.6438234321757
+wine_exact_ranking_std_0.01,2.268802891783786
+wine_exact_ranking_std_0.03,2.3778996647266957
+wine_exact_ranking_std_0.1,2.3489588630398726
+wine_exact_ranking_std_0.3,2.3094845989234885
+wine_exact_ranking_std_1.0,2.316751523231612
+wine_approx_ranking_100_iter_0.01_stddev,2.17997946701317
+wine_approx_ranking_100_iter_0.03_stddev,2.468662944703445
+wine_approx_ranking_100_iter_0.1_stddev,2.885647413576317
+wine_approx_ranking_100_iter_0.3_stddev,2.935420342409091
+wine_approx_ranking_100_iter_1.0_stddev,2.712525664009937
