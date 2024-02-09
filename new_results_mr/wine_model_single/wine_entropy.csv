@@ -1,5 +1,5 @@
 ,entropy
-wine_shap_ranking,2.6438234321757
+wine_shap_ranking,2.053548523283708
 wine_exact_ranking_std_0.01,2.268802891783786
 wine_exact_ranking_std_0.03,2.3778996647266957
 wine_exact_ranking_std_0.1,2.3489588630398726
