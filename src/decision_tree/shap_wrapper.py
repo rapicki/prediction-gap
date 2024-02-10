@@ -16,6 +16,7 @@ class ShapWrapper:
     ) -> list:
         explainer = shap.TreeExplainer(xgb_tree)
         shap_values = explainer.shap_values(X)
+        shap_values = -1 * np.abs(shap_values)
         ranking = np.argsort(shap_values)
         if return_str:
             ranking = self._get_ranking_by_name(ranking, list(X.columns.values))
