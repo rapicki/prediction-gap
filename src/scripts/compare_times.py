@@ -78,6 +78,10 @@ def sample_indices_and_subsets(number: int, file: str):
     print(samples)
     for i in range(0, featue_number):
         print(wine_data.iloc[[random_point], i])"""
+
+    samples = [(['longitude', 'latitude', 'households', 
+               'housing_median_age', 'median_income', 
+               'total_rooms', 'total_bedrooms'], 3481)]
     return samples
 
 
