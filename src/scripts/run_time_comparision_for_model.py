@@ -7,7 +7,7 @@ if __name__ == "__main__":
     result_path = "results/housing_model/test_tiny_times/"
     data_path = "data/housing_data/test_housing_scaled.csv"
     model_path = "models/housing_saved.json"
-    proc_num = "10"
+    proc_num = "20"
     samples = "100"
 
     experiment_args = [
