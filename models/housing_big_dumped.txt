@@ -1,1082 +1,1102 @@
 booster[0]:
-0:[median_income<0.612666547] yes=1,no=2,missing=2,gain=6.01063141e+13,cover=14844
-	1:[median_income<-0.423561066] yes=3,no=4,missing=4,gain=1.53255024e+13,cover=11684
-		3:[latitude<-0.525240481] yes=7,no=8,missing=8,gain=2.53934908e+12,cover=5607
-			7:[longitude<0.633748472] yes=15,no=16,missing=16,gain=2.65335446e+12,cover=2745
-				15:[latitude<-0.740606308] yes=31,no=32,missing=32,gain=1.94176582e+11,cover=490
-					31:[longitude<0.593818069] yes=63,no=64,missing=64,gain=7.70704474e+11,cover=190
-						63:[total_rooms<-0.605879128] yes=127,no=128,missing=128,gain=1.18205972e+10,cover=36
-							127:[housing_median_age<-1.32214165] yes=237,no=238,missing=238,gain=531865600,cover=11
-								237:leaf=4364.73779,cover=1
-								238:leaf=16777.7051,cover=10
-							128:[housing_median_age<-0.368644685] yes=239,no=240,missing=240,gain=2.02017997e+09,cover=25
-								239:leaf=7114.73779,cover=1
-								240:leaf=27989.1035,cover=24
-						64:[latitude<-0.815516114] yes=129,no=130,missing=130,gain=2.21519757e+11,cover=154
-							129:[longitude<0.628757179] yes=241,no=242,missing=242,gain=4.24633713e+10,cover=11
-								241:[longitude<0.608791947] yes=411,no=412,missing=412,gain=1.02454231e+10,cover=5
-									411:leaf=5444.73779,cover=1
-									412:leaf=34615.582,cover=4
-								242:[total_bedrooms<0.534273684] yes=413,no=414,missing=414,gain=472968704,cover=6
-									413:[housing_median_age<1.37943304] yes=681,no=682,missing=682,gain=126858240,cover=4
-										681:leaf=7607.10645,cover=3
-										682:leaf=1864.73755,cover=1
-									414:leaf=1826.31665,cover=2
-							130:[longitude<0.603800654] yes=243,no=244,missing=244,gain=4.74923663e+10,cover=143
-								243:[latitude<-0.745288134] yes=415,no=416,missing=416,gain=6.40050022e+09,cover=12
-									415:[latitude<-0.782743096] yes=683,no=684,missing=684,gain=2.78283494e+09,cover=9
-										683:leaf=3547.1062,cover=3
-										684:leaf=-3080.44995,cover=6
-									416:[housing_median_age<0.267019957] yes=685,no=686,missing=686,gain=2.42879693e+09,cover=3
-										685:leaf=11652.9834,cover=2
-										686:leaf=134.737503,cover=1
-								244:[latitude<-0.792106807] yes=417,no=418,missing=418,gain=4.28567101e+10,cover=131
-									417:[housing_median_age<-0.130270436] yes=687,no=688,missing=688,gain=6.31349965e+09,cover=19
-										687:leaf=1484.97729,cover=10
-										688:leaf=-5507.47266,cover=9
-									418:[population<-0.675956666] yes=689,no=690,missing=690,gain=1.57773332e+10,cover=112
-										689:leaf=-3765.47266,cover=9
-										690:leaf=-13020.8086,cover=103
-					32:[latitude<-0.684423864] yes=65,no=66,missing=66,gain=4.88784921e+11,cover=300
-						65:[total_bedrooms<-0.749619067] yes=131,no=132,missing=131,gain=7.40252713e+10,cover=99
-							131:[housing_median_age<1.29997492] yes=245,no=246,missing=246,gain=2.25835397e+10,cover=8
-								245:[total_bedrooms<-0.948966563] yes=419,no=420,missing=419,gain=3.95140147e+09,cover=6
-									419:[housing_median_age<0.743768394] yes=691,no=692,missing=692,gain=225753344,cover=4
-										691:leaf=-2927.0166,cover=2
-										692:leaf=-120.349998,cover=2
-									420:leaf=-12013.6836,cover=2
-								246:leaf=14286.3174,cover=2
-							132:[median_income<-0.558208525] yes=247,no=248,missing=248,gain=5.90301757e+10,cover=91
-								247:[total_rooms<-0.0544394627] yes=421,no=422,missing=422,gain=5.0611159e+10,cover=75
-									421:[population<-0.0578194447] yes=693,no=694,missing=694,gain=3.73212283e+10,cover=45
-										693:leaf=17789.9219,cover=23
-										694:leaf=5972.5415,cover=22
-									422:[total_rooms<1.09106982] yes=695,no=696,missing=696,gain=5.87327406e+10,cover=30
-										695:leaf=26785.4434,cover=26
-										696:leaf=651.580017,cover=4
-								248:[population<-0.135528117] yes=423,no=424,missing=424,gain=2.02027172e+10,cover=16
-									423:[latitude<-0.735924423] yes=697,no=698,missing=698,gain=1.61775616e+10,cover=11
-										697:leaf=11612.9834,cover=2
-										698:leaf=39994.6055,cover=9
-									424:[longitude<0.61378324] yes=699,no=700,missing=700,gain=287911936,cover=5
-										699:leaf=16815.5801,cover=4
-										700:leaf=4474.73779,cover=1
-						66:[latitude<-0.572059095] yes=133,no=134,missing=134,gain=2.03354898e+11,cover=201
-							133:[median_income<-0.576737046] yes=249,no=250,missing=250,gain=2.89633116e+10,cover=160
-								249:[latitude<-0.665696442] yes=425,no=426,missing=426,gain=1.97378089e+10,cover=102
-									425:[longitude<0.50896579] yes=701,no=702,missing=702,gain=1.67824128e+10,cover=49
-										701:leaf=-8601.47266,cover=9
-										702:leaf=547.292664,cover=40
-									426:[population<-0.433117032] yes=703,no=704,missing=704,gain=1.52491131e+10,cover=53
-										703:leaf=-2328.11914,cover=20
-										704:leaf=-9436.68652,cover=33
-								250:[latitude<-0.679742038] yes=427,no=428,missing=428,gain=2.61816463e+10,cover=58
-									427:[total_rooms<-0.479364276] yes=705,no=706,missing=706,gain=2.05003162e+09,cover=4
-										705:leaf=5906.31689,cover=2
-										706:leaf=19439.6504,cover=2
-									428:[total_bedrooms<-1.21001685] yes=707,no=708,missing=707,gain=1.42631096e+10,cover=54
-										707:leaf=13492.9834,cover=2
-										708:leaf=-682.401917,cover=52
-							134:[population<-0.547913909] yes=251,no=252,missing=252,gain=3.3350697e+10,cover=41
-								251:[longitude<0.50896579] yes=429,no=430,missing=430,gain=3.7569495e+09,cover=20
-									429:[population<-0.723641515] yes=709,no=710,missing=710,gain=5.12149094e+09,cover=19
-										709:leaf=23890.4316,cover=10
-										710:leaf=13374.5283,cover=9
-									430:leaf=3214.73755,cover=1
-								252:[longitude<0.164565623] yes=431,no=432,missing=432,gain=1.2056705e+10,cover=21
-									431:[longitude<-0.0700258166] yes=711,no=712,missing=712,gain=5.57492634e+09,cover=20
-										711:leaf=12933.291,cover=7
-										712:leaf=5360.22705,cover=13
-									432:leaf=-8595.2627,cover=1
-				16:[longitude<0.883313835] yes=33,no=34,missing=34,gain=8.55492264e+11,cover=2255
-					33:[latitude<-0.735924423] yes=67,no=68,missing=68,gain=3.95877024e+11,cover=1259
-						67:[latitude<-0.820197999] yes=135,no=136,missing=136,gain=3.8921542e+11,cover=932
-							135:[latitude<-0.885744095] yes=253,no=254,missing=254,gain=1.5149092e+11,cover=256
-								253:[population<0.0207722839] yes=433,no=434,missing=434,gain=1.91144182e+10,cover=34
-									433:[population<-0.729822874] yes=713,no=714,missing=714,gain=2.07186248e+10,cover=22
-										713:leaf=-292.104187,cover=5
-										714:leaf=14203.3936,cover=17
-									434:[longitude<0.793470323] yes=715,no=716,missing=716,gain=6.36273357e+09,cover=12
-										715:leaf=4715.79053,cover=7
-										716:leaf=-3918.77075,cover=5
-								254:[median_income<-0.870613813] yes=435,no=436,missing=436,gain=5.8342015e+10,cover=222
-									435:[latitude<-0.876380384] yes=717,no=718,missing=718,gain=3.53520681e+10,cover=77
-										717:leaf=144.97728,cover=10
-										718:leaf=-12576.5469,cover=67
-									436:[population<-0.0993229449] yes=719,no=720,missing=720,gain=1.79277455e+10,cover=145
-										719:leaf=-1311.7229,cover=57
-										720:leaf=-5883.21582,cover=88
-							136:[longitude<0.698635519] yes=255,no=256,missing=256,gain=1.81861089e+11,cover=676
-								255:[latitude<-0.754651904] yes=437,no=438,missing=438,gain=1.47656802e+11,cover=517
-									437:[longitude<0.673678935] yes=721,no=722,missing=722,gain=1.03787528e+11,cover=380
-										721:leaf=-19852.8828,cover=266
-										722:leaf=-12401.9121,cover=114
-									438:[median_income<-1.49789846] yes=723,no=724,missing=724,gain=9.75567585e+10,cover=137
-										723:leaf=11910.8154,cover=7
-										724:leaf=-11119.2998,cover=130
-								256:[total_rooms<-1.17794621] yes=439,no=440,missing=440,gain=1.43168635e+10,cover=159
-									439:[housing_median_age<0.267019957] yes=725,no=726,missing=726,gain=1.39233874e+10,cover=3
-										725:leaf=16864.7383,cover=1
-										726:leaf=-5013.68311,cover=2
-									440:[total_rooms<-0.397771388] yes=727,no=728,missing=728,gain=5.26567014e+09,cover=156
-										727:leaf=-9209.71387,cover=86
-										728:leaf=-6556.01123,cover=70
-						68:[longitude<0.668687642] yes=137,no=138,missing=138,gain=1.1857807e+11,cover=327
-							137:[longitude<0.638739824] yes=257,no=258,missing=258,gain=1.51433708e+10,cover=126
-								257:[population<0.295401812] yes=441,no=442,missing=442,gain=1.82388429e+10,cover=21
-									441:[latitude<-0.731242537] yes=729,no=730,missing=730,gain=2.80977357e+09,cover=2
-										729:leaf=-13135.2627,cover=1
-										730:leaf=-75.2625046,cover=1
-									442:[population<1.86547029] yes=731,no=732,missing=732,gain=6.54658355e+09,cover=19
-										731:leaf=4190.43164,cover=10
-										732:leaf=12108.5273,cover=9
-								258:[total_bedrooms<2.67488599] yes=443,no=444,missing=444,gain=2.35989074e+10,cover=105
-									443:[total_bedrooms<0.705142975] yes=733,no=734,missing=734,gain=1.05950648e+10,cover=99
-										733:leaf=19.6253567,cover=69
-										734:leaf=4471.10498,cover=30
-									444:[longitude<0.643731117] yes=735,no=736,missing=736,gain=1.9408425e+09,cover=6
-										735:leaf=-15347.0176,cover=2
-										736:leaf=-5652.41992,cover=4
-							138:[population<-1.01593208] yes=259,no=260,missing=260,gain=4.25916498e+10,cover=201
-								259:[latitude<-0.693787634] yes=445,no=446,missing=446,gain=7.22190828e+10,cover=9
-									445:[total_rooms<-1.06518292] yes=737,no=738,missing=738,gain=4.66214707e+09,cover=5
-										737:leaf=-11336.4209,cover=4
-										738:leaf=1964.73755,cover=1
-									446:[median_income<-1.40283453] yes=739,no=740,missing=740,gain=4.31208858e+10,cover=4
-										739:leaf=39153.1172,cover=2
-										740:leaf=819.650024,cover=2
-								260:[median_income<-0.639323354] yes=447,no=448,missing=448,gain=2.69190595e+10,cover=192
-									447:[longitude<0.71860069] yes=741,no=742,missing=742,gain=1.63914547e+10,cover=124
-										741:leaf=-10619.1094,cover=70
-										742:leaf=-5770.69727,cover=54
-									448:[longitude<0.758531153] yes=743,no=744,missing=744,gain=1.83925985e+10,cover=68
-										743:leaf=-1132.90491,cover=45
-										744:leaf=-8020.08691,cover=23
-					34:[longitude<1.58708811] yes=69,no=70,missing=70,gain=3.14778321e+11,cover=996
-						69:[latitude<-0.95129025] yes=139,no=140,missing=140,gain=4.1052065e+11,cover=881
-							139:[longitude<1.20774877] yes=261,no=262,missing=262,gain=4.99349717e+11,cover=463
-								261:[housing_median_age<-0.686477005] yes=449,no=450,missing=450,gain=1.65298651e+11,cover=132
-									449:[latitude<-1.34456694] yes=745,no=746,missing=746,gain=4.16993034e+10,cover=54
-										745:leaf=14152.9834,cover=2
-										746:leaf=-10729.1943,cover=52
-									450:[longitude<0.96317476] yes=747,no=748,missing=748,gain=9.21866732e+10,cover=78
-										747:leaf=39153.1172,cover=2
-										748:leaf=3311.17261,cover=76
-								262:[latitude<-1.34456694] yes=451,no=452,missing=452,gain=5.6420991e+10,cover=331
-									451:[median_income<-0.925936162] yes=749,no=750,missing=750,gain=2.98284483e+10,cover=209
-										749:leaf=-20411.2012,cover=102
-										750:leaf=-15064.6875,cover=107
-									452:[median_income<-1.56680131] yes=751,no=752,missing=752,gain=7.38977382e+09,cover=122
-										751:leaf=-13.6833334,cover=2
-										752:leaf=-12277.7109,cover=120
-							140:[total_rooms<-1.09222782] yes=263,no=264,missing=264,gain=1.4609023e+11,cover=418
-								263:[median_income<-1.16891217] yes=453,no=454,missing=454,gain=8.90946028e+10,cover=8
-									453:[longitude<1.12788796] yes=753,no=754,missing=754,gain=1.84900403e+09,cover=3
-										753:leaf=-4385.2627,cover=1
-										754:leaf=-21013.6836,cover=2
-									454:[housing_median_age<0.505394161] yes=755,no=756,missing=756,gain=1.04719647e+11,cover=5
-										755:leaf=39882.207,cover=3
-										756:leaf=-11680.3506,cover=2
-								264:[longitude<1.10293138] yes=455,no=456,missing=456,gain=2.91462185e+10,cover=410
-									455:[total_rooms<-1.06518292] yes=757,no=758,missing=758,gain=1.46551603e+09,cover=144
-										757:leaf=-4205.2627,cover=1
-										758:leaf=-18138.7871,cover=143
-									456:[latitude<-0.810834289] yes=759,no=760,missing=760,gain=3.01127434e+10,cover=266
-										759:leaf=-17922.209,cover=70
-										760:leaf=-23621.5371,cover=196
-						70:[total_rooms<-1.17794621] yes=141,no=142,missing=142,gain=3.93254011e+10,cover=115
-							141:leaf=6864.73779,cover=1
-							142:leaf=-27279.8262,cover=114
-			8:[longitude<-1.08326113] yes=17,no=18,missing=18,gain=2.28388032e+12,cover=2862
-				17:[latitude<1.07127571] yes=35,no=36,missing=36,gain=2.28042159e+12,cover=1130
-					35:[longitude<-1.37774825] yes=71,no=72,missing=72,gain=1.11726009e+12,cover=557
-						71:[latitude<1.0104115] yes=143,no=144,missing=144,gain=1.73908361e+11,cover=112
-							143:[longitude<-1.41767871] yes=265,no=266,missing=266,gain=1.15756843e+11,cover=84
-								265:[housing_median_age<1.77672338] yes=457,no=458,missing=458,gain=1.00763107e+11,cover=52
-									457:[median_income<-0.863191903] yes=761,no=762,missing=762,gain=5.36400691e+10,cover=25
-										761:leaf=-4999.47266,cover=9
-										762:leaf=13663.0361,cover=16
-									458:[latitude<0.996365905] yes=763,no=764,missing=764,gain=4.63837921e+10,cover=27
-										763:leaf=10303.9785,cover=8
-										764:leaf=30182,cover=19
-								266:[latitude<1.00572968] yes=459,no=460,missing=460,gain=5.58942904e+10,cover=32
-									459:[total_rooms<-0.81215328] yes=765,no=766,missing=766,gain=1.63479378e+10,cover=29
-										765:leaf=14699.5801,cover=4
-										766:leaf=2048.34155,cover=25
-									460:leaf=-20952.8945,cover=3
-							144:[housing_median_age<-0.52756083] yes=267,no=268,missing=268,gain=4.9854677e+10,cover=28
-								267:[longitude<-1.45760918] yes=461,no=462,missing=462,gain=3.46488678e+09,cover=2
-									461:leaf=5204.73779,cover=1
-									462:leaf=-6595.2627,cover=1
-								268:[total_rooms<0.63359952] yes=463,no=464,missing=464,gain=4.17274921e+10,cover=26
-									463:[median_income<-1.06953204] yes=767,no=768,missing=768,gain=2.44555448e+10,cover=23
-										767:leaf=21582.5469,cover=9
-										768:leaf=40287.5781,cover=14
-									464:[households<4.34049559] yes=769,no=770,missing=770,gain=90772480,cover=3
-										769:leaf=7486.31641,cover=2
-										770:leaf=1864.73755,cover=1
-						72:[latitude<0.921456039] yes=145,no=146,missing=146,gain=3.65253427e+11,cover=445
-							145:[longitude<-1.14315689] yes=269,no=270,missing=270,gain=7.29473024e+10,cover=158
-								269:[median_income<-1.03347516] yes=465,no=466,missing=466,gain=2.35173929e+10,cover=118
-									465:[latitude<0.462633193] yes=771,no=772,missing=772,gain=1.69576366e+10,cover=12
-										771:leaf=29364.7383,cover=1
-										772:leaf=7708.68506,cover=11
-									466:[longitude<-1.33781779] yes=773,no=774,missing=774,gain=2.11872809e+10,cover=106
-										773:leaf=15303.5801,cover=4
-										774:leaf=1921.03345,cover=102
-								270:[population<-0.135528117] yes=467,no=468,missing=468,gain=3.80544983e+10,cover=40
-									467:[housing_median_age<-0.448102742] yes=775,no=776,missing=776,gain=6.37657539e+10,cover=13
-										775:leaf=16345.2646,cover=6
-										776:leaf=-9824.20996,cover=7
-									468:[median_income<-0.766706824] yes=777,no=778,missing=778,gain=3.74142566e+09,cover=27
-										777:leaf=-14418.2441,cover=8
-										778:leaf=-8027.99854,cover=19
-							146:[latitude<1.04786646] yes=271,no=272,missing=272,gain=2.08642376e+11,cover=287
-								271:[median_income<-0.728070676] yes=469,no=470,missing=470,gain=1.54282623e+11,cover=251
-									469:[longitude<-1.28790474] yes=779,no=780,missing=780,gain=3.69318953e+10,cover=149
-										779:leaf=-17908.1465,cover=138
-										780:leaf=-5267.98145,cover=11
-									470:[longitude<-1.3278352] yes=781,no=782,missing=782,gain=6.14757171e+10,cover=102
-										781:leaf=-427.178223,cover=38
-										782:leaf=-10565.1318,cover=64
-								272:[longitude<-1.35279179] yes=471,no=472,missing=472,gain=1.07830985e+11,cover=36
-									471:[median_income<-0.639323354] yes=783,no=784,missing=784,gain=5.47561267e+09,cover=17
-										783:leaf=-10905.9326,cover=10
-										784:leaf=-3124.20947,cover=7
-									472:[total_bedrooms<1.17977989] yes=785,no=786,missing=786,gain=6.72584909e+10,cover=19
-										785:leaf=19198.8965,cover=15
-										786:leaf=-8196.4209,cover=4
-					36:[latitude<1.42709756] yes=73,no=74,missing=74,gain=3.6215246e+11,cover=573
-						73:[longitude<-1.40270483] yes=147,no=148,missing=148,gain=1.00363665e+11,cover=228
-							147:[longitude<-1.5424614] yes=273,no=274,missing=274,gain=3.42828319e+10,cover=73
-								273:[median_income<-0.603055954] yes=473,no=474,missing=474,gain=7.40627251e+09,cover=56
-									473:[housing_median_age<-0.130270436] yes=787,no=788,missing=788,gain=3.54136064e+09,cover=41
-										787:leaf=-7995.78857,cover=16
-										788:leaf=-13095.5049,cover=25
-									474:[total_rooms<0.0592405312] yes=789,no=790,missing=790,gain=2.3583529e+09,cover=15
-										789:leaf=-3209.56812,cover=10
-										790:leaf=-8838.77148,cover=5
-								274:[total_bedrooms<0.73362118] yes=475,no=476,missing=476,gain=1.09963489e+10,cover=17
-									475:[median_income<-0.711121321] yes=791,no=792,missing=792,gain=1.3996201e+09,cover=13
-										791:leaf=-4589.02148,cover=6
-										792:leaf=-506.709381,cover=7
-									476:[latitude<1.0993669] yes=793,no=794,missing=794,gain=4.40827494e+09,cover=4
-										793:leaf=-1885.26257,cover=1
-										794:leaf=11372.1064,cover=3
-							148:[population<2.19661522] yes=275,no=276,missing=276,gain=3.48466053e+10,cover=155
-								275:[housing_median_age<-0.368644685] yes=477,no=478,missing=478,gain=1.85542902e+10,cover=153
-									477:[latitude<1.08532131] yes=795,no=796,missing=796,gain=1.68742912e+09,cover=34
-										795:leaf=-4977.89404,cover=3
-										796:leaf=-12691.4463,cover=31
-									478:[total_bedrooms<1.52626479] yes=797,no=798,missing=798,gain=1.04494531e+10,cover=119
-										797:leaf=-18513.2949,cover=118
-										798:leaf=1034.73755,cover=1
-								276:[housing_median_age<-1.63997388] yes=479,no=480,missing=480,gain=1.93299814e+09,cover=2
-									479:leaf=10364.7373,cover=1
-									480:leaf=-205.262497,cover=1
-						74:[median_income<-0.711121321] yes=149,no=150,missing=150,gain=1.90547231e+10,cover=345
-							149:leaf=-25325.0176,cover=255
-							150:leaf=-20845.5742,cover=90
-				18:[longitude<-0.144895419] yes=37,no=38,missing=38,gain=3.83539741e+11,cover=1732
-					37:[latitude<-0.0195989609] yes=75,no=76,missing=76,gain=2.80929239e+11,cover=1115
-						75:[longitude<-0.524234772] yes=151,no=152,missing=152,gain=8.48411034e+10,cover=81
-							151:[median_income<-1.08453381] yes=277,no=278,missing=278,gain=2.35538944e+10,cover=29
-								277:[population<-0.392496586] yes=481,no=482,missing=482,gain=1.22340803e+10,cover=4
-									481:leaf=-21013.6836,cover=2
-									482:[housing_median_age<-0.924851239] yes=799,no=800,missing=800,gain=47815408,cover=2
-										799:leaf=-1135.26257,cover=1
-										800:leaf=324.737518,cover=1
-								278:[housing_median_age<-1.56051588] yes=483,no=484,missing=484,gain=1.18900716e+10,cover=25
-									483:leaf=-9940.35059,cover=2
-									484:[total_rooms<0.393404722] yes=801,no=802,missing=802,gain=3.4552105e+09,cover=23
-										801:leaf=1653.62341,cover=16
-										802:leaf=6900.79053,cover=7
-							152:[latitude<-0.469058067] yes=279,no=280,missing=280,gain=3.61386803e+10,cover=52
-								279:leaf=9092.9834,cover=2
-								280:[latitude<-0.272419721] yes=485,no=486,missing=486,gain=1.66651167e+10,cover=50
-									485:[longitude<-0.424408615] yes=803,no=804,missing=804,gain=8.57358336e+09,cover=38
-										803:leaf=-18082.2246,cover=34
-										804:leaf=-6128.41992,cover=4
-									486:[housing_median_age<-0.289186597] yes=805,no=806,missing=806,gain=1.49419622e+09,cover=12
-										805:leaf=-8427.75,cover=10
-										806:leaf=-1540.34998,cover=2
-						76:[median_income<-0.783919394] yes=153,no=154,missing=154,gain=1.06781737e+11,cover=1034
-							153:[households<-1.17581892] yes=281,no=282,missing=282,gain=5.79867771e+10,cover=565
-								281:[total_rooms<-0.782816529] yes=487,no=488,missing=488,gain=6.55153889e+10,cover=18
-									487:[population<-1.13161206] yes=807,no=808,missing=808,gain=4.94313472e+09,cover=16
-										807:leaf=-17375.4883,cover=13
-										808:leaf=-5637.89404,cover=3
-									488:[longitude<-0.24971287] yes=809,no=810,missing=810,gain=2.17084088e+10,cover=2
-										809:leaf=29364.8379,cover=1
-										810:leaf=-3635.26245,cover=1
-								282:[housing_median_age<-0.924851239] yes=489,no=490,missing=490,gain=1.2979798e+10,cover=547
-									489:[total_rooms<1.73372853] yes=811,no=812,missing=812,gain=1.42475264e+09,cover=80
-										811:leaf=-20483.1445,cover=79
-										812:leaf=-5025.2627,cover=1
-									490:[total_bedrooms<-1.13882136] yes=813,no=814,missing=814,gain=5.02163046e+09,cover=467
-										813:leaf=-10262.8936,cover=3
-										814:leaf=-24384.0078,cover=464
-							154:[latitude<1.75014627] yes=283,no=284,missing=284,gain=1.43987835e+10,cover=469
-								283:[latitude<1.39900637] yes=491,no=492,missing=492,gain=1.1667243e+10,cover=429
-									491:[longitude<-0.988426328] yes=815,no=816,missing=816,gain=2.49555845e+10,cover=319
-										815:leaf=-11086.8135,cover=18
-										816:leaf=-19851.3516,cover=301
-									492:[longitude<-0.883608878] yes=817,no=818,missing=818,gain=2.12227195e+10,cover=110
-										817:leaf=-20501.8262,cover=37
-										818:leaf=-13850.6533,cover=73
-								284:[total_rooms<0.569425344] yes=493,no=494,missing=494,gain=953286656,cover=40
-									493:leaf=-23909.7637,cover=39
-									494:leaf=-6405.2627,cover=1
-					38:[households<-1.20720625] yes=77,no=78,missing=78,gain=4.70579937e+10,cover=617
-						77:[longitude<0.89329648] yes=155,no=156,missing=156,gain=1.44168182e+10,cover=9
-							155:[longitude<-0.109956272] yes=285,no=286,missing=286,gain=8.24685773e+09,cover=8
-								285:leaf=1864.73755,cover=1
-								286:[latitude<-0.347329557] yes=495,no=496,missing=496,gain=7.23567821e+09,cover=7
-									495:[longitude<0.728583336] yes=819,no=820,missing=820,gain=1.70401536e+09,cover=2
-										819:leaf=1864.73755,cover=1
-										820:leaf=-6885.2627,cover=1
-									496:leaf=-19308.7715,cover=5
-							156:leaf=6864.73779,cover=1
-						78:[median_income<-0.870613813] yes=157,no=158,missing=158,gain=4.62726103e+10,cover=608
-							157:[housing_median_age<-1.63997388] yes=287,no=288,missing=288,gain=766509056,cover=327
-								287:[median_income<-1.29018974] yes=497,no=498,missing=498,gain=1.34394388e+10,cover=6
-									497:leaf=1864.73755,cover=1
-									498:leaf=-21475.4375,cover=5
-								288:leaf=-29129.5,cover=321
-							158:[latitude<0.748227] yes=289,no=290,missing=290,gain=1.85055314e+10,cover=281
-								289:[latitude<-0.347329557] yes=499,no=500,missing=500,gain=1.01381571e+10,cover=266
-									499:[population<-0.864046931] yes=821,no=822,missing=822,gain=2.74752635e+10,cover=22
-										821:leaf=2486.31665,cover=2
-										822:leaf=-20906.2148,cover=20
-									500:leaf=-25807.3809,cover=244
-								290:[total_bedrooms<0.29220888] yes=501,no=502,missing=502,gain=8.76920013e+09,cover=15
-									501:leaf=-18148.1777,cover=12
-									502:leaf=-4302.89404,cover=3
-		4:[housing_median_age<0.823226511] yes=9,no=10,missing=10,gain=3.62889924e+12,cover=6077
-			9:[latitude<1.10404885] yes=19,no=20,missing=20,gain=1.76339367e+12,cover=4806
-				19:[longitude<0.908270419] yes=39,no=40,missing=40,gain=1.84548629e+12,cover=3980
-					39:[longitude<-1.14315689] yes=79,no=80,missing=80,gain=9.76449307e+11,cover=3018
-						79:[longitude<-1.29788733] yes=159,no=160,missing=160,gain=2.57719009e+11,cover=574
-							159:[latitude<1.06191206] yes=291,no=292,missing=292,gain=2.04335219e+11,cover=161
-								291:[latitude<0.902728558] yes=503,no=504,missing=504,gain=1.03338213e+11,cover=127
-									503:[median_income<0.0598644353] yes=823,no=824,missing=824,gain=5.88635832e+10,cover=28
-										823:leaf=17790.2852,cover=12
-										824:leaf=38854.8359,cover=16
-									504:[latitude<0.982320309] yes=825,no=826,missing=826,gain=5.30852086e+10,cover=99
-										825:leaf=13005.5127,cover=67
-										826:leaf=23387.9824,cover=32
-								292:[longitude<-1.45760918] yes=505,no=506,missing=506,gain=1.34693839e+11,cover=34
-									505:[total_rooms<-0.425274611] yes=827,no=828,missing=828,gain=2.03414897e+10,cover=11
-										827:leaf=6123.58008,cover=4
-										828:leaf=25618.3164,cover=7
-									506:[longitude<-1.36776567] yes=829,no=830,missing=830,gain=8.55487078e+09,cover=23
-										829:leaf=-9267.15723,cover=14
-										830:leaf=-1301.47253,cover=9
-							160:[latitude<0.855909944] yes=293,no=294,missing=294,gain=3.75028285e+11,cover=413
-								293:[longitude<-1.22301781] yes=507,no=508,missing=508,gain=7.32670198e+10,cover=218
-									507:[latitude<0.790363789] yes=831,no=832,missing=832,gain=8.1970135e+10,cover=63
-										831:leaf=5945.61523,cover=17
-										832:leaf=22593.5449,cover=46
-									508:[latitude<0.823136866] yes=833,no=834,missing=834,gain=8.34842132e+10,cover=155
-										833:leaf=11793.9639,cover=135
-										834:leaf=-1955.73816,cover=20
-								294:[total_bedrooms<-1.13882136] yes=509,no=510,missing=510,gain=3.61760686e+10,cover=195
-									509:leaf=22206.3184,cover=2
-									510:[housing_median_age<0.346478015] yes=835,no=836,missing=836,gain=2.83683e+10,cover=193
-										835:leaf=1898.43091,cover=123
-										836:leaf=-3114.88379,cover=70
-						80:[latitude<-0.525240481] yes=161,no=162,missing=162,gain=2.68627948e+12,cover=2444
-							161:[longitude<0.633748472] yes=295,no=296,missing=296,gain=1.72610224e+12,cover=1751
-								295:[latitude<-0.679742038] yes=511,no=512,missing=512,gain=1.34994094e+12,cover=627
-									511:[longitude<0.598809361] yes=837,no=838,missing=838,gain=6.19664376e+11,cover=292
-										837:leaf=30920,cover=164
-										838:leaf=12224.6006,cover=128
-									512:[longitude<0.164565623] yes=839,no=840,missing=840,gain=3.66215692e+11,cover=335
-										839:leaf=19623.5352,cover=51
-										840:leaf=1361.51257,cover=284
-								296:[latitude<-0.932562768] yes=513,no=514,missing=514,gain=3.369752e+11,cover=1124
-									513:[housing_median_age<-0.607018888] yes=841,no=842,missing=842,gain=8.09067807e+10,cover=15
-										841:leaf=-752.893738,cover=3
-										842:leaf=35438.0234,cover=12
-									514:[total_rooms<-0.292800725] yes=843,no=844,missing=844,gain=2.08941105e+11,cover=1109
-										843:leaf=-3572.83008,cover=515
-										844:leaf=1926.70374,cover=594
-							162:[longitude<-0.24971287] yes=297,no=298,missing=298,gain=8.52884062e+11,cover=693
-								297:[latitude<0.776318192] yes=515,no=516,missing=516,gain=2.66535682e+11,cover=415
-									515:[households<-0.739012659] yes=845,no=846,missing=846,gain=1.70301112e+11,cover=204
-										845:leaf=21212.8711,cover=14
-										846:leaf=-919.370422,cover=190
-									516:[longitude<-0.85366106] yes=847,no=848,missing=848,gain=1.09347996e+11,cover=211
-										847:leaf=-3711.59033,cover=83
-										848:leaf=-13077.2646,cover=128
-								298:[latitude<-0.347329557] yes=517,no=518,missing=518,gain=5.69688719e+10,cover=278
-									517:[median_income<0.370743245] yes=849,no=850,missing=850,gain=2.46653092e+10,cover=46
-										849:leaf=-14433.0107,cover=35
-										850:leaf=-3252.9812,cover=11
-									518:[latitude<0.781000078] yes=851,no=852,missing=852,gain=4.75230372e+10,cover=232
-										851:leaf=-20959.168,cover=213
-										852:leaf=-9738.99902,cover=19
-					40:[latitude<-0.806152403] yes=81,no=82,missing=82,gain=6.86590525e+11,cover=962
-						81:[longitude<1.19277489] yes=163,no=164,missing=164,gain=5.09597975e+11,cover=624
-							163:[latitude<-1.18070161] yes=299,no=300,missing=300,gain=2.39972434e+11,cover=229
-								299:[longitude<1.16282701] yes=519,no=520,missing=520,gain=2.6033478e+11,cover=83
-									519:[latitude<-1.24156594] yes=853,no=854,missing=854,gain=1.08090032e+11,cover=34
-										853:leaf=39117.4297,cover=13
-										854:leaf=15093.5986,cover=21
-									520:[latitude<-1.35393071] yes=855,no=856,missing=856,gain=4.12825395e+10,cover=49
-										855:leaf=25246.3828,cover=2
-										856:leaf=1018.44427,cover=47
-								300:[longitude<1.09294879] yes=521,no=522,missing=522,gain=6.33642639e+10,cover=146
-									521:[latitude<-1.0168364] yes=857,no=858,missing=858,gain=1.22362806e+11,cover=74
-										857:leaf=22128.6504,cover=10
-										858:leaf=-696.510803,cover=64
-									522:[latitude<-1.13856483] yes=859,no=860,missing=860,gain=4.59202642e+10,cover=72
-										859:leaf=2419.50952,cover=20
-										860:leaf=-8725.4209,cover=52
-							164:[longitude<1.58708811] yes=301,no=302,missing=302,gain=1.27394906e+11,cover=395
-								301:[latitude<-1.27433896] yes=523,no=524,missing=524,gain=7.00598845e+10,cover=354
-									523:[longitude<1.20774877] yes=861,no=862,missing=862,gain=2.95362888e+10,cover=234
-										861:leaf=-2672.35742,cover=26
-										862:leaf=-9945.49902,cover=208
-									524:[median_income<-0.063518554] yes=863,no=864,missing=864,gain=3.31740938e+10,cover=120
-										863:leaf=-7331.15234,cover=46
-										864:leaf=-528.781982,cover=74
-								302:[total_rooms<4.50651169] yes=525,no=526,missing=526,gain=5.04125194e+10,cover=41
-									525:[latitude<-1.33988512] yes=865,no=866,missing=866,gain=1.20347034e+09,cover=35
-										865:leaf=-8660.35059,cover=2
-										866:leaf=-22212.5684,cover=33
-									526:[latitude<-0.895107865] yes=867,no=868,missing=868,gain=2.8360896e+09,cover=6
-										867:leaf=5174.73779,cover=1
-										868:leaf=-3608.77075,cover=5
-						82:[population<-1.13161206] yes=165,no=166,missing=166,gain=6.19275878e+10,cover=338
-							165:[longitude<1.04802704] yes=303,no=304,missing=304,gain=6.01283297e+10,cover=4
-								303:leaf=26819.6504,cover=2
-								304:leaf=-13653.6826,cover=2
-							166:[latitude<-0.469058067] yes=305,no=306,missing=306,gain=4.08096604e+10,cover=334
-								305:[median_income<0.160192072] yes=527,no=528,missing=528,gain=3.17183754e+10,cover=314
-									527:[longitude<1.00809658] yes=869,no=870,missing=870,gain=2.0692992e+10,cover=213
-										869:leaf=-12602.5498,cover=58
-										870:leaf=-17656.9961,cover=155
-									528:[longitude<1.00809658] yes=871,no=872,missing=872,gain=8.18131763e+09,cover=101
-										871:leaf=-7940.12061,cover=25
-										872:leaf=-12819.999,cover=76
-								306:[total_rooms<2.61933231] yes=529,no=530,missing=530,gain=4.65875763e+09,cover=20
-									529:leaf=-25394.998,cover=19
-									530:leaf=-4865.2627,cover=1
-				20:[longitude<-1.40270483] yes=41,no=42,missing=42,gain=3.03861858e+11,cover=826
-					41:[latitude<1.42709756] yes=83,no=84,missing=84,gain=3.66923678e+11,cover=197
-						83:[median_income<0.142084673] yes=167,no=168,missing=168,gain=6.78212649e+10,cover=134
-							167:[households<-0.296975136] yes=307,no=308,missing=308,gain=1.96428636e+10,cover=89
-								307:[median_income<-0.218800038] yes=531,no=532,missing=532,gain=1.4873985e+10,cover=42
-									531:[households<-0.639619589] yes=873,no=874,missing=874,gain=1.50810522e+10,cover=10
-										873:leaf=8546.31641,cover=2
-										874:leaf=-8051.57812,cover=8
-									532:[latitude<1.30536902] yes=875,no=876,missing=876,gain=1.22727444e+10,cover=32
-										875:leaf=6817.75879,cover=22
-										876:leaf=-1449.56824,cover=10
-								308:[total_rooms<0.652393401] yes=533,no=534,missing=534,gain=1.17383342e+10,cover=47
-									533:[latitude<1.1134125] yes=877,no=878,missing=878,gain=7.4257449e+09,cover=35
-										877:leaf=7064.73779,cover=1
-										878:leaf=-6074.22412,cover=34
-									534:[total_bedrooms<0.90686363] yes=879,no=880,missing=880,gain=1.06171064e+10,cover=12
-										879:leaf=12059.6504,cover=2
-										880:leaf=-1400.47729,cover=10
-							168:[housing_median_age<-0.52756083] yes=309,no=310,missing=310,gain=2.07531868e+10,cover=45
-								309:[population<-0.189394355] yes=535,no=536,missing=536,gain=6.25294336e+09,cover=20
-									535:[population<-0.593832672] yes=881,no=882,missing=882,gain=4.7683369e+09,cover=8
-										881:leaf=-787.016663,cover=2
-										882:leaf=9919.5498,cover=6
-									536:[median_income<0.221620366] yes=883,no=884,missing=884,gain=1.47595661e+09,cover=12
-										883:leaf=4346.31689,cover=2
-										884:leaf=-665.931824,cover=10
-								310:[median_income<0.599822938] yes=537,no=538,missing=538,gain=2.00741683e+09,cover=25
-									537:[housing_median_age<-0.289186597] yes=885,no=886,missing=886,gain=826531840,cover=24
-										885:leaf=8468.42188,cover=8
-										886:leaf=14099.5068,cover=16
-									538:leaf=1604.73755,cover=1
-						84:[median_income<0.142084673] yes=169,no=170,missing=170,gain=1.25081027e+10,cover=63
-							169:[latitude<1.75014627] yes=311,no=312,missing=312,gain=9.23949466e+09,cover=61
-								311:[longitude<-2.00166178] yes=539,no=540,missing=540,gain=3.06737971e+10,cover=30
-									539:[median_income<-0.392504752] yes=887,no=888,missing=888,gain=1.97216742e+09,cover=4
-										887:leaf=-1560.34998,cover=2
-										888:leaf=5952.9834,cover=2
-									540:[population<0.117908128] yes=889,no=890,missing=890,gain=1.3479936e+09,cover=26
-										889:leaf=-15870.8896,cover=25
-										890:leaf=-3445.26245,cover=1
-								312:leaf=-19489.5723,cover=31
-							170:[longitude<-2.00166178] yes=313,no=314,missing=314,gain=1.44536781e+09,cover=2
-								313:leaf=-4075.26245,cover=1
-								314:leaf=3534.73755,cover=1
-					42:[median_income<0.0088584125] yes=85,no=86,missing=86,gain=1.76099164e+11,cover=629
-						85:[total_bedrooms<28.0374241] yes=171,no=172,missing=172,gain=2.66681713e+10,cover=323
-							171:[housing_median_age<-0.209728524] yes=315,no=316,missing=316,gain=1.17077443e+10,cover=321
-								315:[latitude<1.75014627] yes=541,no=542,missing=542,gain=7.41133517e+09,cover=227
-									541:[longitude<-1.35778308] yes=891,no=892,missing=892,gain=5.1667927e+09,cover=197
-										891:leaf=-6162.10449,cover=5
-										892:leaf=-14588.6045,cover=192
-									542:leaf=-18822.4434,cover=30
-								316:[latitude<1.42241561] yes=543,no=544,missing=544,gain=5.17020058e+09,cover=94
-									543:[longitude<-1.34780049] yes=893,no=894,missing=894,gain=5.74180557e+09,cover=61
-										893:leaf=-8226.16406,cover=6
-										894:leaf=-17143.5527,cover=55
-									544:[housing_median_age<0.743768394] yes=895,no=896,missing=896,gain=1.54422477e+09,cover=33
-										895:leaf=-21699.2969,cover=32
-										896:leaf=-5325.2627,cover=1
-							172:[longitude<-1.31785262] yes=317,no=318,missing=318,gain=2.11575153e+10,cover=2
-								317:leaf=-10965.2627,cover=1
-								318:leaf=18444.7383,cover=1
-						86:[longitude<-0.833695829] yes=173,no=174,missing=174,gain=3.59384351e+10,cover=306
-							173:[longitude<-1.20305252] yes=319,no=320,missing=320,gain=3.12686674e+10,cover=223
-								319:[median_income<0.234516636] yes=545,no=546,missing=546,gain=1.94461164e+10,cover=62
-									545:[longitude<-1.35279179] yes=897,no=898,missing=898,gain=1.48202291e+09,cover=23
-										897:leaf=-7347.47266,cover=9
-										898:leaf=-12768.4902,cover=14
-									546:[latitude<1.28195965] yes=899,no=900,missing=900,gain=2.15393157e+10,cover=39
-										899:leaf=-5472.51025,cover=34
-										900:leaf=7594.5625,cover=5
-								320:[latitude<1.42709756] yes=547,no=548,missing=548,gain=1.45723884e+10,cover=161
-									547:[median_income<0.323369235] yes=901,no=902,missing=902,gain=6.66520781e+09,cover=125
-										901:leaf=-11917.46,cover=84
-										902:leaf=-8231.22656,cover=41
-									548:[housing_median_age<-0.607018888] yes=903,no=904,missing=904,gain=3.61414656e+09,cover=36
-										903:leaf=-12679.1377,cover=21
-										904:leaf=-19153.6172,cover=15
-							174:[longitude<-0.60908699] yes=321,no=322,missing=322,gain=1.55662008e+10,cover=83
-								321:[median_income<0.0997638777] yes=549,no=550,missing=550,gain=3.80087706e+09,cover=57
-									549:leaf=-6648.17676,cover=12
-									550:[median_income<0.107554272] yes=905,no=906,missing=906,gain=4.69327616e+09,cover=45
-										905:leaf=5226.31689,cover=2
-										906:leaf=-3094.37671,cover=43
-								322:[total_rooms<1.73372853] yes=551,no=552,missing=552,gain=9.8698199e+09,cover=26
-									551:[population<-1.05655253] yes=907,no=908,missing=908,gain=1.38219438e+10,cover=24
-										907:leaf=-2644.20947,cover=7
-										908:leaf=-13571.0518,cover=17
-									552:[longitude<-0.24971287] yes=909,no=910,missing=910,gain=7.25763942e+09,cover=2
-										909:leaf=-6505.2627,cover=1
-										910:leaf=10704.7373,cover=1
-			10:[longitude<-1.39272225] yes=21,no=22,missing=22,gain=1.89136844e+12,cover=1271
-				21:[latitude<1.16959488] yes=43,no=44,missing=44,gain=6.93731328e+11,cover=288
-					43:[latitude<1.00104773] yes=87,no=88,missing=88,gain=9.62015527e+11,cover=260
-						87:[latitude<0.987002134] yes=175,no=176,missing=176,gain=1.17045068e+11,cover=158
-							175:[latitude<0.921456039] yes=323,no=324,missing=324,gain=1.48083229e+11,cover=71
-								323:[latitude<0.748227] yes=553,no=554,missing=554,gain=1.21633669e+10,cover=6
-									553:leaf=7974.73779,cover=1
-									554:leaf=42707.9648,cover=5
-								324:[longitude<-1.41268742] yes=555,no=556,missing=556,gain=7.90095462e+09,cover=65
-									555:[total_bedrooms<0.86889267] yes=911,no=912,missing=912,gain=4.21879808e+09,cover=56
-										911:leaf=8223.48438,cover=54
-										912:leaf=17519.6504,cover=2
-									556:[median_income<-0.206482798] yes=913,no=914,missing=914,gain=222469120,cover=9
-										913:leaf=3437.1062,cover=3
-										914:leaf=1156.69287,cover=6
-							176:[longitude<-1.41767871] yes=325,no=326,missing=326,gain=5.65190984e+10,cover=87
-								325:[longitude<-1.45760918] yes=557,no=558,missing=558,gain=3.3408811e+10,cover=72
-									557:leaf=14186.1768,cover=14
-									558:[latitude<0.99168402] yes=915,no=916,missing=916,gain=6.18017587e+09,cover=58
-										915:leaf=20103.0371,cover=16
-										916:leaf=28976.707,cover=42
-								326:[total_rooms<-1.11835587] yes=559,no=560,missing=560,gain=8.61647258e+09,cover=15
-									559:leaf=-4385.2627,cover=1
-									560:[housing_median_age<1.53834915] yes=917,no=918,missing=918,gain=966664192,cover=14
-										917:leaf=2324.73755,cover=1
-										918:leaf=11930.2266,cover=13
-						88:[longitude<-1.44762659] yes=177,no=178,missing=178,gain=1.93477476e+11,cover=102
-							177:[latitude<1.10404885] yes=327,no=328,missing=328,gain=1.5306326e+10,cover=30
-								327:[total_rooms<-1.11835587] yes=561,no=562,missing=562,gain=4.17778893e+09,cover=25
-									561:leaf=6864.73779,cover=1
-									562:leaf=30216.2969,cover=24
-								328:leaf=13027.8965,cover=5
-							178:[latitude<1.02913892] yes=329,no=330,missing=330,gain=5.83238943e+10,cover=72
-								329:[total_rooms<-1.02438653] yes=563,no=564,missing=564,gain=2.9591339e+10,cover=70
-									563:leaf=6864.73779,cover=1
-									564:leaf=49731.7188,cover=69
-								330:leaf=9119.65039,cover=2
-					44:[longitude<-1.6472789] yes=89,no=90,missing=90,gain=4.21182218e+10,cover=28
-						89:leaf=-17971.709,cover=7
-						90:[median_income<0.0856043175] yes=179,no=180,missing=180,gain=5.59159654e+09,cover=21
-							179:[housing_median_age<1.61780727] yes=331,no=332,missing=332,gain=2.38608051e+09,cover=17
-								331:[total_rooms<-0.24237816] yes=565,no=566,missing=566,gain=3.27664333e+09,cover=12
-									565:[median_income<-0.0336202867] yes=919,no=920,missing=920,gain=1.47525632e+09,cover=8
-										919:leaf=-7420.4502,cover=6
-										920:leaf=-807.016663,cover=2
-									566:[latitude<1.33346021] yes=921,no=922,missing=922,gain=70593256,cover=4
-										921:leaf=1087.10632,cover=3
-										922:leaf=-465.262512,cover=1
-								332:[households<-0.414677441] yes=567,no=568,missing=568,gain=1.57338611e+09,cover=5
-									567:leaf=4386.31689,cover=2
-									568:[longitude<-1.58738315] yes=923,no=924,missing=924,gain=13198752,cover=3
-										923:leaf=-2305.26245,cover=1
-										924:leaf=-753.68335,cover=2
-							180:leaf=5091.58008,cover=4
-				22:[median_income<0.17908904] yes=45,no=46,missing=46,gain=9.4909517e+11,cover=983
-					45:[total_bedrooms<-0.158696145] yes=91,no=92,missing=91,gain=6.47763001e+11,cover=717
-						91:[latitude<1.08063948] yes=181,no=182,missing=182,gain=2.78475145e+11,cover=541
-							181:[latitude<-0.7686975] yes=333,no=334,missing=334,gain=1.96822106e+11,cover=484
-								333:[latitude<-0.941926479] yes=569,no=570,missing=570,gain=1.03098597e+11,cover=137
-									569:[longitude<1.20774877] yes=925,no=926,missing=926,gain=1.24649202e+11,cover=18
-										925:leaf=24626.2227,cover=8
-										926:leaf=-7278.65967,cover=10
-									570:[longitude<0.608791947] yes=927,no=928,missing=928,gain=4.58837524e+10,cover=119
-										927:leaf=4141.34131,cover=10
-										928:leaf=-9666.97559,cover=109
-								334:[latitude<-0.70783323] yes=571,no=572,missing=572,gain=2.06705558e+11,cover=347
-									571:[longitude<0.61378324] yes=929,no=930,missing=930,gain=3.07536069e+11,cover=121
-										929:leaf=22347.4961,cover=44
-										930:leaf=1514.22534,cover=77
-									572:[longitude<0.778496385] yes=931,no=932,missing=932,gain=7.74098207e+10,cover=226
-										931:leaf=-340.340729,cover=220
-										932:leaf=-21706.1934,cover=6
-							182:[total_bedrooms<-0.804202318] yes=335,no=336,missing=335,gain=1.3386711e+09,cover=57
-								335:leaf=-17996.4902,cover=14
-								336:[longitude<-0.933521926] yes=573,no=574,missing=574,gain=1.23892531e+09,cover=43
-									573:[total_rooms<-0.297843009] yes=933,no=934,missing=934,gain=1.90808064e+09,cover=31
-										933:leaf=-12267.9131,cover=26
-										934:leaf=-5832.10449,cover=5
-									574:leaf=-16305.1006,cover=12
-						92:[latitude<-0.558013499] yes=183,no=184,missing=184,gain=2.4504782e+11,cover=176
-							183:[population<-0.135528117] yes=337,no=338,missing=338,gain=2.13596832e+11,cover=121
-								337:[longitude<1.21274018] yes=575,no=576,missing=576,gain=5.78385347e+10,cover=55
-									575:[median_income<-0.282860249] yes=935,no=936,missing=936,gain=3.84814285e+10,cover=53
-										935:leaf=18014.5059,cover=17
-										936:leaf=31788.166,cover=36
-									576:[longitude<1.22771406] yes=937,no=938,missing=938,gain=1.36491712e+09,cover=2
-										937:leaf=674.737488,cover=1
-										938:leaf=-7775.2627,cover=1
-								338:[total_bedrooms<0.586483777] yes=577,no=578,missing=578,gain=2.25529217e+11,cover=66
-									577:[households<0.126753137] yes=939,no=940,missing=940,gain=5.04701256e+10,cover=49
-										939:leaf=-5150.97607,cover=20
-										940:leaf=7651.15967,cover=29
-									578:[population<1.77098358] yes=941,no=942,missing=942,gain=3.43484989e+10,cover=17
-										941:leaf=30805.4258,cover=16
-										942:leaf=-3875.26245,cover=1
-							184:[longitude<-1.02835679] yes=339,no=340,missing=340,gain=5.50964838e+10,cover=55
-								339:[latitude<1.06191206] yes=579,no=580,missing=580,gain=3.95745157e+10,cover=47
-									579:[median_income<-0.175110668] yes=943,no=944,missing=944,gain=2.77171118e+10,cover=40
-										943:leaf=1731.58032,cover=23
-										944:leaf=12300.0596,cover=17
-									580:[latitude<1.07127571] yes=945,no=946,missing=946,gain=3.33047603e+09,cover=7
-										945:leaf=-2687.8938,cover=3
-										946:leaf=-12312.4209,cover=4
-								340:[population<-0.170850247] yes=581,no=582,missing=582,gain=4.97614848e+09,cover=8
-									581:[total_rooms<0.193547949] yes=947,no=948,missing=948,gain=677830656,cover=6
-										947:leaf=-16885.4375,cover=5
-										948:leaf=-4185.2627,cover=1
-									582:leaf=-2700.3501,cover=2
-					46:[latitude<-0.871698499] yes=93,no=94,missing=94,gain=1.55298955e+11,cover=266
-						93:[longitude<1.19776618] yes=185,no=186,missing=186,gain=1.93240433e+10,cover=14
-							185:[total_bedrooms<-0.728260398] yes=341,no=342,missing=342,gain=1.44360079e+10,cover=12
-								341:[longitude<0.71860069] yes=583,no=584,missing=584,gain=9.09354496e+09,cover=2
-									583:leaf=21244.7383,cover=1
-									584:leaf=-1095.26257,cover=1
-								342:leaf=42535.9414,cover=10
-							186:leaf=10539.6504,cover=2
-						94:[longitude<0.618774593] yes=187,no=188,missing=188,gain=2.5346415e+11,cover=252
-							187:[latitude<0.921456039] yes=343,no=344,missing=344,gain=3.24573725e+11,cover=147
-								343:[total_bedrooms<-0.255996704] yes=585,no=586,missing=586,gain=6.05383557e+10,cover=108
-									585:[population<-0.464023888] yes=949,no=950,missing=950,gain=3.07640402e+10,cover=75
-										949:leaf=24121.1934,cover=58
-										950:leaf=13018.96,cover=17
-									586:[population<-0.243260607] yes=951,no=952,missing=952,gain=2.07586591e+10,cover=33
-										951:leaf=39058.4805,cover=18
-										952:leaf=24253.8965,cover=15
-								344:[latitude<1.08532131] yes=587,no=588,missing=588,gain=4.45067346e+10,cover=39
-									587:[longitude<-1.31785262] yes=953,no=954,missing=954,gain=2.85911613e+10,cover=28
-										953:leaf=14863.085,cover=13
-										954:leaf=2127.63281,cover=15
-									588:[total_rooms<0.155501813] yes=955,no=956,missing=956,gain=3.35187149e+09,cover=11
-										955:leaf=-7265.93213,cover=10
-										956:leaf=2744.73755,cover=1
-							188:[latitude<-0.717196941] yes=345,no=346,missing=346,gain=1.05904988e+11,cover=105
-								345:[latitude<-0.834243596] yes=589,no=590,missing=590,gain=4.3916374e+10,cover=57
-									589:[longitude<0.688652873] yes=957,no=958,missing=958,gain=3.2788267e+10,cover=24
-										957:leaf=-4740.4502,cover=6
-										958:leaf=11597.3975,cover=18
-									590:[latitude<-0.726560652] yes=959,no=960,missing=960,gain=1.25382502e+10,cover=33
-										959:leaf=-5373.7207,cover=27
-										960:leaf=4205.26465,cover=6
-								346:[median_income<0.433592767] yes=591,no=592,missing=592,gain=3.3284948e+10,cover=48
-									591:[total_rooms<-0.80206877] yes=961,no=962,missing=962,gain=2.1858644e+10,cover=27
-										961:leaf=-4140.41992,cover=4
-										962:leaf=10988.2471,cover=23
-									592:[total_bedrooms<-0.329565436] yes=963,no=964,missing=964,gain=3.05047634e+10,cover=21
-										963:leaf=26895.3535,cover=11
-										964:leaf=10226.7959,cover=10
-	2:[median_income<1.65257883] yes=5,no=6,missing=6,gain=1.13174779e+13,cover=3160
-		5:[housing_median_age<0.664310336] yes=11,no=12,missing=12,gain=2.18041313e+12,cover=2317
-			11:[median_income<1.0109241] yes=23,no=24,missing=24,gain=1.28668978e+12,cover=1939
-				23:[housing_median_age<-0.845393121] yes=47,no=48,missing=48,gain=5.81537366e+11,cover=1070
-					47:[latitude<-0.815516114] yes=95,no=96,missing=96,gain=1.0463427e+11,cover=401
-						95:[longitude<1.20774877] yes=189,no=190,missing=190,gain=8.31221432e+10,cover=136
-							189:[latitude<-0.932562768] yes=347,no=348,missing=348,gain=6.78064292e+10,cover=96
-								347:[latitude<-1.13856483] yes=593,no=594,missing=594,gain=3.38046812e+10,cover=38
-									593:[longitude<1.17280972] yes=965,no=966,missing=966,gain=7.70347418e+09,cover=13
-										965:leaf=4630.52734,cover=9
-										966:leaf=15307.5801,cover=4
-									594:[median_income<0.664462149] yes=967,no=968,missing=968,gain=1.68002847e+10,cover=25
-										967:leaf=7791.57959,cover=4
-										968:leaf=24604.5371,cover=21
-								348:[longitude<0.89329648] yes=595,no=596,missing=596,gain=4.88733983e+10,cover=58
-									595:[median_income<0.793266833] yes=969,no=970,missing=970,gain=1.91499387e+10,cover=37
-										969:leaf=6812.68066,cover=21
-										970:leaf=16448.9297,cover=16
-									596:[total_rooms<0.0436553732] yes=971,no=972,missing=972,gain=3.5239831e+09,cover=21
-										971:leaf=-3485.47266,cover=9
-										972:leaf=1516.43848,cover=12
-							190:[total_rooms<-0.600378454] yes=349,no=350,missing=350,gain=3.16216279e+10,cover=40
-								349:[longitude<1.45232284] yes=597,no=598,missing=598,gain=887085056,cover=8
-									597:[longitude<1.31256628] yes=973,no=974,missing=974,gain=528072704,cover=7
-										973:leaf=-7777.59326,cover=6
-										974:leaf=-1255.26257,cover=1
-									598:leaf=-15885.2627,cover=1
-								350:[households<0.427547902] yes=599,no=600,missing=600,gain=1.32628173e+10,cover=32
-									599:[median_income<0.860643208] yes=975,no=976,missing=976,gain=1.61298186e+10,cover=20
-										975:leaf=-4246.63818,cover=12
-										976:leaf=6768.42188,cover=8
-									600:[population<1.19964826] yes=977,no=978,missing=978,gain=5.89157171e+09,cover=12
-										977:leaf=11350.6445,cover=8
-										978:leaf=1647.58008,cover=4
-						96:[longitude<-0.933521926] yes=191,no=192,missing=192,gain=7.25692088e+10,cover=265
-							191:[latitude<1.07127571] yes=351,no=352,missing=352,gain=8.4097409e+10,cover=100
-								351:[latitude<0.518815577] yes=601,no=602,missing=602,gain=5.24358451e+09,cover=52
-									601:leaf=-1635.26257,cover=1
-									602:[latitude<0.748227] yes=979,no=980,missing=980,gain=6.62555853e+09,cover=51
-										979:leaf=18964.5625,cover=5
-										980:leaf=10342.0391,cover=46
-								352:[longitude<-1.48755705] yes=603,no=604,missing=604,gain=4.21945917e+10,cover=48
-									603:[population<-0.196458787] yes=981,no=982,missing=982,gain=6.53292544e+09,cover=13
-										981:leaf=12863.291,cover=7
-										982:leaf=3356.69312,cover=6
-									604:[total_bedrooms<-0.165815711] yes=983,no=984,missing=983,gain=5.82956646e+09,cover=35
-										983:leaf=-7542.98145,cover=11
-										984:leaf=-2011.70398,cover=24
-							192:[latitude<-0.141327471] yes=353,no=354,missing=354,gain=9.12864215e+10,cover=165
-								353:[longitude<0.663696349] yes=605,no=606,missing=606,gain=1.12029573e+11,cover=92
-									605:[median_income<0.742892444] yes=985,no=986,missing=986,gain=2.8187009e+10,cover=35
-										985:leaf=2570.43188,cover=10
-										986:leaf=15362.1875,cover=25
-									606:[total_bedrooms<2.34501338] yes=987,no=988,missing=988,gain=2.50763571e+10,cover=57
-										987:leaf=-4604.95801,cover=44
-										988:leaf=5113.08398,cover=13
-								354:[longitude<-0.484304309] yes=607,no=608,missing=608,gain=8.39695811e+10,cover=73
-									607:[longitude<-0.753834903] yes=989,no=990,missing=990,gain=1.6351617e+10,cover=42
-										989:leaf=-2466.68604,cover=33
-										990:leaf=6734.52734,cover=9
-									608:[latitude<0.570316136] yes=991,no=992,missing=992,gain=1.87845837e+09,cover=31
-										991:leaf=-15171.7051,cover=24
-										992:leaf=-8559.20996,cover=7
-					48:[longitude<0.623765886] yes=97,no=98,missing=98,gain=3.18005051e+11,cover=669
-						97:[latitude<-0.679742038] yes=193,no=194,missing=194,gain=6.94038823e+11,cover=413
-							193:[longitude<0.603800654] yes=355,no=356,missing=356,gain=1.26636917e+11,cover=60
-								355:[latitude<-0.684423864] yes=609,no=610,missing=610,gain=2.98306765e+09,cover=43
-									609:[longitude<0.588826716] yes=993,no=994,missing=994,gain=5.09162291e+09,cover=37
-										993:leaf=49149.1836,cover=23
-										994:leaf=33963.5234,cover=14
-									610:[total_bedrooms<-0.312953144] yes=995,no=996,missing=996,gain=9.81856256e+09,cover=6
-										995:leaf=8726.31641,cover=2
-										996:leaf=31927.6191,cover=4
-								356:[latitude<-0.824879885] yes=611,no=612,missing=612,gain=875626496,cover=17
-									611:leaf=21997.3711,cover=13
-									612:[total_rooms<-0.852949739] yes=997,no=998,missing=998,gain=1.31872461e+09,cover=4
-										997:leaf=2124.73755,cover=1
-										998:leaf=13037.1064,cover=3
-							194:[longitude<-1.22301781] yes=357,no=358,missing=358,gain=2.98504159e+11,cover=353
-								357:[latitude<0.893364847] yes=613,no=614,missing=614,gain=2.41838195e+11,cover=112
-									613:[median_income<0.690465212] yes=999,no=1000,missing=1000,gain=1.57813309e+10,cover=38
-										999:leaf=24308.7617,cover=12
-										1000:leaf=38705.4492,cover=26
-									614:[longitude<-1.3328265] yes=1001,no=1002,missing=1002,gain=6.36666184e+10,cover=74
-										1001:leaf=19161.2871,cover=49
-										1002:leaf=6438.34131,cover=25
-								358:[latitude<0.958910942] yes=615,no=616,missing=616,gain=1.89751034e+11,cover=241
-									615:[longitude<0.269383073] yes=1003,no=1004,missing=1004,gain=1.26453219e+11,cover=200
-										1003:leaf=15347.8281,cover=138
-										1004:leaf=4394.40381,cover=62
-									616:[total_rooms<-0.821321011] yes=1005,no=1006,missing=1006,gain=2.7631874e+10,cover=41
-										1005:leaf=-14349.0225,cover=6
-										1006:leaf=-565.788208,cover=35
-						98:[longitude<1.19277489] yes=195,no=196,missing=196,gain=1.0010411e+11,cover=256
-							195:[latitude<-0.885744095] yes=359,no=360,missing=360,gain=1.68534802e+11,cover=233
-								359:[housing_median_age<0.267019957] yes=617,no=618,missing=618,gain=9.11671951e+10,cover=57
-									617:[housing_median_age<-0.130270436] yes=1007,no=1008,missing=1008,gain=1.35637565e+10,cover=40
-										1007:leaf=14459.7842,cover=33
-										1008:leaf=4048.29077,cover=7
-									618:[longitude<1.16781831] yes=1009,no=1010,missing=1010,gain=8.43799593e+10,cover=17
-										1009:leaf=36752.8984,cover=14
-										1010:leaf=7.10625029,cover=3
-								360:[total_bedrooms<-0.566883862] yes=619,no=620,missing=619,gain=4.22880051e+10,cover=176
-									619:[population<-0.947053969] yes=1011,no=1012,missing=1012,gain=2.6732716e+10,cover=60
-										1011:leaf=20106.3184,cover=2
-										1012:leaf=727.280518,cover=58
-									620:[longitude<0.96317476] yes=1013,no=1014,missing=1014,gain=3.24703191e+10,cover=116
-										1013:leaf=8974.39258,cover=111
-										1014:leaf=-6515.4375,cover=5
-							196:[total_rooms<0.0922444016] yes=361,no=362,missing=362,gain=5.69420493e+09,cover=23
-								361:[housing_median_age<-0.130270436] yes=621,no=622,missing=622,gain=4.34140979e+09,cover=17
-									621:[total_rooms<-0.0150181726] yes=1015,no=1016,missing=1016,gain=884414464,cover=13
-										1015:leaf=-8927.75,cover=10
-										1016:leaf=-3257.8938,cover=3
-									622:[longitude<1.33752286] yes=1017,no=1018,missing=1018,gain=2.71650406e+09,cover=4
-										1017:leaf=2697.1062,cover=3
-										1018:leaf=-6335.2627,cover=1
-								362:[latitude<-1.31647575] yes=623,no=624,missing=624,gain=1.3034409e+09,cover=6
-									623:[latitude<-1.34456694] yes=1019,no=1020,missing=1020,gain=326350048,cover=4
-										1019:leaf=1074.73755,cover=1
-										1020:leaf=-2232.8938,cover=3
-									624:leaf=3939.65015,cover=2
-				24:[housing_median_age<-0.130270436] yes=49,no=50,missing=50,gain=6.05383819e+11,cover=869
-					49:[median_income<1.29332578] yes=99,no=100,missing=100,gain=2.07455519e+11,cover=643
-						99:[latitude<1.08532131] yes=197,no=198,missing=198,gain=1.41186302e+11,cover=353
-							197:[longitude<-1.21802652] yes=363,no=364,missing=364,gain=1.69027043e+11,cover=306
-								363:[total_bedrooms<-0.642825782] yes=625,no=626,missing=626,gain=2.17500877e+10,cover=28
-									625:[latitude<0.832500577] yes=1021,no=1022,missing=1022,gain=5.99782605e+09,cover=6
-										1021:leaf=20777.1074,cover=3
-										1022:leaf=5892.10645,cover=3
-									626:[population<0.835830331] yes=1023,no=1024,missing=1024,gain=1.82108815e+10,cover=22
-										1023:leaf=36862.3164,cover=17
-										1024:leaf=16924.5625,cover=5
-								364:[longitude<0.943209529] yes=627,no=628,missing=628,gain=7.74141379e+10,cover=278
-									627:[latitude<-0.679742038] yes=1025,no=1026,missing=1026,gain=6.62578135e+10,cover=204
-										1025:leaf=19945.8281,cover=89
-										1026:leaf=12384.3936,cover=115
-									628:[latitude<-0.796788692] yes=1027,no=1028,missing=1028,gain=7.64974694e+10,cover=74
-										1027:leaf=11625.8037,cover=56
-										1028:leaf=-3179.44482,cover=18
-							198:[total_rooms<-1.02438653] yes=365,no=366,missing=366,gain=1.78606326e+10,cover=47
-								365:[longitude<-1.45760918] yes=629,no=630,missing=630,gain=3.82772019e+09,cover=3
-									629:leaf=614.737488,cover=1
-									630:leaf=-13093.6836,cover=2
-								366:[housing_median_age<-1.63997388] yes=631,no=632,missing=632,gain=1.4215764e+10,cover=44
-									631:[longitude<-1.16312206] yes=1029,no=1030,missing=1030,gain=1.54152346e+09,cover=7
-										1029:leaf=-5500.41992,cover=4
-										1030:leaf=177.106247,cover=3
-									632:[total_rooms<0.245345682] yes=1031,no=1032,missing=1032,gain=1.51305585e+10,cover=37
-										1031:leaf=3230.60547,cover=26
-										1032:leaf=12017.0186,cover=11
-						100:[housing_median_age<-1.0043093] yes=199,no=200,missing=200,gain=9.70645832e+10,cover=290
-							199:[longitude<1.17280972] yes=367,no=368,missing=368,gain=2.10969559e+10,cover=106
-								367:[latitude<-0.984063268] yes=633,no=634,missing=634,gain=2.88784384e+10,cover=93
-									633:[longitude<1.16781831] yes=1033,no=1034,missing=1034,gain=1.21996902e+09,cover=12
-										1033:leaf=27653.7188,cover=11
-										1034:leaf=7324.73779,cover=1
-									634:[longitude<-1.00839162] yes=1035,no=1036,missing=1036,gain=2.39590769e+10,cover=81
-										1035:leaf=20736.8105,cover=25
-										1036:leaf=12572.8174,cover=56
-								368:[longitude<1.75180125] yes=635,no=636,missing=636,gain=6.56582656e+09,cover=13
-									635:[latitude<-0.904471576] yes=1037,no=1038,missing=1038,gain=2.34340966e+09,cover=12
-										1037:leaf=9632.01855,cover=11
-										1038:leaf=-225.262497,cover=1
-									636:leaf=-4645.2627,cover=1
-							200:[total_bedrooms<0.304074794] yes=369,no=370,missing=370,gain=1.01571887e+11,cover=184
-								369:[total_bedrooms<-0.602481604] yes=637,no=638,missing=638,gain=2.20326789e+10,cover=143
-									637:[median_income<1.36801887] yes=1039,no=1040,missing=1040,gain=6.03137638e+09,cover=45
-										1039:leaf=8928.29102,cover=7
-										1040:leaf=17687.1816,cover=38
-									638:[population<-0.444596708] yes=1041,no=1042,missing=1042,gain=5.94943672e+10,cover=98
-										1041:leaf=35643.5625,cover=14
-										1042:leaf=20547.959,cover=84
-								370:[population<1.08131909] yes=639,no=640,missing=640,gain=4.87122534e+10,cover=41
-									639:[latitude<0.921456039] yes=1043,no=1044,missing=1044,gain=8.00515686e+09,cover=20
-										1043:leaf=43409.0039,cover=17
-										1044:leaf=19222.1074,cover=3
-									640:[total_bedrooms<2.91932392] yes=1045,no=1046,missing=1046,gain=7.4605527e+09,cover=21
-										1045:leaf=25426.002,cover=19
-										1046:leaf=7326.31641,cover=2
-					50:[median_income<1.29332578] yes=101,no=102,missing=102,gain=1.39891048e+11,cover=226
-						101:[longitude<-1.25795686] yes=201,no=202,missing=202,gain=8.52622049e+10,cover=127
-							201:[latitude<0.977638423] yes=371,no=372,missing=372,gain=6.24872653e+09,cover=25
-								371:leaf=41573.4062,cover=12
-								372:leaf=26914.5293,cover=13
-							202:[total_bedrooms<-0.476702869] yes=373,no=374,missing=374,gain=5.99198269e+10,cover=102
-								373:[latitude<-0.764015615] yes=641,no=642,missing=642,gain=2.45958574e+10,cover=43
-									641:[longitude<0.813435555] yes=1047,no=1048,missing=1048,gain=2.71946875e+10,cover=18
-										1047:leaf=26111.8242,cover=12
-										1048:leaf=7962.40723,cover=6
-									642:[population<-0.822543442] yes=1049,no=1050,missing=1050,gain=6.22350336e+09,cover=25
-										1049:leaf=16033.8359,cover=6
-										1050:leaf=7801.00146,cover=19
-								374:[population<-0.283881038] yes=643,no=644,missing=644,gain=9.36749302e+10,cover=59
-									643:leaf=38910.1406,cover=16
-									644:[longitude<0.638739824] yes=1051,no=1052,missing=1052,gain=4.50060616e+10,cover=43
-										1051:leaf=24969.8652,cover=27
-										1052:leaf=10579.5068,cover=16
-						102:[longitude<1.19277489] yes=203,no=204,missing=204,gain=4.41647104e+10,cover=99
-							203:[households<-0.686700523] yes=375,no=376,missing=376,gain=4.44313108e+10,cover=97
-								375:[housing_median_age<0.346478015] yes=645,no=646,missing=646,gain=2.49362514e+10,cover=24
-									645:[latitude<1.08063948] yes=1053,no=1054,missing=1054,gain=1.51348838e+10,cover=11
-										1053:leaf=35603.1992,cover=10
-										1054:leaf=4524.73779,cover=1
-									646:[latitude<0.912092328] yes=1055,no=1056,missing=1056,gain=1.17861089e+10,cover=13
-										1055:leaf=22101.7559,cover=8
-										1056:leaf=7607.896,cover=5
-								376:[latitude<-0.684423864] yes=647,no=648,missing=648,gain=2.22874829e+09,cover=73
-									647:[housing_median_age<-0.0508123636] yes=1057,no=1058,missing=1058,gain=449576960,cover=38
-										1057:leaf=21392.1074,cover=3
-										1058:leaf=43583.6953,cover=35
-									648:[longitude<0.523939729] yes=1059,no=1060,missing=1060,gain=1.23524219e+10,cover=35
-										1059:leaf=35831.9297,cover=28
-										1060:leaf=19990.791,cover=7
-							204:leaf=3672.98315,cover=2
-			12:[median_income<0.959496975] yes=25,no=26,missing=26,gain=3.01147881e+11,cover=378
-				25:[households<-0.739012659] yes=51,no=52,missing=52,gain=1.75596896e+11,cover=201
-					51:[longitude<-1.31785262] yes=103,no=104,missing=104,gain=4.32349266e+10,cover=33
-						103:[latitude<1.05723011] yes=205,no=206,missing=206,gain=344023040,cover=10
-							205:leaf=23142.5293,cover=9
-							206:leaf=6424.73779,cover=1
-						104:[longitude<0.618774593] yes=207,no=208,missing=208,gain=1.90406902e+10,cover=23
-							207:[longitude<0.553887606] yes=377,no=378,missing=378,gain=1.93633075e+10,cover=17
-								377:[latitude<1.06191206] yes=649,no=650,missing=650,gain=5.86232678e+09,cover=11
-									649:[total_rooms<-0.617338777] yes=1061,no=1062,missing=1062,gain=6.35775693e+09,cover=9
-										1061:leaf=8035.08936,cover=8
-										1062:leaf=-5255.2627,cover=1
-									650:[longitude<-1.24298298] yes=1063,no=1064,missing=1064,gain=129383680,cover=2
-										1063:leaf=-1015.26251,cover=1
-										1064:leaf=-5325.2627,cover=1
-								378:[longitude<0.588826716] yes=651,no=652,missing=652,gain=9.27639552e+09,cover=6
-									651:leaf=22839.5801,cover=4
-									652:leaf=4119.6499,cover=2
-							208:[latitude<-0.876380384] yes=379,no=380,missing=380,gain=9.01107098e+09,cover=6
-								379:leaf=6252.9834,cover=2
-								380:[longitude<0.633748472] yes=653,no=654,missing=654,gain=1.32428902e+09,cover=4
-									653:leaf=-10600.3506,cover=2
-									654:leaf=-2313.68335,cover=2
-					52:[total_bedrooms<0.000307202688] yes=105,no=106,missing=106,gain=8.12258427e+10,cover=168
-						105:[latitude<-0.913835287] yes=209,no=210,missing=210,gain=8.99085763e+10,cover=134
-							209:leaf=45228.6055,cover=9
-							210:[longitude<0.603800654] yes=381,no=382,missing=382,gain=1.02740525e+11,cover=125
-								381:[latitude<1.04786646] yes=655,no=656,missing=656,gain=1.06967073e+11,cover=74
-									655:[population<-0.438415349] yes=1065,no=1066,missing=1066,gain=1.57074063e+10,cover=59
-										1065:leaf=35517.8516,cover=41
-										1066:leaf=24221.6074,cover=18
-									656:[longitude<-1.3428092] yes=1067,no=1068,missing=1068,gain=2.49807708e+10,cover=15
-										1067:leaf=17786.7949,cover=10
-										1068:leaf=611.229187,cover=5
-								382:[latitude<-0.764015615] yes=657,no=658,missing=658,gain=6.49437184e+10,cover=51
-									657:[population<-0.675956666] yes=1069,no=1070,missing=1070,gain=9.18860595e+09,cover=17
-										1069:leaf=16079.6504,cover=2
-										1070:leaf=3506.38281,cover=15
-									658:[total_bedrooms<-0.659438074] yes=1071,no=1072,missing=1072,gain=3.44245207e+10,cover=34
-										1071:leaf=3019.58008,cover=4
-										1072:leaf=23570.459,cover=30
-						106:[population<-0.112568736] yes=211,no=212,missing=212,gain=5.24002263e+10,cover=34
-							211:leaf=50487.1367,cover=11
-							212:[total_rooms<0.172920525] yes=383,no=384,missing=384,gain=1.19018291e+10,cover=23
-								383:leaf=8786.31641,cover=2
-								384:[latitude<-0.843607306] yes=659,no=660,missing=660,gain=130875392,cover=21
-									659:leaf=13346.3174,cover=2
-									660:[median_income<0.876697719] yes=1073,no=1074,missing=1074,gain=2.58519859e+09,cover=19
-										1073:leaf=35828.8125,cover=13
-										1074:leaf=20513.8359,cover=6
-				26:[total_rooms<-1.06518292] yes=53,no=54,missing=54,gain=1.67377371e+11,cover=177
-					53:[total_rooms<-1.11835587] yes=107,no=108,missing=108,gain=9.26911795e+09,cover=4
-						107:[longitude<-1.35279179] yes=213,no=214,missing=214,gain=1.28392755e+09,cover=2
-							213:leaf=-13135.2627,cover=1
-							214:leaf=-1885.26257,cover=1
-						108:leaf=5819.6499,cover=2
-					54:[longitude<0.693644166] yes=109,no=110,missing=110,gain=2.27572449e+10,cover=173
-						109:[median_income<1.16031015] yes=215,no=216,missing=216,gain=1.71248189e+10,cover=142
-							215:[total_bedrooms<-0.998803437] yes=385,no=386,missing=386,gain=4.90884301e+10,cover=53
-								385:leaf=-5035.2627,cover=1
-								386:leaf=35231.2109,cover=52
-							216:[latitude<1.01509333] yes=387,no=388,missing=388,gain=1.56122481e+10,cover=89
-								387:leaf=45010.8672,cover=68
-								388:[longitude<-1.44762659] yes=661,no=662,missing=662,gain=1.06231235e+10,cover=21
-									661:leaf=44974.6641,cover=5
-									662:leaf=26799.5059,cover=16
-						110:[total_bedrooms<0.140325084] yes=217,no=218,missing=218,gain=2.15242506e+10,cover=31
-							217:[latitude<-0.693787634] yes=389,no=390,missing=390,gain=2.8418048e+10,cover=29
-								389:[median_income<1.49245465] yes=663,no=664,missing=664,gain=1.08800901e+10,cover=21
-									663:leaf=38831.2031,cover=17
-									664:leaf=18183.5801,cover=4
-								390:[longitude<0.708618104] yes=665,no=666,missing=666,gain=3.45219891e+09,cover=8
-									665:leaf=6052.9834,cover=2
-									666:leaf=20219.5508,cover=6
-							218:[longitude<0.923244298] yes=391,no=392,missing=392,gain=22422016,cover=2
-								391:leaf=1964.73755,cover=1
-								392:leaf=7524.73779,cover=1
-		6:[median_income<2.25170207] yes=13,no=14,missing=14,gain=1.11592813e+12,cover=843
-			13:[housing_median_age<-0.0508123636] yes=27,no=28,missing=28,gain=6.2448468e+11,cover=399
-				27:[total_rooms<-0.680596173] yes=55,no=56,missing=56,gain=1.02409699e+11,cover=237
-					55:[longitude<1.00809658] yes=111,no=112,missing=112,gain=1.8397397e+10,cover=17
-						111:[housing_median_age<-0.765935063] yes=219,no=220,missing=220,gain=6.75232154e+09,cover=15
-							219:[longitude<0.923244298] yes=393,no=394,missing=394,gain=4.26917888e+09,cover=11
-								393:[total_bedrooms<-0.965578854] yes=667,no=668,missing=668,gain=1.03954186e+10,cover=8
-									667:leaf=26357.8965,cover=5
-									668:leaf=7917.10645,cover=3
-								394:leaf=7862.10645,cover=3
-							220:[total_rooms<-0.79244262] yes=395,no=396,missing=396,gain=6.43178701e+09,cover=4
-								395:[longitude<-0.788774073] yes=669,no=670,missing=670,gain=279988224,cover=2
-									669:leaf=614.737488,cover=1
-									670:leaf=-3005.26245,cover=1
-								396:leaf=12359.6504,cover=2
-						112:leaf=-3133.68335,cover=2
-					56:[longitude<-1.22301781] yes=113,no=114,missing=114,gain=8.28836413e+10,cover=220
-						113:[latitude<1.21173167] yes=221,no=222,missing=222,gain=1.85920389e+10,cover=33
-							221:[total_bedrooms<1.8395251] yes=397,no=398,missing=398,gain=7.9322153e+09,cover=30
-								397:leaf=44067.1289,cover=28
-								398:leaf=16326.3174,cover=2
-							222:[housing_median_age<-1.24268353] yes=399,no=400,missing=400,gain=486025216,cover=3
-								399:leaf=4894.73779,cover=1
-								400:leaf=19266.3184,cover=2
-						114:[latitude<1.08063948] yes=223,no=224,missing=224,gain=2.81233326e+10,cover=187
-							223:[latitude<-1.37733996] yes=401,no=402,missing=402,gain=2.74331075e+10,cover=180
-								401:leaf=-1885.26257,cover=1
-								402:[median_income<2.05773187] yes=671,no=672,missing=672,gain=2.11568558e+10,cover=179
-									671:[housing_median_age<-1.95780623] yes=1075,no=1076,missing=1076,gain=4.11539866e+09,cover=131
-										1075:leaf=10032.9834,cover=2
-										1076:leaf=27707.8789,cover=129
-									672:[latitude<-1.32583952] yes=1077,no=1078,missing=1078,gain=7.86930074e+09,cover=48
-										1077:leaf=7124.73779,cover=1
-										1078:leaf=34864.293,cover=47
-							224:[total_rooms<-0.383561373] yes=403,no=404,missing=404,gain=513998848,cover=7
-								403:leaf=5586.31689,cover=2
-								404:leaf=15081.2295,cover=5
-				28:[total_rooms<-1.15181816] yes=57,no=58,missing=58,gain=1.55378516e+11,cover=162
-					57:[longitude<0.68366158] yes=115,no=116,missing=116,gain=6.28000666e+09,cover=4
-						115:[longitude<0.189522162] yes=225,no=226,missing=226,gain=1.59227013e+10,cover=3
-							225:leaf=9152.9834,cover=2
-							226:leaf=-13885.2627,cover=1
-						116:leaf=14364.7373,cover=1
-					58:[latitude<1.01977527] yes=117,no=118,missing=118,gain=6.56838492e+10,cover=158
-						117:[longitude<0.828409493] yes=227,no=228,missing=228,gain=5.64621476e+10,cover=128
-							227:leaf=51573.0703,cover=111
-							228:[latitude<-0.932562768] yes=405,no=406,missing=406,gain=3.88363059e+10,cover=17
-								405:[housing_median_age<0.902684569] yes=673,no=674,missing=674,gain=2.66652877e+09,cover=9
-									673:leaf=47545.918,cover=7
-									674:leaf=18546.3184,cover=2
-								406:[longitude<0.883313835] yes=675,no=676,missing=676,gain=8.91327283e+09,cover=8
-									675:leaf=22135.791,cover=7
-									676:leaf=1024.73755,cover=1
-						118:[longitude<-0.988426328] yes=229,no=230,missing=230,gain=8.46240154e+09,cover=30
-							229:leaf=36329.1797,cover=29
-							230:leaf=7404.73779,cover=1
-			14:[total_rooms<-1.09222782] yes=29,no=30,missing=30,gain=2.99437654e+11,cover=444
-				29:[longitude<0.563870192] yes=59,no=60,missing=60,gain=1.13654104e+11,cover=15
-					59:[population<-0.238845333] yes=119,no=120,missing=120,gain=4.90108027e+10,cover=12
-						119:[longitude<-1.14315689] yes=231,no=232,missing=232,gain=4.08475075e+10,cover=11
-							231:leaf=42163.418,cover=7
-							232:[population<-1.19607496] yes=407,no=408,missing=408,gain=3.52133202e+10,cover=4
-								407:[longitude<-0.988426328] yes=677,no=678,missing=678,gain=627687936,cover=2
-									677:leaf=-7505.2627,cover=1
-									678:leaf=-635.262512,cover=1
-								408:leaf=26653.0508,cover=2
-						120:leaf=-6885.2627,cover=1
-					60:[latitude<-0.731242537] yes=121,no=122,missing=122,gain=839709696,cover=3
-						121:leaf=-12513.6836,cover=2
-						122:leaf=-2385.26245,cover=1
-				30:[median_income<2.84787774] yes=61,no=62,missing=62,gain=1.53314394e+11,cover=429
-					61:[housing_median_age<0.0286457147] yes=123,no=124,missing=124,gain=1.41283033e+11,cover=182
-						123:[latitude<1.15086746] yes=233,no=234,missing=234,gain=2.07324447e+10,cover=103
-							233:[housing_median_age<-0.924851239] yes=409,no=410,missing=410,gain=1.16014449e+10,cover=100
-								409:[total_bedrooms<0.114220053] yes=679,no=680,missing=680,gain=1.85417073e+10,cover=47
-									679:[median_income<2.37950659] yes=1079,no=1080,missing=1080,gain=1.67103037e+10,cover=30
-										1079:leaf=18415.0898,cover=8
-										1080:leaf=34016.918,cover=22
-									680:leaf=43926.7617,cover=17
-								410:leaf=45469.3789,cover=53
-							234:leaf=16087.1064,cover=3
-						124:[latitude<1.37091517] yes=235,no=236,missing=236,gain=1.05921905e+10,cover=79
-							235:leaf=54465.957,cover=78
-							236:leaf=13234.7373,cover=1
-					62:[latitude<1.10404885] yes=125,no=126,missing=126,gain=5.95675054e+10,cover=247
-						125:leaf=56301.2617,cover=246
-						126:leaf=3564.73755,cover=1
+0:[median_income<0.632956028] yes=1,no=2,missing=2,gain=6.10797827e+13,cover=14700
+	1:[median_income<-0.359964967] yes=3,no=4,missing=4,gain=1.600242e+13,cover=11645
+		3:[latitude<-0.539822936] yes=7,no=8,missing=8,gain=2.51851597e+12,cover=6065
+			7:[longitude<0.634225249] yes=15,no=16,missing=16,gain=3.1871693e+12,cover=2959
+				15:[longitude<0.609269261] yes=31,no=32,missing=32,gain=3.46872349e+11,cover=565
+					31:[latitude<-0.68493396] yes=63,no=64,missing=64,gain=7.61007571e+11,cover=355
+						63:[latitude<-0.773872972] yes=127,no=128,missing=128,gain=2.12494189e+11,cover=137
+							127:[total_rooms<-0.568595588] yes=245,no=246,missing=246,gain=2.89372713e+10,cover=21
+								245:[median_income<-0.508023858] yes=443,no=444,missing=444,gain=6.78534758e+09,cover=8
+									443:leaf=12517.8125,cover=6
+									444:leaf=-466.145844,cover=2
+								246:[median_income<-0.436732322] yes=445,no=446,missing=446,gain=4.19918029e+09,cover=13
+									445:[latitude<-0.797277987] yes=721,no=722,missing=722,gain=3.3952215e+09,cover=11
+										721:leaf=2655.39062,cover=1
+										722:leaf=-7477.47217,cover=10
+									446:[longitude<0.604278088] yes=723,no=724,missing=724,gain=346540192,cover=2
+										723:leaf=4035.39062,cover=1
+										724:leaf=-274.609375,cover=1
+							128:[median_income<-0.634179235] yes=247,no=248,missing=248,gain=9.27145656e+10,cover=116
+								247:[longitude<0.589304507] yes=447,no=448,missing=448,gain=7.73392466e+10,cover=45
+									447:[longitude<0.239920974] yes=725,no=726,missing=726,gain=7.13671311e+10,cover=28
+										725:leaf=-6141.91406,cover=3
+										726:leaf=24675.0059,cover=25
+									448:[latitude<-0.741105974] yes=727,no=728,missing=728,gain=9.99759053e+10,cover=17
+										727:leaf=-8602.92578,cover=10
+										728:leaf=20836.959,cover=7
+								248:[longitude<0.559357345] yes=449,no=450,missing=450,gain=3.55063562e+10,cover=71
+									449:leaf=36354.6719,cover=17
+									450:[latitude<-0.741105974] yes=729,no=730,missing=730,gain=4.60933693e+10,cover=54
+										729:leaf=17019.375,cover=28
+										730:leaf=30115.6035,cover=26
+						64:[latitude<-0.614718974] yes=129,no=130,missing=130,gain=1.49327757e+11,cover=218
+							129:[latitude<-0.647485971] yes=249,no=250,missing=250,gain=7.5153408e+10,cover=162
+								249:[total_rooms<-1.08799505] yes=451,no=452,missing=452,gain=4.57236275e+10,cover=125
+									451:[longitude<0.239920974] yes=731,no=732,missing=732,gain=1.82581248e+09,cover=2
+										731:leaf=29275.4902,cover=1
+										732:leaf=6775.39062,cover=1
+									452:[total_bedrooms<-0.452971011] yes=733,no=734,missing=734,gain=2.2640726e+10,cover=123
+										733:leaf=-7117.75781,cover=19
+										734:leaf=228.011917,cover=104
+								250:[median_income<-0.444051027] yes=453,no=454,missing=454,gain=6.3353815e+09,cover=37
+									453:[total_rooms<-0.568595588] yes=735,no=736,missing=736,gain=3.15057766e+09,cover=33
+										735:leaf=-13863.9707,cover=16
+										736:leaf=-8486.48438,cover=17
+									454:[longitude<0.185017839] yes=737,no=738,missing=738,gain=3.17297306e+09,cover=4
+										737:leaf=4685.39062,cover=1
+										738:leaf=-5241.91406,cover=3
+							130:[population<-0.792412817] yes=251,no=252,missing=252,gain=4.41691505e+10,cover=56
+								251:[total_rooms<-1.06236827] yes=455,no=456,missing=456,gain=1.50803825e+10,cover=10
+									455:[housing_median_age<-0.367954135] yes=739,no=740,missing=740,gain=1.56998554e+09,cover=4
+										739:leaf=2367.1875,cover=2
+										740:leaf=11253.8545,cover=2
+									456:leaf=26640.6699,cover=6
+								252:[housing_median_age<-0.923884869] yes=457,no=458,missing=458,gain=5.67553679e+10,cover=46
+									457:leaf=-16866.9141,cover=3
+									458:[longitude<0.0452644303] yes=741,no=742,missing=742,gain=3.45795379e+10,cover=43
+										741:leaf=11465,cover=32
+										742:leaf=-1368.45056,cover=11
+					32:[latitude<-0.741105974] yes=65,no=66,missing=66,gain=4.62721712e+11,cover=210
+						65:[latitude<-0.797277987] yes=131,no=132,missing=132,gain=1.64706157e+11,cover=130
+							131:[housing_median_age<0.902744651] yes=253,no=254,missing=254,gain=2.86374605e+10,cover=21
+								253:[total_bedrooms<1.19639218] yes=459,no=460,missing=460,gain=6.26763366e+09,cover=18
+									459:[latitude<-0.811320961] yes=743,no=744,missing=744,gain=1.47386829e+09,cover=14
+										743:leaf=6167.36084,cover=8
+										744:leaf=1717.8125,cover=6
+									460:leaf=-3775.375,cover=4
+								254:[longitude<0.629234076] yes=461,no=462,missing=462,gain=1.05433948e+10,cover=3
+									461:leaf=27440.5215,cover=2
+									462:leaf=1775.39062,cover=1
+							132:[population<-0.674161613] yes=255,no=256,missing=256,gain=1.94246083e+10,cover=109
+								255:[longitude<0.619251668] yes=463,no=464,missing=464,gain=8.60721459e+09,cover=5
+									463:leaf=10525.3906,cover=1
+									464:[median_income<-0.524504066] yes=745,no=746,missing=746,gain=1.97304192e+09,cover=4
+										745:leaf=-7056.91406,cover=3
+										746:leaf=1595.39062,cover=1
+								256:[latitude<-0.745786965] yes=465,no=466,missing=466,gain=1.3897302e+10,cover=104
+									465:[housing_median_age<1.29983807] yes=747,no=748,missing=748,gain=1.21682657e+10,cover=91
+										747:leaf=-11662.3604,cover=47
+										748:leaf=-17127.2363,cover=44
+									466:[longitude<0.619251668] yes=749,no=750,missing=750,gain=5.72241203e+09,cover=13
+										749:leaf=-10195.5664,cover=7
+										750:leaf=-1685.0448,cover=6
+						66:[latitude<-0.722381949] yes=133,no=134,missing=134,gain=9.21529876e+10,cover=80
+							133:[longitude<0.624242842] yes=257,no=258,missing=258,gain=3.16468593e+10,cover=32
+								257:[total_rooms<-0.243227318] yes=467,no=468,missing=468,gain=4.75975926e+10,cover=13
+									467:[longitude<0.619251668] yes=751,no=752,missing=752,gain=1.19794381e+09,cover=5
+										751:leaf=-7801.91406,cover=3
+										752:leaf=-1126.14587,cover=2
+									468:[total_rooms<0.254663944] yes=753,no=754,missing=754,gain=1.0821378e+10,cover=8
+										753:leaf=10374.9561,cover=6
+										754:leaf=28813.9219,cover=2
+								258:[population<1.54525483] yes=469,no=470,missing=470,gain=5.01202944e+10,cover=19
+									469:[latitude<-0.727062941] yes=755,no=756,missing=756,gain=1.46369085e+10,cover=16
+										755:leaf=31318.2324,cover=11
+										756:leaf=13515.6514,cover=5
+									470:[longitude<0.629234076] yes=757,no=758,missing=758,gain=2.04876646e+09,cover=3
+										757:leaf=4275.39062,cover=1
+										758:leaf=-4019.47925,cover=2
+							134:[total_rooms<-0.935149729] yes=259,no=260,missing=260,gain=5.24124529e+10,cover=48
+								259:[households<-0.971601665] yes=471,no=472,missing=472,gain=8.8807895e+09,cover=5
+									471:leaf=-4501.91406,cover=3
+									472:leaf=-21966.1465,cover=2
+								260:[total_bedrooms<1.1109575] yes=473,no=474,missing=474,gain=2.30522348e+10,cover=43
+									473:[housing_median_age<1.06158197] yes=759,no=760,missing=760,gain=1.94174976e+10,cover=33
+										759:leaf=-489.708801,cover=21
+										760:leaf=9323.79883,cover=12
+									474:[total_rooms<0.402475417] yes=761,no=762,missing=762,gain=4.06550692e+10,cover=10
+										761:leaf=27328.666,cover=4
+										762:leaf=2449.24097,cover=6
+				16:[longitude<0.898758471] yes=33,no=34,missing=34,gain=9.68903098e+11,cover=2394
+					33:[latitude<-0.736424983] yes=67,no=68,missing=68,gain=4.47944327e+11,cover=1326
+						67:[latitude<-0.816001952] yes=135,no=136,missing=136,gain=4.07813226e+11,cover=980
+							135:[longitude<0.64919883] yes=261,no=262,missing=262,gain=6.82884465e+10,cover=319
+								261:[latitude<-0.881536007] yes=475,no=476,missing=476,gain=1.06214318e+10,cover=30
+									475:[population<-0.3555893] yes=763,no=764,missing=764,gain=4.82197299e+09,cover=13
+										763:leaf=12840.625,cover=4
+										764:leaf=4233.70312,cover=9
+									476:[median_income<-0.49981004] yes=765,no=766,missing=766,gain=1.16855757e+10,cover=17
+										765:leaf=-2811.41748,cover=13
+										766:leaf=8452.625,cover=4
+								262:[median_income<-0.868588209] yes=477,no=478,missing=478,gain=7.65636772e+10,cover=289
+									477:[latitude<-0.876854956] yes=767,no=768,missing=768,gain=3.13397084e+10,cover=86
+										767:leaf=-182.296875,cover=9
+										768:leaf=-12667.0498,cover=77
+									478:[latitude<-0.909622014] yes=769,no=770,missing=770,gain=4.41460818e+10,cover=203
+										769:leaf=4283.92773,cover=21
+										770:leaf=-5246.43652,cover=182
+							136:[longitude<0.70410198] yes=263,no=264,missing=264,gain=2.19499463e+11,cover=661
+								263:[latitude<-0.750467956] yes=479,no=480,missing=480,gain=1.01977162e+11,cover=522
+									479:[longitude<0.674154818] yes=771,no=772,missing=772,gain=1.26580687e+11,cover=424
+										771:leaf=-19963.1641,cover=278
+										772:leaf=-12497.3193,cover=146
+									480:[total_bedrooms<0.574617803] yes=773,no=774,missing=774,gain=9.62660106e+10,cover=98
+										773:leaf=-11565.9287,cover=93
+										774:leaf=14902.3174,cover=5
+								264:[total_rooms<-1.17906153] yes=481,no=482,missing=482,gain=1.24720087e+10,cover=139
+									481:[housing_median_age<0.267395258] yes=775,no=776,missing=776,gain=1.39871959e+10,cover=3
+										775:leaf=16775.3906,cover=1
+										776:leaf=-5132.8125,cover=2
+									482:[longitude<0.739040315] yes=777,no=778,missing=778,gain=1.07878973e+10,cover=136
+										777:leaf=-5805.58105,cover=84
+										778:leaf=-9659.98828,cover=52
+						68:[longitude<0.669163585] yes=137,no=138,missing=138,gain=1.34459875e+11,cover=346
+							137:[total_bedrooms<0.878385425] yes=265,no=266,missing=266,gain=3.19577334e+10,cover=138
+								265:[population<-0.696223378] yes=483,no=484,missing=484,gain=3.18891397e+10,cover=97
+									483:[households<-0.859121561] yes=779,no=780,missing=780,gain=2.07824323e+10,cover=21
+										779:leaf=398.216156,cover=11
+										780:leaf=12729.8008,cover=10
+									484:[households<-0.466749132] yes=781,no=782,missing=782,gain=7.06524211e+09,cover=76
+										781:leaf=-6313.125,cover=12
+										782:leaf=-1168.15381,cover=64
+								266:[median_income<-1.11895084] yes=485,no=486,missing=486,gain=3.35929426e+10,cover=41
+									485:[population<2.56097984] yes=783,no=784,missing=784,gain=7.50975181e+09,cover=6
+										783:leaf=-9484.34961,cover=5
+										784:leaf=5525.39062,cover=1
+									486:[latitude<-0.731743991] yes=785,no=786,missing=786,gain=3.03982428e+10,cover=35
+										785:leaf=23528.625,cover=4
+										786:leaf=6246.06982,cover=31
+							138:[population<-0.995381296] yes=267,no=268,missing=268,gain=4.53342003e+10,cover=208
+								267:[longitude<0.714084327] yes=487,no=488,missing=488,gain=1.98974546e+10,cover=3
+									487:leaf=29275.4902,cover=1
+									488:[longitude<0.719075561] yes=787,no=788,missing=788,gain=615798784,cover=2
+										787:leaf=-1974.60938,cover=1
+										788:leaf=3025.39062,cover=1
+								268:[longitude<0.714084327] yes=489,no=490,missing=490,gain=2.69311836e+10,cover=205
+									489:[median_income<-0.578367591] yes=789,no=790,missing=790,gain=1.84136335e+10,cover=78
+										789:leaf=-11037.3271,cover=62
+										790:leaf=-3185.14722,cover=16
+									490:[longitude<0.75900507] yes=791,no=792,missing=792,gain=5.00473856e+10,cover=127
+										791:leaf=-852.361755,cover=66
+										792:leaf=-8780.03809,cover=61
+					34:[latitude<-1.12962902] yes=69,no=70,missing=70,gain=3.0179328e+11,cover=1068
+						69:[longitude<1.21320367] yes=139,no=140,missing=140,gain=5.82951371e+11,cover=494
+							139:[housing_median_age<-0.685628831] yes=269,no=270,missing=270,gain=5.7257726e+10,cover=118
+								269:[latitude<-1.34495509] yes=491,no=492,missing=492,gain=1.38628997e+10,cover=36
+									491:[longitude<1.18325651] yes=793,no=794,missing=794,gain=2.68032051e+09,cover=3
+										793:leaf=9275.39062,cover=1
+										794:leaf=-746.145874,cover=2
+									492:[households<-0.00636549806] yes=795,no=796,missing=796,gain=3.8981632e+09,cover=33
+										795:leaf=-11760.6045,cover=14
+										796:leaf=-6523.75781,cover=19
+								270:[housing_median_age<1.69693136] yes=493,no=494,missing=494,gain=8.40154808e+10,cover=82
+									493:[population<-0.197626859] yes=797,no=798,missing=798,gain=4.78018478e+10,cover=70
+										797:leaf=7339.25732,cover=52
+										798:leaf=-4408.73389,cover=18
+									494:[median_income<-0.925400257] yes=799,no=800,missing=800,gain=5.8598441e+09,cover=12
+										799:leaf=-14425.1172,cover=11
+										800:leaf=775.390625,cover=1
+							140:[longitude<1.57256961] yes=271,no=272,missing=272,gain=1.32063429e+11,cover=376
+								271:[median_income<-0.671667814] yes=495,no=496,missing=496,gain=5.42775706e+10,cover=325
+									495:[latitude<-1.34495509] yes=801,no=802,missing=802,gain=2.4623317e+10,cover=220
+										801:leaf=-19168.2695,cover=156
+										802:leaf=-13857.3848,cover=64
+									496:[latitude<-1.35431707] yes=803,no=804,missing=804,gain=4.16386253e+09,cover=105
+										803:leaf=-14143.9629,cover=35
+										804:leaf=-10562.8916,cover=70
+								272:leaf=-27017.1191,cover=51
+						70:[longitude<0.998582363] yes=141,no=142,missing=142,gain=7.83516959e+10,cover=574
+							141:[housing_median_age<-1.71807158] yes=273,no=274,missing=274,gain=1.35444365e+11,cover=116
+								273:[longitude<0.923714459] yes=497,no=498,missing=498,gain=3.97474898e+10,cover=3
+									497:leaf=-6974.60938,cover=1
+									498:leaf=33480.5898,cover=2
+								274:[latitude<-1.00324202] yes=499,no=500,missing=500,gain=4.25580298e+10,cover=113
+									499:[longitude<0.978617609] yes=805,no=806,missing=806,gain=2.68947507e+09,cover=3
+										805:leaf=8453.85449,cover=2
+										806:leaf=-1974.60938,cover=1
+									500:[latitude<-0.717700958] yes=807,no=808,missing=808,gain=1.42736753e+10,cover=110
+										807:leaf=-17940.7793,cover=102
+										808:leaf=-7708.19482,cover=8
+							142:[median_income<-0.868588209] yes=275,no=276,missing=276,gain=4.53393777e+10,cover=458
+								275:[total_rooms<-1.17906153] yes=501,no=502,missing=502,gain=3.32432671e+10,cover=205
+									501:leaf=6775.39062,cover=1
+									502:[longitude<1.57256961] yes=809,no=810,missing=810,gain=8.00640205e+09,cover=204
+										809:leaf=-23081.7695,cover=164
+										810:leaf=-28331.9219,cover=40
+								276:[latitude<-0.85345] yes=503,no=504,missing=504,gain=1.48027474e+10,cover=253
+									503:[median_income<-0.470219314] yes=811,no=812,missing=812,gain=1.54792428e+10,cover=72
+										811:leaf=-18375.459,cover=52
+										812:leaf=-10704.0186,cover=20
+									504:[population<-1.22129405] yes=813,no=814,missing=814,gain=6.89556685e+09,cover=181
+										813:leaf=-1974.60938,cover=1
+										814:leaf=-20837.0137,cover=180
+			8:[longitude<-1.07775414] yes=17,no=18,missing=18,gain=2.7726866e+12,cover=3106
+				17:[latitude<1.06576025] yes=35,no=36,missing=36,gain=2.57905577e+12,cover=1232
+					35:[longitude<-1.36225212] yes=71,no=72,missing=72,gain=1.25893529e+12,cover=611
+						71:[latitude<0.995545268] yes=143,no=144,missing=144,gain=1.89001695e+11,cover=132
+							143:[latitude<0.930011272] yes=277,no=278,missing=278,gain=4.23457014e+10,cover=57
+								277:[housing_median_age<1.14100063] yes=505,no=506,missing=506,gain=7.61801933e+09,cover=7
+									505:[median_income<-0.685620725] yes=815,no=816,missing=816,gain=1.81400371e+09,cover=5
+										815:leaf=6585.39062,cover=1
+										816:leaf=26996.625,cover=4
+									506:leaf=6120.521,cover=2
+								278:[longitude<-1.41715527] yes=507,no=508,missing=508,gain=2.38567813e+10,cover=50
+									507:[latitude<0.981502235] yes=817,no=818,missing=818,gain=1.35423058e+10,cover=23
+										817:leaf=4320.72119,cover=12
+										818:leaf=14358.2158,cover=11
+									508:[longitude<-1.4071728] yes=819,no=820,missing=820,gain=5.06116915e+09,cover=27
+										819:leaf=2860.18237,cover=17
+										820:leaf=-2593.83521,cover=10
+							144:[housing_median_age<-0.288535476] yes=279,no=280,missing=280,gain=1.94114421e+11,cover=75
+								279:[longitude<-1.46207595] yes=509,no=510,missing=510,gain=1.28530749e+10,cover=8
+									509:leaf=5767.1875,cover=2
+									510:[total_rooms<-0.273887902] yes=821,no=822,missing=822,gain=6.56666829e+09,cover=6
+										821:leaf=-14267.375,cover=4
+										822:leaf=-466.145844,cover=2
+								280:[total_bedrooms<1.24385583] yes=511,no=512,missing=512,gain=4.33342382e+10,cover=67
+									511:[population<0.34774068] yes=823,no=824,missing=824,gain=9.57680189e+10,cover=59
+										823:leaf=27881.873,cover=45
+										824:leaf=8224.72949,cover=14
+									512:leaf=40960.7617,cover=8
+						72:[latitude<0.906606257] yes=145,no=146,missing=146,gain=4.89026486e+11,cover=479
+							145:[longitude<-1.14263964] yes=281,no=282,missing=282,gain=1.37075057e+11,cover=189
+								281:[longitude<-1.32232261] yes=513,no=514,missing=514,gain=5.56498698e+10,cover=144
+									513:[median_income<-0.436732322] yes=825,no=826,missing=826,gain=3.46411827e+09,cover=6
+										825:leaf=24569.0176,cover=5
+										826:leaf=4905.39062,cover=1
+									514:[latitude<0.635108232] yes=827,no=828,missing=828,gain=4.12267725e+10,cover=138
+										827:leaf=8905.87109,cover=46
+										828:leaf=1601.85034,cover=92
+								282:[latitude<0.312119156] yes=515,no=516,missing=516,gain=2.59995976e+10,cover=45
+									515:leaf=15525.3906,cover=1
+									516:[median_income<-0.49981004] yes=829,no=830,missing=830,gain=8.00739328e+09,cover=44
+										829:leaf=-9744.51855,cover=35
+										830:leaf=-2692.29688,cover=9
+							146:[latitude<1.0423553] yes=283,no=284,missing=284,gain=1.963897e+11,cover=290
+								283:[median_income<-0.73321861] yes=517,no=518,missing=518,gain=1.62392637e+11,cover=244
+									517:[longitude<-1.28738415] yes=831,no=832,missing=832,gain=1.95782246e+10,cover=136
+										831:leaf=-18480.5332,cover=129
+										832:leaf=-6390.56641,cover=7
+									518:[longitude<-1.32232261] yes=833,no=834,missing=834,gain=4.50500854e+10,cover=108
+										833:leaf=-1702.6604,cover=37
+										834:leaf=-10342.4248,cover=71
+								284:[longitude<-1.34727848] yes=519,no=520,missing=520,gain=6.00345518e+10,cover=46
+									519:[median_income<-0.508023858] yes=835,no=836,missing=836,gain=8.41804186e+09,cover=24
+										835:leaf=-7513.5415,cover=20
+										836:leaf=2060.625,cover=4
+									520:[longitude<-1.31733131] yes=837,no=838,missing=838,gain=6.1105836e+10,cover=22
+										837:leaf=13821.2939,cover=17
+										838:leaf=-9794.34961,cover=5
+					36:[latitude<1.42619729] yes=73,no=74,missing=74,gain=4.86677676e+11,cover=621
+						73:[longitude<-1.4071728] yes=147,no=148,missing=148,gain=1.23617018e+11,cover=254
+							147:[longitude<-1.53694391] yes=285,no=286,missing=286,gain=1.66082888e+10,cover=85
+								285:[longitude<-1.64175892] yes=521,no=522,missing=522,gain=9.40537446e+09,cover=63
+									521:[housing_median_age<-0.209116802] yes=839,no=840,missing=840,gain=1.19259955e+10,cover=11
+										839:leaf=4195.39062,cover=1
+										840:leaf=-15248.3818,cover=10
+									522:[population<-0.835653901] yes=841,no=842,missing=842,gain=1.61787658e+10,cover=52
+										841:leaf=4724.625,cover=4
+										842:leaf=-7604.94922,cover=48
+								286:[total_rooms<0.0455313176] yes=523,no=524,missing=524,gain=1.44034949e+10,cover=22
+									523:[housing_median_age<1.37925673] yes=843,no=844,missing=844,gain=8.41545933e+09,cover=16
+										843:leaf=-6705.70312,cover=13
+										844:leaf=3998.08594,cover=3
+									524:[total_rooms<1.02804279] yes=845,no=846,missing=846,gain=2.81996186e+09,cover=6
+										845:leaf=7912.31787,cover=5
+										846:leaf=-1974.60938,cover=1
+							148:[latitude<1.23895729] yes=287,no=288,missing=288,gain=5.10071276e+10,cover=169
+								287:[longitude<-1.38221693] yes=525,no=526,missing=526,gain=1.38781655e+10,cover=128
+									525:leaf=-23053.002,cover=23
+									526:[latitude<1.10788929] yes=847,no=848,missing=848,gain=1.69530491e+10,cover=105
+										847:leaf=-12543.7607,cover=41
+										848:leaf=-18627.5391,cover=64
+								288:[housing_median_age<-0.685628831] yes=527,no=528,missing=528,gain=2.36888556e+10,cover=41
+									527:[total_rooms<-0.391038775] yes=849,no=850,missing=850,gain=1.81030216e+10,cover=10
+										849:leaf=10353.0859,cover=3
+										850:leaf=-6130.56641,cover=7
+									528:[total_rooms<0.78413105] yes=851,no=852,missing=852,gain=6.04489318e+09,cover=31
+										851:leaf=-12629.5781,cover=29
+										852:leaf=-832.8125,cover=2
+						74:[median_income<-0.70747155] yes=149,no=150,missing=150,gain=4.00645161e+10,cover=367
+							149:leaf=-25666.4512,cover=255
+							150:[total_rooms<-1.02530098] yes=289,no=290,missing=290,gain=7.43964672e+09,cover=112
+								289:[longitude<-1.24745464] yes=529,no=530,missing=530,gain=1.19569408e+10,cover=3
+									529:leaf=-14019.4795,cover=2
+									530:leaf=6775.39062,cover=1
+								290:leaf=-20686.9531,cover=109
+				18:[longitude<-0.179339275] yes=37,no=38,missing=38,gain=4.61650264e+11,cover=1874
+					37:[latitude<-0.0015078719] yes=75,no=76,missing=76,gain=4.02883871e+11,cover=1184
+						75:[latitude<-0.240238905] yes=151,no=152,missing=152,gain=1.18116532e+11,cover=93
+							151:[longitude<-0.423907757] yes=291,no=292,missing=292,gain=6.03205796e+10,cover=52
+								291:[median_income<-0.634179235] yes=531,no=532,missing=532,gain=3.83116902e+09,cover=44
+									531:leaf=-18363.5781,cover=29
+									532:[median_income<-0.524504066] yes=853,no=854,missing=854,gain=1.45081549e+09,cover=15
+										853:leaf=-5221.91406,cover=3
+										854:leaf=-13185.4326,cover=12
+								292:[latitude<-0.324496925] yes=533,no=534,missing=534,gain=2.57668833e+10,cover=8
+									533:[total_rooms<-0.935149729] yes=855,no=856,missing=856,gain=2.86915215e+10,cover=5
+										855:leaf=-12284.6094,cover=1
+										856:leaf=17136.666,cover=4
+									534:leaf=-10576.9141,cover=3
+							152:[median_income<-1.44350088] yes=293,no=294,missing=294,gain=5.07894088e+10,cover=41
+								293:leaf=25700.5879,cover=2
+								294:[longitude<-0.59360832] yes=535,no=536,missing=536,gain=1.64832512e+10,cover=39
+									535:[total_rooms<0.213935718] yes=857,no=858,missing=858,gain=5.09819443e+09,cover=10
+										857:leaf=1831.93359,cover=7
+										858:leaf=11128.0859,cover=3
+									536:[housing_median_age<-0.447372824] yes=859,no=860,missing=860,gain=1.5981014e+10,cover=29
+										859:leaf=-8301.9375,cover=14
+										860:leaf=877.607422,cover=15
+						76:[median_income<-0.791083694] yes=153,no=154,missing=154,gain=1.09808976e+11,cover=1091
+							153:[households<-1.26980472] yes=295,no=296,missing=296,gain=1.80615643e+11,cover=559
+								295:[housing_median_age<-0.129698128] yes=537,no=538,missing=538,gain=6.03654267e+10,cover=3
+									537:leaf=-12224.6094,cover=1
+									538:leaf=35700.5898,cover=2
+								296:[population<-0.776528299] yes=539,no=540,missing=540,gain=2.46504489e+10,cover=556
+									539:[housing_median_age<-0.209116802] yes=861,no=862,missing=862,gain=1.37221898e+10,cover=108
+										861:leaf=-16289.4688,cover=42
+										862:leaf=-22315.0527,cover=66
+									540:[housing_median_age<-0.685628831] yes=863,no=864,missing=864,gain=1.64275159e+10,cover=448
+										863:leaf=-21469.4824,cover=116
+										864:leaf=-25265.8887,cover=332
+							154:[latitude<1.76791036] yes=297,no=298,missing=298,gain=2.27797893e+10,cover=532
+								297:[housing_median_age<-0.288535476] yes=541,no=542,missing=542,gain=1.36154972e+10,cover=484
+									541:[housing_median_age<-1.95632768] yes=865,no=866,missing=866,gain=5.26267187e+09,cover=248
+										865:leaf=-4226.146,cover=2
+										866:leaf=-17275.7402,cover=246
+									542:[longitude<-1.02784216] yes=867,no=868,missing=868,gain=1.23448852e+10,cover=236
+										867:leaf=-11773.125,cover=12
+										868:leaf=-20272.5566,cover=224
+								298:[median_income<-0.400191486] yes=543,no=544,missing=544,gain=5.86206413e+09,cover=48
+									543:leaf=-24231.1094,cover=47
+									544:leaf=-3894.60938,cover=1
+					38:[latitude<0.597660184] yes=77,no=78,missing=78,gain=6.65394872e+10,cover=690
+						77:[housing_median_age<-1.8769089] yes=155,no=156,missing=156,gain=3.6658217e+10,cover=656
+							155:[longitude<0.898758471] yes=299,no=300,missing=300,gain=4.72623206e+09,cover=2
+								299:leaf=-6974.60938,cover=1
+								300:leaf=6775.39062,cover=1
+							156:[median_income<-0.772286773] yes=301,no=302,missing=302,gain=3.15547976e+10,cover=654
+								301:leaf=-28640.1289,cover=407
+								302:[latitude<-0.385349929] yes=545,no=546,missing=546,gain=3.88838195e+09,cover=247
+									545:leaf=-19385.3398,cover=22
+									546:leaf=-25496.6113,cover=225
+						78:[latitude<1.46364534] yes=157,no=158,missing=158,gain=6.32165171e+09,cover=34
+							157:[median_income<-0.455108047] yes=303,no=304,missing=304,gain=1.74972928e+09,cover=33
+								303:[population<-0.752701581] yes=547,no=548,missing=548,gain=2.87906202e+09,cover=28
+									547:[total_rooms<0.109598204] yes=869,no=870,missing=870,gain=273589248,cover=5
+										869:leaf=-11171.375,cover=4
+										870:leaf=-2774.60938,cover=1
+									548:leaf=-19910.502,cover=23
+								304:[total_rooms<-0.148042217] yes=549,no=550,missing=550,gain=1.01553869e+09,cover=5
+									549:leaf=-11207.375,cover=4
+									550:leaf=-1834.60938,cover=1
+							158:leaf=-724.609375,cover=1
+		4:[housing_median_age<1.53809404] yes=9,no=10,missing=10,gain=3.72435268e+12,cover=5580
+			9:[latitude<1.08448422] yes=19,no=20,missing=20,gain=2.15028584e+12,cover=5103
+				19:[longitude<0.739040315] yes=39,no=40,missing=40,gain=2.00990471e+12,cover=4254
+					39:[latitude<-0.680252969] yes=79,no=80,missing=80,gain=1.4921091e+12,cover=2506
+						79:[longitude<0.599286914] yes=159,no=160,missing=160,gain=2.81547479e+12,cover=834
+							159:[longitude<0.239920974] yes=305,no=306,missing=306,gain=3.43509303e+11,cover=207
+								305:[longitude<0.185017839] yes=551,no=552,missing=552,gain=8.5975466e+10,cover=17
+									551:leaf=30368.1387,cover=3
+									552:[housing_median_age<-0.844466209] yes=871,no=872,missing=872,gain=843061504,cover=14
+										871:leaf=1665.39062,cover=1
+										872:leaf=-3155.70312,cover=13
+								306:[latitude<-0.689614952] yes=553,no=554,missing=554,gain=1.29435697e+11,cover=190
+									553:[total_rooms<-0.243227318] yes=873,no=874,missing=874,gain=9.23622441e+10,cover=161
+										873:leaf=29767.0039,cover=65
+										874:leaf=41089.6953,cover=96
+									554:[median_income<-0.129610255] yes=875,no=876,missing=876,gain=1.66151455e+10,cover=29
+										875:leaf=12226.165,cover=10
+										876:leaf=24600.2422,cover=19
+							160:[total_rooms<-0.258328795] yes=307,no=308,missing=308,gain=7.02233313e+11,cover=627
+								307:[latitude<-0.876854956] yes=555,no=556,missing=556,gain=2.83683193e+11,cover=370
+									555:[housing_median_age<0.0291392263] yes=877,no=878,missing=878,gain=6.96318362e+10,cover=10
+										877:leaf=3843.08594,cover=3
+										878:leaf=40979.5117,cover=7
+									556:[longitude<0.619251668] yes=879,no=880,missing=880,gain=1.39009753e+11,cover=360
+										879:leaf=7223.18848,cover=61
+										880:leaf=-3181.4541,cover=299
+								308:[population<-0.158798099] yes=557,no=558,missing=558,gain=1.70554163e+11,cover=257
+									557:[households<0.336306423] yes=881,no=882,missing=882,gain=1.73927694e+11,cover=70
+										881:leaf=17182.5508,cover=61
+										882:leaf=46527.7617,cover=9
+									558:[longitude<0.634225249] yes=883,no=884,missing=884,gain=1.10552449e+11,cover=187
+										883:leaf=16689.6855,cover=63
+										884:leaf=6356.29492,cover=124
+						80:[longitude<-1.14263964] yes=161,no=162,missing=162,gain=2.134669e+12,cover=1672
+							161:[longitude<-1.32232261] yes=309,no=310,missing=310,gain=3.65160563e+11,cover=669
+								309:[total_rooms<0.442288429] yes=559,no=560,missing=560,gain=1.03317111e+11,cover=218
+									559:[latitude<1.07980323] yes=885,no=886,missing=886,gain=9.2173697e+10,cover=171
+										885:leaf=15387.2256,cover=165
+										886:leaf=-8696.47363,cover=6
+									560:[total_rooms<1.21109116] yes=887,no=888,missing=888,gain=1.10487142e+10,cover=47
+										887:leaf=21574.0918,cover=32
+										888:leaf=31545.1309,cover=15
+								310:[latitude<0.873839259] yes=561,no=562,missing=562,gain=4.56736899e+11,cover=451
+									561:[longitude<-1.28239298] yes=889,no=890,missing=890,gain=1.06445013e+11,cover=255
+										889:leaf=26735.2539,cover=19
+										890:leaf=11265.3379,cover=236
+									562:[latitude<1.05171728] yes=891,no=892,missing=892,gain=9.28093061e+10,cover=196
+										891:leaf=-1877.50903,cover=174
+										892:leaf=11636.3994,cover=22
+							162:[latitude<-0.493012935] yes=311,no=312,missing=312,gain=1.22407315e+12,cover=1003
+								311:[longitude<0.155070677] yes=563,no=564,missing=564,gain=4.27655922e+11,cover=379
+									563:[median_income<0.117224701] yes=893,no=894,missing=894,gain=6.91077775e+10,cover=51
+										893:leaf=12160.748,cover=22
+										894:leaf=27878.4512,cover=29
+									564:[total_rooms<-0.386920184] yes=895,no=896,missing=896,gain=9.06919444e+10,cover=328
+										895:leaf=-2461.97534,cover=119
+										896:leaf=4433.96924,cover=209
+								312:[longitude<-0.289145529] yes=565,no=566,missing=566,gain=9.14697748e+11,cover=624
+									565:[latitude<0.770857215] yes=897,no=898,missing=898,gain=2.60973298e+11,cover=379
+										897:leaf=1593.85217,cover=191
+										898:leaf=-8881.7627,cover=188
+									566:[latitude<-0.324496925] yes=899,no=900,missing=900,gain=5.29916232e+10,cover=245
+										899:leaf=-12090.457,cover=40
+										900:leaf=-20624.0293,cover=205
+					40:[latitude<-0.816001952] yes=81,no=82,missing=82,gain=6.56178086e+11,cover=1748
+						81:[longitude<1.21320367] yes=163,no=164,missing=164,gain=8.0234899e+11,cover=1008
+							163:[latitude<-0.909622014] yes=313,no=314,missing=314,gain=5.45319191e+11,cover=694
+								313:[housing_median_age<0.743907273] yes=567,no=568,missing=568,gain=6.21327811e+11,cover=319
+									567:[longitude<0.888776124] yes=901,no=902,missing=902,gain=2.28968956e+11,cover=289
+										901:leaf=17621.9961,cover=57
+										902:leaf=3547.56421,cover=232
+									568:[longitude<1.16329169] yes=903,no=904,missing=904,gain=4.604638e+10,cover=30
+										903:leaf=44347.8672,cover=16
+										904:leaf=24584.7422,cover=14
+								314:[median_income<0.260439515] yes=569,no=570,missing=570,gain=4.58295542e+10,cover=375
+									569:[longitude<0.898758471] yes=905,no=906,missing=906,gain=4.48469402e+10,cover=266
+										905:leaf=-2632.31421,cover=248
+										906:leaf=-12744.5225,cover=18
+									570:[longitude<0.778969884] yes=907,no=908,missing=908,gain=2.99923743e+10,cover=109
+										907:leaf=9498.8584,cover=15
+										908:leaf=130.246719,cover=94
+							164:[longitude<1.71232307] yes=315,no=316,missing=316,gain=9.36155546e+10,cover=314
+								315:[latitude<-1.34963608] yes=571,no=572,missing=572,gain=9.07535647e+10,cover=296
+									571:[housing_median_age<-1.71807158] yes=909,no=910,missing=910,gain=8.07878656e+09,cover=97
+										909:leaf=-306.145844,cover=2
+										910:leaf=-13304.9561,cover=95
+									572:[median_income<0.298191369] yes=911,no=912,missing=912,gain=4.30280049e+10,cover=199
+										911:leaf=-7400.48145,cover=142
+										912:leaf=-884.921875,cover=57
+								316:[latitude<-1.34495509] yes=573,no=574,missing=574,gain=399605760,cover=18
+									573:leaf=-6474.60938,cover=1
+									574:leaf=-23214.2637,cover=17
+						82:[longitude<0.908740878] yes=165,no=166,missing=166,gain=5.26708769e+11,cover=740
+							165:[median_income<0.437404603] yes=317,no=318,missing=318,gain=1.20343495e+11,cover=425
+								317:[latitude<-0.680252969] yes=575,no=576,missing=576,gain=8.8810537e+10,cover=381
+									575:[latitude<-0.708338976] yes=913,no=914,missing=914,gain=8.79376794e+10,cover=358
+										913:leaf=-5468.40186,cover=304
+										914:leaf=3241.13062,cover=54
+									576:[latitude<-0.385349929] yes=915,no=916,missing=916,gain=1.2340265e+09,cover=23
+										915:leaf=-13638.0879,cover=16
+										916:leaf=-21295.5664,cover=7
+								318:[latitude<-0.703657985] yes=577,no=578,missing=578,gain=9.40873728e+10,cover=44
+									577:[housing_median_age<0.823325992] yes=917,no=918,missing=918,gain=2.95875666e+10,cover=36
+										917:leaf=-284.955353,cover=34
+										918:leaf=20427.1875,cover=2
+									578:[latitude<-0.680252969] yes=919,no=920,missing=920,gain=8.34120909e+09,cover=8
+										919:leaf=26514.4355,cover=7
+										920:leaf=3265.39062,cover=1
+							166:[total_bedrooms<-1.17679226] yes=319,no=320,missing=320,gain=9.79097354e+10,cover=315
+								319:[longitude<0.998582363] yes=579,no=580,missing=580,gain=6.24454451e+09,cover=2
+									579:leaf=29275.3906,cover=1
+									580:leaf=4275.39062,cover=1
+								320:[median_income<0.10864234] yes=581,no=582,missing=582,gain=5.19619215e+10,cover=313
+									581:[latitude<-0.806639969] yes=921,no=922,missing=922,gain=3.67844393e+10,cover=196
+										921:leaf=-2348.06641,cover=7
+										922:leaf=-17477.9082,cover=189
+									582:[housing_median_age<-2.03574634] yes=923,no=924,missing=924,gain=2.15196959e+10,cover=117
+										923:leaf=10775.3906,cover=1
+										924:leaf=-11650.8496,cover=116
+				20:[longitude<-1.4071728] yes=41,no=42,missing=42,gain=4.41061343e+11,cover=849
+					41:[latitude<1.43555927] yes=83,no=84,missing=84,gain=4.33655087e+11,cover=202
+						83:[median_income<0.260439515] yes=167,no=168,missing=168,gain=6.21402276e+10,cover=147
+							167:[latitude<1.25300026] yes=321,no=322,missing=322,gain=4.26457457e+10,cover=103
+								321:[housing_median_age<-0.844466209] yes=583,no=584,missing=584,gain=2.35291279e+10,cover=36
+									583:[total_rooms<-0.51825732] yes=925,no=926,missing=926,gain=9.16805325e+09,cover=9
+										925:leaf=-13974.6094,cover=1
+										926:leaf=1058.47229,cover=8
+									584:[latitude<1.12661326] yes=927,no=928,missing=928,gain=5.4975529e+09,cover=27
+										927:leaf=14280.6943,cover=8
+										928:leaf=7198.24219,cover=19
+								322:[longitude<-1.50699675] yes=585,no=586,missing=586,gain=1.37115075e+10,cover=67
+									585:[median_income<-0.0199350826] yes=929,no=930,missing=930,gain=1.32028774e+10,cover=50
+										929:leaf=-6148.17529,cover=27
+										930:leaf=306.165375,cover=23
+									586:[population<-0.20909898] yes=931,no=932,missing=932,gain=6.10058803e+09,cover=17
+										931:leaf=4922.0625,cover=14
+										932:leaf=-4041.91406,cover=3
+							168:[longitude<-1.50699675] yes=323,no=324,missing=324,gain=2.5561727e+10,cover=44
+								323:[housing_median_age<-1.24155951] yes=587,no=588,missing=588,gain=1.04669676e+10,cover=30
+									587:[latitude<1.34193933] yes=933,no=934,missing=934,gain=1.04602093e+09,cover=6
+										933:leaf=-1954.349,cover=5
+										934:leaf=3355.39062,cover=1
+									588:[longitude<-1.56189978] yes=935,no=936,missing=936,gain=8.14166835e+09,cover=24
+										935:leaf=11483.3965,cover=14
+										936:leaf=3597.07397,cover=10
+								324:[latitude<1.36534429] yes=589,no=590,missing=590,gain=1.79684147e+09,cover=14
+									589:[longitude<-1.41715527] yes=937,no=938,missing=938,gain=1.66694093e+09,cover=13
+										937:leaf=18665.3359,cover=12
+										938:leaf=4125.39062,cover=1
+									590:leaf=3775.39062,cover=1
+						84:[median_income<0.284080505] yes=169,no=170,missing=170,gain=7.07444736e+09,cover=55
+							169:leaf=-17092.4414,cover=52
+							170:[longitude<-2.02608085] yes=325,no=326,missing=326,gain=4.05385344e+09,cover=3
+								325:leaf=-8852.8125,cover=2
+								326:leaf=3445.39062,cover=1
+					42:[median_income<0.171035558] yes=85,no=86,missing=86,gain=1.76696852e+11,cover=647
+						85:[median_income<-0.144247651] yes=171,no=172,missing=172,gain=2.86211441e+10,cover=430
+							171:[total_rooms<0.0853443146] yes=327,no=328,missing=328,gain=4.69447475e+09,cover=187
+								327:[latitude<1.2951293] yes=591,no=592,missing=592,gain=6.12243866e+09,cover=123
+									591:[median_income<-0.353383422] yes=939,no=940,missing=940,gain=5.26444134e+09,cover=49
+										939:leaf=-274.609375,cover=1
+										940:leaf=-15213.1123,cover=48
+									592:leaf=-19215.2305,cover=74
+								328:[population<-0.122616753] yes=593,no=594,missing=594,gain=9.90052352e+09,cover=64
+									593:[housing_median_age<-1.08272219] yes=941,no=942,missing=942,gain=6.50851021e+09,cover=8
+										941:leaf=-12591.9141,cover=3
+										942:leaf=-1431.01562,cover=5
+									594:[housing_median_age<-1.79749024] yes=943,no=944,missing=944,gain=368640000,cover=56
+										943:leaf=-7501.91406,cover=3
+										944:leaf=-15623.1221,cover=53
+							172:[longitude<-0.813220859] yes=329,no=330,missing=330,gain=1.5883436e+10,cover=243
+								329:[latitude<1.42619729] yes=595,no=596,missing=596,gain=2.01654272e+10,cover=189
+									595:[longitude<-0.962956607] yes=945,no=946,missing=946,gain=8.15903539e+09,cover=140
+										945:leaf=-10748.3311,cover=77
+										946:leaf=-14449.7002,cover=63
+									596:[housing_median_age<-0.606210172] yes=947,no=948,missing=948,gain=2.08293069e+09,cover=49
+										947:leaf=-14307.9482,cover=22
+										948:leaf=-19871.0332,cover=27
+								330:[total_rooms<2.36429524] yes=597,no=598,missing=598,gain=1.85662423e+10,cover=54
+									597:[longitude<-0.658493817] yes=949,no=950,missing=950,gain=1.22979123e+10,cover=53
+										949:leaf=-6515.01807,cover=25
+										950:leaf=-13094.418,cover=28
+									598:leaf=10615.3906,cover=1
+						86:[longitude<-1.22748983] yes=173,no=174,missing=174,gain=3.63344364e+10,cover=217
+							173:[latitude<1.27172434] yes=331,no=332,missing=332,gain=1.22849362e+10,cover=42
+								331:[longitude<-1.32232261] yes=599,no=600,missing=600,gain=1.09880914e+10,cover=39
+									599:[population<-0.433246821] yes=951,no=952,missing=952,gain=1.80149453e+09,cover=21
+										951:leaf=-2277.68237,cover=5
+										952:leaf=-7234.55859,cover=16
+									600:[population<0.225077108] yes=953,no=954,missing=954,gain=4.05746355e+09,cover=18
+										953:leaf=2499.18262,cover=12
+										954:leaf=-3476.47314,cover=6
+								332:[longitude<-1.35226977] yes=601,no=602,missing=602,gain=1.31940014e+10,cover=3
+									601:leaf=15607.1875,cover=2
+									602:leaf=-6474.60938,cover=1
+							174:[longitude<-0.828194439] yes=333,no=334,missing=334,gain=3.2101761e+10,cover=175
+								333:[latitude<1.1032083] yes=603,no=604,missing=604,gain=1.36079933e+10,cover=133
+									603:[total_bedrooms<-0.835053682] yes=955,no=956,missing=956,gain=1.81370906e+09,cover=8
+										955:leaf=3685.39062,cover=1
+										956:leaf=-3220.56641,cover=7
+									604:[total_rooms<-1.11636746] yes=957,no=958,missing=958,gain=8.56355635e+09,cover=125
+										957:leaf=4275.39062,cover=1
+										958:leaf=-10997.4648,cover=124
+								334:[households<-0.364732295] yes=605,no=606,missing=606,gain=1.30933811e+10,cover=42
+									605:[longitude<-0.723379374] yes=959,no=960,missing=960,gain=6.40225075e+09,cover=24
+										959:leaf=-2592.01709,cover=10
+										960:leaf=-9477.9375,cover=14
+									606:[housing_median_age<-1.40039694] yes=961,no=962,missing=962,gain=1.55733504e+09,cover=18
+										961:leaf=-2835.375,cover=4
+										962:leaf=1242.0625,cover=14
+			10:[longitude<-1.36225212] yes=21,no=22,missing=22,gain=1.16991853e+12,cover=477
+				21:[latitude<1.00022626] yes=43,no=44,missing=44,gain=4.26697294e+11,cover=199
+					43:[total_rooms<-0.258328795] yes=87,no=88,missing=88,gain=9.93538867e+10,cover=112
+						87:[total_bedrooms<-0.806575477] yes=175,no=176,missing=176,gain=1.83267656e+10,cover=49
+							175:[total_rooms<-1.11636746] yes=335,no=336,missing=336,gain=1.13078963e+09,cover=3
+								335:leaf=-4474.60938,cover=1
+								336:[longitude<-1.43212879] yes=607,no=608,missing=608,gain=84165696,cover=2
+									607:leaf=2465.39062,cover=1
+									608:leaf=105.390625,cover=1
+							176:[population<-0.484430164] yes=337,no=338,missing=338,gain=2.64504934e+10,cover=46
+								337:[total_rooms<-0.479817182] yes=609,no=610,missing=610,gain=3.13342362e+09,cover=19
+									609:[longitude<-1.44211125] yes=963,no=964,missing=964,gain=310796288,cover=10
+										963:leaf=19623.0859,cover=3
+										964:leaf=10639.4336,cover=7
+									610:[median_income<0.361005813] yes=965,no=966,missing=966,gain=4.4299223e+09,cover=9
+										965:leaf=26554.0508,cover=8
+										966:leaf=5245.39062,cover=1
+								338:[longitude<-1.44710243] yes=611,no=612,missing=612,gain=3.34208205e+09,cover=27
+									611:leaf=16076.625,cover=4
+									612:[longitude<-1.43711996] yes=967,no=968,missing=968,gain=1.14738381e+09,cover=23
+										967:leaf=3273.08594,cover=3
+										968:leaf=9152.17285,cover=20
+						88:[population<-0.361766607] yes=177,no=178,missing=178,gain=3.29441608e+10,cover=63
+							177:[total_rooms<-0.253752589] yes=339,no=340,missing=340,gain=6.5798144e+09,cover=12
+								339:leaf=8765.39062,cover=1
+								340:leaf=38781.582,cover=11
+							178:[latitude<0.986183226] yes=341,no=342,missing=342,gain=1.73203784e+10,cover=51
+								341:[longitude<-1.42214644] yes=613,no=614,missing=614,gain=5.13796096e+09,cover=9
+									613:[median_income<-0.10912843] yes=969,no=970,missing=970,gain=461155328,cover=7
+										969:leaf=1775.39062,cover=1
+										970:leaf=8869.24121,cover=6
+									614:leaf=20973.8555,cover=2
+								342:[longitude<-1.41715527] yes=615,no=616,missing=616,gain=1.08366397e+10,cover=42
+									615:[total_rooms<0.638607681] yes=971,no=972,missing=972,gain=3.03182643e+09,cover=37
+										971:leaf=26884.0039,cover=36
+										972:leaf=6275.39062,cover=1
+									616:leaf=12265.6514,cover=5
+					44:[latitude<1.02363122] yes=89,no=90,missing=90,gain=4.81279082e+11,cover=87
+						89:[latitude<1.00958824] yes=179,no=180,missing=180,gain=7.96784067e+10,cover=75
+							179:[longitude<-1.42713761] yes=343,no=344,missing=344,gain=1.11996305e+11,cover=37
+								343:[longitude<-1.44710243] yes=617,no=618,missing=618,gain=5.22190848e+09,cover=30
+									617:leaf=27494.459,cover=7
+									618:leaf=45492.0586,cover=23
+								344:[total_rooms<-1.11636746] yes=619,no=620,missing=620,gain=1.91453798e+09,cover=7
+									619:leaf=1775.39062,cover=1
+									620:[median_income<-0.299625218] yes=973,no=974,missing=974,gain=570093568,cover=6
+										973:leaf=5547.1875,cover=2
+										974:leaf=15268.625,cover=4
+							180:[longitude<-1.4071728] yes=345,no=346,missing=346,gain=5.94018304e+09,cover=38
+								345:leaf=54283.2695,cover=37
+								346:leaf=14275.3906,cover=1
+						90:[longitude<-1.5818646] yes=181,no=182,missing=182,gain=4.85585388e+10,cover=12
+							181:[longitude<-1.64175892] yes=347,no=348,missing=348,gain=1.98289203e+09,cover=4
+								347:leaf=-15441.9141,cover=3
+								348:leaf=-2394.60938,cover=1
+							182:[longitude<-1.50699675] yes=349,no=350,missing=350,gain=6.45286502e+09,cover=8
+								349:leaf=4072.625,cover=4
+								350:leaf=16292.625,cover=4
+				22:[latitude<-0.708338976] yes=45,no=46,missing=46,gain=3.63396006e+11,cover=278
+					45:[longitude<0.624242842] yes=91,no=92,missing=92,gain=2.85384573e+11,cover=110
+						91:[latitude<-0.745786965] yes=183,no=184,missing=184,gain=1.65577032e+11,cover=49
+							183:[longitude<0.564348519] yes=351,no=352,missing=352,gain=7.74392791e+10,cover=13
+								351:leaf=29316.666,cover=4
+								352:[total_rooms<-0.283955544] yes=621,no=622,missing=622,gain=1.36246825e+10,cover=9
+									621:[longitude<0.619251668] yes=975,no=976,missing=976,gain=4.63784909e+09,cover=7
+										975:leaf=-7716.47363,cover=6
+										976:leaf=4035.39062,cover=1
+									622:leaf=10093.8545,cover=2
+							184:[median_income<-0.25392282] yes=353,no=354,missing=354,gain=8.32776438e+10,cover=36
+								353:[total_rooms<0.118750617] yes=623,no=624,missing=624,gain=1.6677716e+10,cover=8
+									623:[median_income<-0.316105425] yes=977,no=978,missing=978,gain=6.15381504e+09,cover=6
+										977:leaf=838.085938,cover=3
+										978:leaf=13123.0859,cover=3
+									624:leaf=28560.5215,cover=2
+								354:leaf=41682.8711,cover=28
+						92:[latitude<-0.867492974] yes=185,no=186,missing=186,gain=1.37449308e+11,cover=61
+							185:[population<0.0106364777] yes=355,no=356,missing=356,gain=3.12237916e+10,cover=12
+								355:leaf=30188.2168,cover=11
+								356:leaf=-3474.60938,cover=1
+							186:[latitude<-0.722381949] yes=357,no=358,missing=358,gain=1.22462306e+11,cover=49
+								357:[total_rooms<-1.17906153] yes=625,no=626,missing=626,gain=5.83166484e+10,cover=31
+									625:[longitude<0.659181237] yes=979,no=980,missing=980,gain=4.0091689e+09,cover=2
+										979:leaf=29275.4902,cover=1
+										980:leaf=5525.39062,cover=1
+									626:[latitude<-0.839406967] yes=981,no=982,missing=982,gain=4.29087785e+10,cover=29
+										981:leaf=6824.43359,cover=7
+										982:leaf=-10359.2529,cover=22
+								358:[total_rooms<-0.709542751] yes=627,no=628,missing=628,gain=3.55941007e+10,cover=18
+									627:[longitude<0.654190004] yes=983,no=984,missing=984,gain=1.44710234e+09,cover=3
+										983:leaf=2355.39062,cover=1
+										984:leaf=-4879.47949,cover=2
+									628:[latitude<-0.717700958] yes=985,no=986,missing=986,gain=1.13027809e+10,cover=15
+										985:leaf=9732.31836,cover=5
+										986:leaf=24507.9824,cover=10
+					46:[median_income<0.208892718] yes=93,no=94,missing=94,gain=1.59540527e+11,cover=168
+						93:[latitude<1.06576025] yes=187,no=188,missing=188,gain=7.76374845e+10,cover=129
+							187:[longitude<-1.32232261] yes=359,no=360,missing=360,gain=5.95838689e+10,cover=114
+								359:[longitude<-1.35226977] yes=629,no=630,missing=630,gain=9.19374234e+09,cover=33
+									629:[latitude<1.05639827] yes=987,no=988,missing=988,gain=1.85855411e+09,cover=4
+										987:leaf=-3506.14575,cover=2
+										988:leaf=3533.85425,cover=2
+									630:[total_bedrooms<-0.825560987] yes=989,no=990,missing=990,gain=5.49434982e+09,cover=29
+										989:leaf=17236.625,cover=4
+										990:leaf=8487.29004,cover=25
+								360:[longitude<0.783961058] yes=631,no=632,missing=632,gain=3.95786158e+10,cover=81
+									631:[latitude<-0.55854696] yes=991,no=992,missing=992,gain=4.3312001e+10,cover=78
+										991:leaf=4593.44531,cover=40
+										992:leaf=-4716.6748,cover=38
+									632:leaf=-20341.9648,cover=3
+							188:[total_rooms<-0.951624095] yes=361,no=362,missing=362,gain=4.53985894e+09,cover=15
+								361:leaf=-19015.375,cover=4
+								362:[longitude<-0.848159194] yes=633,no=634,missing=634,gain=1.89052928e+09,cover=11
+									633:leaf=-9995.65332,cover=10
+									634:leaf=-444.609375,cover=1
+						94:[latitude<1.06576025] yes=189,no=190,missing=190,gain=1.51549542e+10,cover=39
+							189:[median_income<0.387490034] yes=363,no=364,missing=364,gain=9.11002829e+09,cover=36
+								363:leaf=9459.88281,cover=11
+								364:[total_rooms<-0.584154665] yes=635,no=636,missing=636,gain=9.02638797e+09,cover=25
+									635:[longitude<-1.28738415] yes=993,no=994,missing=994,gain=9.36630374e+09,cover=6
+										993:leaf=-5094.60938,cover=1
+										994:leaf=12118.9844,cover=5
+									636:[longitude<0.724066734] yes=995,no=996,missing=996,gain=5.94966938e+09,cover=19
+										995:leaf=21611.3047,cover=17
+										996:leaf=5933.85449,cover=2
+							190:[longitude<-1.27241063] yes=365,no=366,missing=366,gain=994732288,cover=3
+								365:leaf=-2894.60938,cover=1
+								366:leaf=2893.85425,cover=2
+	2:[median_income<1.6603117] yes=5,no=6,missing=6,gain=1.05435911e+13,cover=3055
+		5:[housing_median_age<0.664488614] yes=11,no=12,missing=12,gain=1.97014218e+12,cover=2226
+			11:[median_income<1.02063644] yes=23,no=24,missing=24,gain=1.54696837e+12,cover=1855
+				23:[housing_median_age<-0.844466209] yes=47,no=48,missing=48,gain=5.02638576e+11,cover=992
+					47:[latitude<-0.55854696] yes=95,no=96,missing=96,gain=7.85445847e+10,cover=363
+						95:[longitude<0.878793716] yes=191,no=192,missing=192,gain=2.00907047e+11,cover=187
+							191:[median_income<0.749633968] yes=367,no=368,missing=368,gain=3.79998372e+10,cover=57
+								367:[total_rooms<-0.279836953] yes=637,no=638,missing=638,gain=1.24924068e+10,cover=20
+									637:[latitude<-0.820683002] yes=997,no=998,missing=998,gain=2.57784422e+09,cover=5
+										997:leaf=3403.08594,cover=3
+										998:leaf=-4352.8125,cover=2
+									638:[median_income<0.685292602] yes=999,no=1000,missing=1000,gain=6.28554957e+09,cover=15
+										999:leaf=15325.1396,cover=8
+										1000:leaf=5886.93359,cover=7
+								368:[latitude<-0.923664987] yes=639,no=640,missing=640,gain=1.99398195e+10,cover=37
+									639:leaf=39033.9883,cover=2
+									640:[longitude<0.768987477] yes=1001,no=1002,missing=1002,gain=1.34006374e+10,cover=35
+										1001:leaf=21266.1738,cover=23
+										1002:leaf=11174.5674,cover=12
+							192:[latitude<-0.830044985] yes=369,no=370,missing=370,gain=4.54991626e+10,cover=130
+								369:[longitude<1.19323885] yes=641,no=642,missing=642,gain=7.54246779e+10,cover=85
+									641:[latitude<-0.942389011] yes=1003,no=1004,missing=1004,gain=3.82355784e+10,cover=47
+										1003:leaf=14903.5205,cover=28
+										1004:leaf=3155.24219,cover=19
+									642:[longitude<1.71232307] yes=1005,no=1006,missing=1006,gain=1.9656233e+10,cover=38
+										1005:leaf=-267.888519,cover=36
+										1006:leaf=-17126.1465,cover=2
+								370:[longitude<1.10339737] yes=643,no=644,missing=644,gain=1.48140421e+10,cover=45
+									643:[total_bedrooms<3.61704016] yes=1007,no=1008,missing=1008,gain=1.03488604e+10,cover=30
+										1007:leaf=-1487.46094,cover=27
+										1008:leaf=9388.08594,cover=3
+									644:[total_rooms<3.18709707] yes=1009,no=1010,missing=1010,gain=3.33816218e+09,cover=15
+										1009:leaf=-8764.27441,cover=13
+										1010:leaf=-19.4791679,cover=2
+						96:[longitude<-0.458846092] yes=193,no=194,missing=194,gain=1.6478249e+11,cover=176
+							193:[latitude<1.00958824] yes=371,no=372,missing=372,gain=8.72405729e+10,cover=142
+								371:[total_bedrooms<0.429853588] yes=645,no=646,missing=646,gain=1.44134308e+10,cover=58
+									645:[population<-0.165857866] yes=1011,no=1012,missing=1012,gain=7.1314391e+09,cover=41
+										1011:leaf=10696.0303,cover=16
+										1012:leaf=4955.75146,cover=25
+									646:[median_income<0.642538786] yes=1013,no=1014,missing=1014,gain=5.59458714e+09,cover=17
+										1013:leaf=75.390625,cover=1
+										1014:leaf=15544.2646,cover=16
+								372:[longitude<-1.48204076] yes=647,no=648,missing=648,gain=4.71187784e+10,cover=84
+									647:[population<-0.390888155] yes=1015,no=1016,missing=1016,gain=5.78629222e+09,cover=11
+										1015:leaf=15277.8125,cover=6
+										1016:leaf=4865.65137,cover=5
+									648:[median_income<0.788122952] yes=1017,no=1018,missing=1018,gain=1.00445911e+10,cover=73
+										1017:leaf=-4256.79883,cover=40
+										1018:leaf=419.287689,cover=33
+							194:[latitude<-0.324496925] yes=373,no=374,missing=374,gain=2.72522936e+10,cover=34
+								373:[longitude<0.679145992] yes=649,no=650,missing=650,gain=1.2815617e+10,cover=9
+									649:[median_income<0.806656659] yes=1019,no=1020,missing=1020,gain=289620992,cover=4
+										1019:leaf=2313.85425,cover=2
+										1020:leaf=7513.854,cover=2
+									650:leaf=-7851.01562,cover=5
+								374:[population<-0.995381296] yes=651,no=652,missing=652,gain=1.77784422e+09,cover=25
+									651:leaf=-2804.60938,cover=1
+									652:[housing_median_age<-0.923884869] yes=1021,no=1022,missing=1022,gain=569409536,cover=24
+										1021:leaf=-15413.002,cover=23
+										1022:leaf=-3954.60938,cover=1
+					48:[longitude<0.634225249] yes=97,no=98,missing=98,gain=2.50842972e+11,cover=629
+						97:[latitude<-0.680252969] yes=195,no=196,missing=196,gain=5.25247185e+11,cover=394
+							195:[longitude<0.604278088] yes=375,no=376,missing=376,gain=1.5910817e+11,cover=62
+								375:[longitude<0.324771255] yes=653,no=654,missing=654,gain=2.79629005e+10,cover=37
+									653:leaf=4035.39062,cover=1
+									654:leaf=42453.7969,cover=36
+								376:[latitude<-0.825363994] yes=655,no=656,missing=656,gain=3.57664031e+10,cover=25
+									655:leaf=25124.2637,cover=16
+									656:[total_rooms<-0.164516553] yes=1023,no=1024,missing=1024,gain=4.9807401e+09,cover=9
+										1023:leaf=3025.65112,cover=5
+										1024:leaf=12800.625,cover=4
+							196:[longitude<-1.22748983] yes=377,no=378,missing=378,gain=2.51952103e+11,cover=332
+								377:[latitude<0.887882233] yes=657,no=658,missing=658,gain=2.59121611e+11,cover=108
+									657:leaf=35971.0859,cover=32
+									658:[longitude<-1.25743699] yes=1025,no=1026,missing=1026,gain=6.86674739e+10,cover=76
+										1025:leaf=17651.6152,cover=58
+										1026:leaf=3324.95093,cover=18
+								378:[latitude<0.841072261] yes=659,no=660,missing=660,gain=1.75362572e+11,cover=224
+									659:[longitude<0.264876932] yes=1027,no=1028,missing=1028,gain=1.68308048e+11,cover=169
+										1027:leaf=17469.1309,cover=102
+										1028:leaf=4504.15186,cover=67
+									660:[total_rooms<-0.82623601] yes=1029,no=1030,missing=1030,gain=2.50405745e+10,cover=55
+										1029:leaf=-11790.7588,cover=6
+										1030:leaf=983.365662,cover=49
+						98:[longitude<1.18325651] yes=197,no=198,missing=198,gain=9.64315709e+10,cover=235
+							197:[latitude<-0.942389011] yes=379,no=380,missing=380,gain=1.42965735e+11,cover=199
+								379:[longitude<1.16329169] yes=661,no=662,missing=662,gain=4.01548902e+10,cover=17
+									661:[population<-0.235573143] yes=1031,no=1032,missing=1032,gain=8.82996019e+09,cover=12
+										1031:leaf=39057.0117,cover=7
+										1032:leaf=19162.3184,cover=5
+									662:[housing_median_age<-0.0502794497] yes=1033,no=1034,missing=1034,gain=4.67681997e+09,cover=5
+										1033:leaf=11804.625,cover=4
+										1034:leaf=-1704.60938,cover=1
+								380:[latitude<-0.708338976] yes=663,no=664,missing=664,gain=4.4202197e+10,cover=182
+									663:[housing_median_age<-0.685628831] yes=1035,no=1036,missing=1036,gain=4.5664469e+10,cover=167
+										1035:leaf=18482.2598,cover=12
+										1036:leaf=5981.99561,cover=155
+									664:[longitude<0.778969884] yes=1037,no=1038,missing=1038,gain=5.60971366e+10,cover=15
+										1037:leaf=25026.5664,cover=11
+										1038:leaf=-1879.375,cover=4
+							198:[latitude<-1.14835298] yes=381,no=382,missing=382,gain=3.26865654e+10,cover=36
+								381:[total_rooms<-0.0926701203] yes=665,no=666,missing=666,gain=1.42648648e+10,cover=34
+									665:[housing_median_age<-0.129698128] yes=1039,no=1040,missing=1040,gain=8.18754355e+09,cover=16
+										1039:leaf=-10555.6533,cover=10
+										1040:leaf=-1156.47327,cover=6
+									666:[housing_median_age<-0.685628831] yes=1041,no=1042,missing=1042,gain=3.30167091e+09,cover=18
+										1041:leaf=5848.08594,cover=3
+										1042:leaf=-588.642578,cover=15
+								382:[longitude<1.33798349] yes=667,no=668,missing=668,gain=1.69386435e+10,cover=2
+									667:leaf=-1344.60938,cover=1
+									668:leaf=29275.4902,cover=1
+				24:[housing_median_age<-0.129698128] yes=49,no=50,missing=50,gain=6.50104537e+11,cover=863
+					49:[latitude<1.08916521] yes=99,no=100,missing=100,gain=2.09155785e+11,cover=630
+						99:[longitude<-1.21750748] yes=199,no=200,missing=200,gain=2.90813641e+11,cover=558
+							199:[population<1.0625428] yes=383,no=384,missing=384,gain=3.51604572e+10,cover=49
+								383:[total_bedrooms<-0.645198941] yes=669,no=670,missing=670,gain=3.36447406e+10,cover=39
+									669:[total_rooms<-0.836761296] yes=1043,no=1044,missing=1044,gain=3.63359027e+09,cover=6
+										1043:leaf=21824.625,cover=4
+										1044:leaf=6493.85449,cover=2
+									670:leaf=39902.8555,cover=33
+								384:[total_rooms<1.39230883] yes=671,no=672,missing=672,gain=5.99709286e+09,cover=10
+									671:leaf=5993.85449,cover=2
+									672:[housing_median_age<-1.95632768] yes=1045,no=1046,missing=1046,gain=154140672,cover=8
+										1045:leaf=6625.39062,cover=1
+										1046:leaf=23531.9355,cover=7
+							200:[median_income<1.29995799] yes=385,no=386,missing=386,gain=1.22595312e+11,cover=509
+								385:[total_bedrooms<0.268477052] yes=673,no=674,missing=674,gain=8.07282934e+10,cover=272
+									673:[longitude<1.16329169] yes=1047,no=1048,missing=1048,gain=4.65512038e+10,cover=186
+										1047:leaf=13639.041,cover=160
+										1048:leaf=4305.9375,cover=26
+									674:[population<1.81617367] yes=1049,no=1050,missing=1050,gain=3.76678646e+10,cover=86
+										1049:leaf=22850.9551,cover=60
+										1050:leaf=12771.123,cover=26
+								386:[longitude<1.19823015] yes=675,no=676,missing=676,gain=5.94165105e+10,cover=237
+									675:[latitude<-0.975156009] yes=1051,no=1052,missing=1052,gain=3.12863621e+10,cover=211
+										1051:leaf=30519.0527,cover=22
+										1052:leaf=21282.8379,cover=189
+									676:[median_income<1.34260654] yes=1053,no=1054,missing=1054,gain=1.14933842e+10,cover=26
+										1053:leaf=-111.914062,cover=3
+										1054:leaf=12981.166,cover=23
+						100:[longitude<-1.4071728] yes=201,no=202,missing=202,gain=4.91260641e+10,cover=72
+							201:[latitude<1.09384632] yes=387,no=388,missing=388,gain=7.68901939e+09,cover=14
+								387:leaf=525.390625,cover=1
+								388:[longitude<-1.76154757] yes=677,no=678,missing=678,gain=8.39517798e+09,cover=13
+									677:leaf=765.390625,cover=1
+									678:[median_income<1.05201733] yes=1055,no=1056,missing=1056,gain=2.03795661e+09,cover=12
+										1055:leaf=4845.39062,cover=1
+										1056:leaf=21488.2168,cover=11
+							202:[median_income<1.37346089] yes=389,no=390,missing=390,gain=3.27299318e+10,cover=58
+								389:[total_rooms<-0.316446602] yes=679,no=680,missing=680,gain=1.94154332e+10,cover=44
+									679:[total_rooms<-1.02530098] yes=1057,no=1058,missing=1058,gain=8.67628134e+09,cover=15
+										1057:leaf=-13212.8125,cover=2
+										1058:leaf=-1165.70312,cover=13
+									680:[total_rooms<0.54342258] yes=1059,no=1060,missing=1060,gain=6.38320026e+09,cover=29
+										1059:leaf=2596.52979,cover=18
+										1060:leaf=8778.2168,cover=11
+								390:[population<-0.427951992] yes=681,no=682,missing=682,gain=1.11621407e+10,cover=14
+									681:[housing_median_age<-1.40039694] yes=1061,no=1062,missing=1062,gain=9.70960896e+09,cover=5
+										1061:leaf=1085.39062,cover=1
+										1062:leaf=23824.625,cover=4
+									682:[housing_median_age<-1.4798156] yes=1063,no=1064,missing=1064,gain=3.47258163e+09,cover=9
+										1063:leaf=11364.625,cover=4
+										1064:leaf=3018.98438,cover=5
+					50:[median_income<1.29995799] yes=101,no=102,missing=102,gain=1.92390103e+11,cover=233
+						101:[total_rooms<-0.391038775] yes=203,no=204,missing=204,gain=8.94849516e+10,cover=123
+							203:[population<-0.634450376] yes=391,no=392,missing=392,gain=3.86268529e+10,cover=45
+								391:[total_bedrooms<-0.856412351] yes=683,no=684,missing=684,gain=4.07790223e+10,cover=30
+									683:[median_income<1.20681572] yes=1065,no=1066,missing=1066,gain=6.29277082e+09,cover=13
+										1065:leaf=13975.7031,cover=9
+										1066:leaf=3452.625,cover=4
+									684:[latitude<1.07512224] yes=1067,no=1068,missing=1068,gain=4.49604485e+10,cover=17
+										1067:leaf=30911.3691,cover=15
+										1068:leaf=-599.479187,cover=2
+								392:[total_rooms<-0.531070709] yes=685,no=686,missing=686,gain=4.99255091e+09,cover=15
+									685:[population<-0.513551712] yes=1069,no=1070,missing=1070,gain=100730624,cover=4
+										1069:leaf=1788.08594,cover=3
+										1070:leaf=-244.609375,cover=1
+									686:[latitude<0.972140253] yes=1071,no=1072,missing=1072,gain=2.31266509e+09,cover=11
+										1071:leaf=10707.9834,cover=10
+										1072:leaf=325.390625,cover=1
+							204:[longitude<0.833872974] yes=393,no=394,missing=394,gain=5.31208602e+10,cover=78
+								393:[latitude<1.11725128] yes=687,no=688,missing=688,gain=2.00654193e+10,cover=67
+									687:[median_income<1.05201733] yes=1073,no=1074,missing=1074,gain=3.57341594e+09,cover=64
+										1073:leaf=16824.625,cover=4
+										1074:leaf=32534.5625,cover=60
+									688:leaf=10268.0859,cover=3
+								394:[latitude<-0.951750994] yes=689,no=690,missing=690,gain=3.29441157e+10,cover=11
+									689:leaf=32560.5879,cover=2
+									690:[longitude<0.878793716] yes=1075,no=1076,missing=1076,gain=7.14422682e+09,cover=9
+										1075:leaf=10574.9561,cover=6
+										1076:leaf=-831.914062,cover=3
+						102:[longitude<1.19323885] yes=205,no=206,missing=206,gain=6.44098294e+10,cover=110
+							205:[latitude<1.12661326] yes=395,no=396,missing=396,gain=4.84088218e+10,cover=108
+								395:leaf=38134.1094,cover=105
+								396:leaf=8773.08594,cover=3
+							206:[longitude<1.21320367] yes=397,no=398,missing=398,gain=566783808,cover=2
+								397:leaf=2995.39062,cover=1
+								398:leaf=-1814.60938,cover=1
+			12:[households<-0.73356235] yes=25,no=26,missing=26,gain=2.64090157e+11,cover=371
+				25:[median_income<0.902115643] yes=51,no=52,missing=52,gain=1.35737967e+11,cover=62
+					51:[longitude<-1.32232261] yes=103,no=104,missing=104,gain=6.63618478e+10,cover=29
+						103:[latitude<1.05171728] yes=207,no=208,missing=208,gain=254623744,cover=9
+							207:[total_rooms<-0.898082435] yes=399,no=400,missing=400,gain=266084352,cover=8
+								399:leaf=9907.1875,cover=2
+								400:leaf=24934.9551,cover=6
+							208:leaf=6335.39062,cover=1
+						104:[longitude<0.619251668] yes=209,no=210,missing=210,gain=2.16965693e+10,cover=20
+							209:[median_income<0.685292602] yes=401,no=402,missing=402,gain=9.45319834e+09,cover=12
+								401:[median_income<0.655912519] yes=691,no=692,missing=692,gain=2.32753766e+09,cover=5
+									691:leaf=1775.39062,cover=1
+									692:[longitude<-1.30235779] yes=1077,no=1078,missing=1078,gain=2.29879603e+09,cover=4
+										1077:leaf=2635.39062,cover=1
+										1078:leaf=16773.0859,cover=3
+								402:[housing_median_age<1.14100063] yes=693,no=694,missing=694,gain=5.71457382e+09,cover=7
+									693:[latitude<1.01426923] yes=1079,no=1080,missing=1080,gain=448336128,cover=5
+										1079:leaf=5760.625,cover=4
+										1080:leaf=525.390625,cover=1
+									694:leaf=-5766.146,cover=2
+							210:[longitude<0.923714459] yes=403,no=404,missing=404,gain=3.98355507e+09,cover=8
+								403:[total_bedrooms<-0.766231358] yes=695,no=696,missing=696,gain=807109632,cover=7
+									695:[housing_median_age<0.98216331] yes=1081,no=1082,missing=1082,gain=283596800,cover=5
+										1081:leaf=-2304.60938,cover=1
+										1082:leaf=-9743.375,cover=4
+									696:leaf=-2432.8125,cover=2
+								404:leaf=3365.39062,cover=1
+					52:[total_rooms<-0.985487998] yes=105,no=106,missing=106,gain=1.28854589e+11,cover=33
+						105:[longitude<-0.778282464] yes=211,no=212,missing=212,gain=1.44469012e+10,cover=5
+							211:leaf=-12119.4795,cover=2
+							212:[longitude<0.674154818] yes=405,no=406,missing=406,gain=3.29845965e+09,cover=3
+								405:leaf=9700.52148,cover=2
+								406:leaf=-1974.60938,cover=1
+						106:[longitude<0.604278088] yes=213,no=214,missing=214,gain=2.99657462e+10,cover=28
+							213:[latitude<0.930011272] yes=407,no=408,missing=408,gain=4.16579584e+09,cover=19
+								407:leaf=40488.918,cover=15
+								408:leaf=20588.625,cover=4
+							214:[total_rooms<-0.715491831] yes=409,no=410,missing=410,gain=2.94634291e+09,cover=9
+								409:leaf=11652.3184,cover=5
+								410:leaf=24580.625,cover=4
+				26:[median_income<0.881633818] yes=53,no=54,missing=54,gain=1.31780313e+11,cover=309
+					53:[longitude<0.604278088] yes=107,no=108,missing=108,gain=7.01709681e+10,cover=131
+						107:[longitude<-0.0645418242] yes=215,no=216,missing=216,gain=1.28937361e+11,cover=77
+							215:[households<-0.401353717] yes=411,no=412,missing=412,gain=4.49890877e+10,cover=52
+								411:[latitude<1.11725128] yes=697,no=698,missing=698,gain=9.8073641e+09,cover=21
+									697:[total_bedrooms<-0.469583303] yes=1083,no=1084,missing=1084,gain=8.98182349e+09,cover=20
+										1083:leaf=19890.1836,cover=17
+										1084:leaf=5558.08594,cover=3
+									698:leaf=-1114.60938,cover=1
+								412:[latitude<1.05171728] yes=699,no=700,missing=700,gain=4.18481439e+10,cover=31
+									699:leaf=33258.0234,cover=28
+									700:leaf=6063.08594,cover=3
+							216:leaf=44631.9609,cover=25
+						108:[latitude<-0.867492974] yes=217,no=218,missing=218,gain=8.91975762e+10,cover=54
+							217:[median_income<0.806656659] yes=413,no=414,missing=414,gain=7.49767885e+09,cover=10
+								413:leaf=40671.7617,cover=9
+								414:leaf=9045.39062,cover=1
+							218:[latitude<-0.722381949] yes=415,no=416,missing=416,gain=1.35336854e+11,cover=44
+								415:[population<-0.709460437] yes=701,no=702,missing=702,gain=2.22476677e+10,cover=22
+									701:leaf=21893.8555,cover=2
+									702:[total_bedrooms<-0.649945319] yes=1085,no=1086,missing=1086,gain=4.30209075e+09,cover=20
+										1085:leaf=-2283.375,cover=4
+										1086:leaf=4572.5,cover=16
+								416:[longitude<0.629234076] yes=703,no=704,missing=704,gain=2.27799859e+10,cover=22
+									703:[total_rooms<-0.435885608] yes=1087,no=1088,missing=1088,gain=3.22697011e+09,cover=4
+										1087:leaf=225.390625,cover=1
+										1088:leaf=13158.0859,cover=3
+									704:[median_income<0.642538786] yes=1089,no=1090,missing=1090,gain=6.94399795e+09,cover=18
+										1089:leaf=6345.39062,cover=1
+										1090:leaf=32137.959,cover=17
+					54:[latitude<-0.698976934] yes=109,no=110,missing=110,gain=3.6476289e+10,cover=178
+						109:[longitude<1.16828299] yes=219,no=220,missing=220,gain=1.97546476e+10,cover=65
+							219:leaf=43150.9883,cover=63
+							220:leaf=13233.8545,cover=2
+						110:[longitude<-1.37223446] yes=221,no=222,missing=222,gain=3.63596349e+10,cover=113
+							221:[total_bedrooms<-0.728260398] yes=417,no=418,missing=418,gain=4.54898483e+09,cover=30
+								417:leaf=16667.1875,cover=2
+								418:leaf=42888.4023,cover=28
+							222:[median_income<1.42337549] yes=419,no=420,missing=420,gain=5.55404493e+10,cover=83
+								419:[median_income<1.05201733] yes=705,no=706,missing=706,gain=2.93824102e+09,cover=66
+									705:[longitude<-1.28239298] yes=1091,no=1092,missing=1092,gain=2.09184686e+10,cover=20
+										1091:leaf=29942.9375,cover=8
+										1092:leaf=14382.2598,cover=12
+									706:[longitude<-1.36225212] yes=1093,no=1094,missing=1094,gain=5.85767322e+09,cover=46
+										1093:leaf=6045.39062,cover=1
+										1094:leaf=29813.1699,cover=45
+								420:leaf=42411.3594,cover=17
+		6:[median_income<2.06210303] yes=13,no=14,missing=14,gain=1.31030476e+12,cover=829
+			13:[housing_median_age<-0.288535476] yes=27,no=28,missing=28,gain=3.36577167e+11,cover=291
+				27:[total_bedrooms<-0.856412351] yes=55,no=56,missing=56,gain=7.18678262e+10,cover=147
+					55:[total_rooms<-0.82623601] yes=111,no=112,missing=112,gain=1.58321818e+10,cover=8
+						111:leaf=14292.625,cover=4
+						112:[latitude<-0.792596996] yes=223,no=224,missing=224,gain=4.99957862e+09,cover=4
+							223:leaf=6465.39062,cover=1
+							224:leaf=-5896.91406,cover=3
+					56:[longitude<-1.21251631] yes=113,no=114,missing=114,gain=2.62862275e+10,cover=139
+						113:[latitude<0.897244215] yes=225,no=226,missing=226,gain=2.79054909e+10,cover=25
+							225:leaf=42791.5703,cover=12
+							226:[population<-0.776528299] yes=421,no=422,missing=422,gain=5.89548749e+09,cover=13
+								421:leaf=4275.39062,cover=1
+								422:[households<-0.809421062] yes=707,no=708,missing=708,gain=5.83681638e+09,cover=12
+									707:leaf=4805.39062,cover=1
+									708:leaf=27016.5508,cover=11
+						114:[households<-0.241788954] yes=227,no=228,missing=228,gain=1.62465055e+10,cover=114
+							227:[total_rooms<0.254663944] yes=423,no=424,missing=424,gain=2.64070758e+09,cover=50
+								423:[population<-0.139383718] yes=709,no=710,missing=710,gain=2.29677466e+09,cover=49
+									709:[housing_median_age<-1.8769089] yes=1095,no=1096,missing=1096,gain=937099264,cover=47
+										1095:leaf=8913.85449,cover=2
+										1096:leaf=22411.8574,cover=45
+									710:[longitude<0.324771255] yes=1097,no=1098,missing=1098,gain=4.20408218e+09,cover=2
+										1097:leaf=-1314.60938,cover=1
+										1098:leaf=13415.3906,cover=1
+								424:leaf=4655.39062,cover=1
+							228:[longitude<-1.20253396] yes=425,no=426,missing=426,gain=6.34519552e+09,cover=64
+								425:leaf=5315.39062,cover=1
+								426:leaf=28383.4355,cover=63
+				28:[total_bedrooms<-1.08898449] yes=57,no=58,missing=58,gain=2.15220748e+11,cover=144
+					57:[longitude<-1.28738415] yes=115,no=116,missing=116,gain=3.46285097e+10,cover=10
+						115:[latitude<1.11257029] yes=229,no=230,missing=230,gain=500043776,cover=4
+							229:leaf=25373.0859,cover=3
+							230:leaf=6775.39062,cover=1
+						116:[longitude<0.684137166] yes=231,no=232,missing=232,gain=3.62195681e+10,cover=6
+							231:[longitude<-0.688440979] yes=427,no=428,missing=428,gain=4.04362752e+09,cover=4
+								427:[longitude<-0.778282464] yes=711,no=712,missing=712,gain=332058016,cover=2
+									711:leaf=525.390625,cover=1
+									712:leaf=-3504.60938,cover=1
+								428:leaf=-14799.4795,cover=2
+							232:leaf=17727.1875,cover=2
+					58:[longitude<0.838864207] yes=117,no=118,missing=118,gain=7.38648392e+10,cover=134
+						117:[latitude<0.897244215] yes=233,no=234,missing=234,gain=9.91103549e+10,cover=123
+							233:[housing_median_age<-0.0502794497] yes=429,no=430,missing=430,gain=1.18174515e+09,cover=95
+								429:[longitude<0.629234076] yes=713,no=714,missing=714,gain=5.92950067e+09,cover=17
+									713:leaf=37873.7148,cover=16
+									714:leaf=8765.39062,cover=1
+								430:leaf=49179.3359,cover=78
+							234:[latitude<1.01426923] yes=431,no=432,missing=432,gain=8.86426829e+09,cover=28
+								431:leaf=10400.5215,cover=2
+								432:[longitude<-1.18756032] yes=715,no=716,missing=716,gain=5.39354726e+09,cover=26
+									715:leaf=32938.8359,cover=25
+									716:leaf=7315.39062,cover=1
+						118:[latitude<-0.975156009] yes=235,no=236,missing=236,gain=1.59266406e+10,cover=11
+							235:leaf=33144.668,cover=4
+							236:[longitude<0.963644028] yes=433,no=434,missing=434,gain=1.17557412e+10,cover=7
+								433:leaf=18402.3184,cover=5
+								434:[longitude<1.10339737] yes=717,no=718,missing=718,gain=30833512,cover=2
+									717:leaf=935.390625,cover=1
+									718:leaf=-244.609375,cover=1
+			14:[median_income<2.76532984] yes=29,no=30,missing=30,gain=2.89125958e+11,cover=538
+				29:[housing_median_age<0.0291392263] yes=59,no=60,missing=60,gain=3.80891038e+11,cover=280
+					59:[longitude<0.898758471] yes=119,no=120,missing=120,gain=4.85045043e+10,cover=158
+						119:[latitude<1.25300026] yes=237,no=238,missing=238,gain=3.42559293e+10,cover=121
+							237:[total_bedrooms<0.0216658618] yes=435,no=436,missing=436,gain=1.10362624e+09,cover=116
+								435:[total_rooms<0.681623995] yes=719,no=720,missing=720,gain=4.19013591e+10,cover=72
+									719:[housing_median_age<-1.08272219] yes=1099,no=1100,missing=1100,gain=2.05544489e+10,cover=71
+										1099:leaf=28211.3164,cover=17
+										1100:leaf=41193.5625,cover=54
+									720:leaf=-1374.60938,cover=1
+								436:leaf=45853.2617,cover=44
+							238:leaf=18392.3184,cover=5
+						120:[total_bedrooms<-0.716394484] yes=239,no=240,missing=240,gain=1.11999058e+10,cover=37
+							239:[longitude<0.943679214] yes=437,no=438,missing=438,gain=2.86605619e+09,cover=3
+								437:leaf=17695.3906,cover=1
+								438:leaf=3960.52075,cover=2
+							240:[latitude<-0.975156009] yes=439,no=440,missing=440,gain=2.10901402e+09,cover=34
+								439:leaf=35980.1055,cover=15
+								440:leaf=25304.2422,cover=19
+					60:[latitude<1.1032083] yes=121,no=122,missing=122,gain=1.16664566e+10,cover=122
+						121:leaf=54364.8828,cover=120
+						122:leaf=20500.5215,cover=2
+				30:[total_rooms<-1.11636746] yes=61,no=62,missing=62,gain=2.31737393e+11,cover=258
+					61:[total_rooms<-1.15114665] yes=123,no=124,missing=124,gain=7.32177613e+10,cover=8
+						123:[latitude<1.01426923] yes=241,no=242,missing=242,gain=6.01081446e+10,cover=5
+							241:leaf=40840.7461,cover=4
+							242:leaf=-6974.60938,cover=1
+						124:[longitude<-1.39219928] yes=243,no=244,missing=244,gain=2.32939213e+09,cover=3
+							243:leaf=1775.39062,cover=1
+							244:[longitude<0.8288818] yes=441,no=442,missing=442,gain=35134976,cover=2
+								441:leaf=-2474.60938,cover=1
+								442:leaf=-9474.60938,cover=1
+					62:[latitude<1.09384632] yes=125,no=126,missing=126,gain=6.11592438e+10,cover=250
+						125:leaf=56754.4336,cover=249
+						126:leaf=3475.39062,cover=1
