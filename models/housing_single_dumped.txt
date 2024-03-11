@@ -1,16 +1,16 @@
 booster[0]:
-0:[median_income<0.632956028] yes=1,no=2,missing=2,gain=6.10797827e+13,cover=14700
-	1:[median_income<-0.359964967] yes=3,no=4,missing=4,gain=1.600242e+13,cover=11645
-		3:[latitude<-0.539822936] yes=7,no=8,missing=8,gain=2.51851597e+12,cover=6065
-			7:leaf=-43227.2617,cover=2959
-			8:leaf=-79946.5781,cover=3106
-		4:[housing_median_age<1.53809404] yes=9,no=10,missing=10,gain=3.72435268e+12,cover=5580
-			9:leaf=-2376.55957,cover=5103
-			10:leaf=80703.1875,cover=477
-	2:[median_income<1.6603117] yes=5,no=6,missing=6,gain=1.05435911e+13,cover=3055
-		5:[housing_median_age<0.664488614] yes=11,no=12,missing=12,gain=1.97014218e+12,cover=2226
-			11:leaf=68544.3984,cover=1855
-			12:leaf=140451.188,cover=371
-		6:[median_income<2.06210303] yes=13,no=14,missing=14,gain=1.31030476e+12,cover=829
-			13:leaf=149825.438,cover=291
-			14:leaf=226073.703,cover=538
+0:[median_income<0.618739843] yes=1,no=2,missing=2,gain=5.99683844e+13,cover=14700
+	1:[median_income<-0.423253298] yes=3,no=4,missing=4,gain=1.49874373e+13,cover=11589
+		3:[latitude<-0.530460954] yes=7,no=8,missing=8,gain=2.31674479e+12,cover=5565
+			7:leaf=-44420.7188,cover=2673
+			8:leaf=-81208.5625,cover=2892
+		4:[housing_median_age<1.53809404] yes=9,no=10,missing=10,gain=3.49663474e+12,cover=6024
+			9:leaf=-5263.91309,cover=5529
+			10:leaf=73618.2656,cover=495
+	2:[median_income<1.59744465] yes=5,no=6,missing=6,gain=1.15346296e+13,cover=3111
+		5:[housing_median_age<-0.0502794497] yes=11,no=12,missing=12,gain=2.16596795e+12,cover=2208
+			11:leaf=52562.6133,cover=1321
+			12:leaf=110126.602,cover=887
+		6:[median_income<2.07726693] yes=13,no=14,missing=14,gain=1.36280067e+12,cover=903
+			13:leaf=151636.672,cover=350
+			14:leaf=224554.078,cover=553

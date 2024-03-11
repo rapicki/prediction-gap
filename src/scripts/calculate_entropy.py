@@ -2,7 +2,7 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 
-model_name = "wine_model"
+model_name = "wine_model_single"
 results_path = "results"
 
 def get_features(data_name: str) -> list:
@@ -38,12 +38,12 @@ def get_rewards_dict(model_name: str, ranking_name: str, entropy_mode: str) -> f
 
 def main():
     name = model_name.split("_")[0]
-    stddevs = ["0.01", "0.03", "0.1", "0.3"]
+    stddevs = ["0.01", "0.03", "0.1", "0.3", "1.0"]
     shap_name = f"{name}_shap_ranking"
     exact_names = [f"{name}_exact_ranking_std_{s}" for s in stddevs]
     approx_names = [f"{name}_approx_ranking_{s}_stddev"
-                    for s in ["100_iter_0.01", "100_iter_0.03", "500_iter_0.1", "1500_iter_0.3"]]
-    all_names = [shap_name] + exact_names + approx_names
+                    for s in ["100_iter_0.01", "100_iter_0.03", "100_iter_0.1", "100_iter_0.3", "1000_iter_1.0"]]
+    all_names = [shap_name] + exact_names# + approx_names
     entropy_results = {ranking_name: [] for ranking_name in all_names}
     entropy_modes = ["geometric", "top_1", "top_2", "top_3"]
     for mode in entropy_modes:
