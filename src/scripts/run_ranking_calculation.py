@@ -4,11 +4,11 @@ if __name__ == "__main__":
     experiment_type = "ranking"
     stddev_list = "0.01,0.03,0.1,0.3"
     iterations = "100"
-    result_path = "results/housing_model_single/ranking/"
+    result_path = "results/housing_model/ranking/"
     data_path = "data/housing_data/test_housing_scaled.csv"
-    model_path = "models/housing_single_saved.json"
-    proc_num = "50"
-    ranking_method = "exact"
+    model_path = "models/housing_saved.json"
+    proc_num = "30"
+    ranking_method = "shap"
     data_name = "housing"
 
     experiment_args = [
