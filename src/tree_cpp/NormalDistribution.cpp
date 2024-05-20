@@ -9,7 +9,7 @@ float NormalDistribution::normalCDF(double value) {
   return static_cast<float>(p);
 }
 
-float NormalDistribution::get_value() {
+float NormalDistribution::get_value(float x) {
   // Implement get_value() based on your requirements
-  return 0.0f;
+  return normalCDF(static_cast<double>(x));
 }

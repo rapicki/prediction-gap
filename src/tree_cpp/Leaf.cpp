@@ -7,8 +7,6 @@ Leaf::Leaf(int _id, float _value) {
 
 bool Leaf::is_leaf() { return true; }
 
-float Leaf::descend(float cdf_dict, Node &prob_anc) { return 1.0f; }
-
 void Leaf::collect_thresholds(DataPoint &data_point,
                               std::string perturbed_feature, float current_ub,
                               float result) {
@@ -16,3 +14,11 @@ void Leaf::collect_thresholds(DataPoint &data_point,
 }
 
 float Leaf::eval(DataPoint &x) { return value; }
+
+float Leaf::descend(CdfDict cdf_dict, CurrentPath *prob_anc,
+                    float (*func)(CdfDict cdf_dict, CurrentPath *prob_anc,
+                                  float val, float baseline,
+                                  vector<Node *> trees),
+                    float baseline, vector<Node *> trees) {
+  return func(cdf_dict, prob_anc, value, baseline, trees);
+};

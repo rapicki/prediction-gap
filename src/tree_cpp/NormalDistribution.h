@@ -5,7 +5,7 @@
 class NormalDistribution : public Distribution {
 public:
   NormalDistribution(float mean_, float var_);
-  float get_value() override;
+  float get_value(float x) override;
 
 private:
   float mean;

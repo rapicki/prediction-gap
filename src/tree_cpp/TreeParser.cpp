@@ -26,7 +26,6 @@ void TreeParser::parse_tree(string filename) {
     file.close();
   };
 };
-
 Split_params TreeParser::get_split_params(string line) {
   regex id("\\s*(\\d+):");
   regex feature("\\[(\\w+)<([^\\]]+)]\\s*");
@@ -139,7 +138,8 @@ float TreeParser::eval_numpy(const pybind11::array_t<float> input1,
   return eval(d);
 }
 
-DataPoint TreeParser::convert_to_data_point(list<string> &names, float *values) {
+DataPoint TreeParser::convert_to_data_point(list<string> &names,
+                                            float *values) {
   DataPoint d;
   int i = 0;
   for (auto n : names) {
@@ -147,4 +147,66 @@ DataPoint TreeParser::convert_to_data_point(list<string> &names, float *values) 
     i++;
   }
   return d;
+};
+float value_function(CdfDict cdf_dict, CurrentPath *prob_anc, float val,
+                     float baseline, vector<Node *> trees) {
+  return val;
+}
+
+float contrib_outer(CdfDict cdf_dict, CurrentPath *prob_anc, float val,
+                    float baseline, vector<Node *> trees) {
+  float inner_sum = -1 * baseline * 2.0;
+  for (auto inner_tree : trees) {
+    inner_sum += inner_tree->descend(cdf_dict, prob_anc, &value_function,
+                                     baseline, trees);
+  };
+  return val * inner_sum;
+};
+
+CdfDict construct_cdf_dict(DataPoint &data_point, list<string> &perturbed_names,
+                           float std) {
+  CdfDict cdf_dict;
+  for (auto feature : data_point) {
+    if (find(perturbed_names.begin(), perturbed_names.end(), feature.first) !=
+        perturbed_names.end()) {
+      NormalDistribution *norm = new NormalDistribution(feature.second, std);
+      cdf_dict.insert({feature.first, norm});
+
+    } else {
+        cout<<"Point distribution"<<endl;
+      PointDistribution *point = new PointDistribution(feature.second);
+      cdf_dict.insert({feature.first, point});
+    };
+  };
+  return cdf_dict;
+};
+
+float TreeParser::expected_diff_squared(const pybind11::array_t<float> input1,
+                                        list<string> &input2,
+                                        list<string> &perturbed_names,
+                                        float std) {
+
+  pybind11::buffer_info buf1 = input1.request();
+
+  if (buf1.ndim != 1) {
+    throw std::runtime_error("Number of dimensions must be one");
+  }
+  float *ptr1 = static_cast<float *>(buf1.ptr);
+  DataPoint d = convert_to_data_point(input2, ptr1);
+  float baseline = eval(d);
+  baseline -= bias;
+
+  CdfDict cdf_dict = construct_cdf_dict(d, perturbed_names, std);
+  cout << "xd:" << cdf_dict.at("fixed_acidity")->get_value(2.0f) << endl;
+  cout << "xd:"
+       << cdf_dict.at("fixed_acidity")->get_value(d.at("fixed_acidity"))
+       << endl;
+
+  float result = baseline * baseline;
+  CurrentPath *path_pointer = new CurrentPath();
+  for (auto t : trees) {
+    result +=
+        t->descend(cdf_dict, path_pointer, &contrib_outer, baseline, trees);
+  }
+  return result;
 };

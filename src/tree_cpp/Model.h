@@ -2,9 +2,10 @@
 #include <functional>
 #include <map>
 #include <string>
+#include "Distribution.h"
 
 typedef std::map<std::string, float> DataPoint;
-typedef std::map<std::string, std::function<float()>> CdfDict;
+typedef std::map<std::string, Distribution*> CdfDict;
 
 class Model {
 public:

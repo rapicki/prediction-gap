@@ -3,5 +3,5 @@
 class Distribution {
 public:
   virtual ~Distribution() {}
-  virtual float get_value() = 0;
+  virtual float get_value(float x) = 0;
 };

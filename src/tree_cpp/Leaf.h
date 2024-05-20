@@ -5,7 +5,11 @@ class Leaf : public Node {
 public:
   Leaf(int _id, float _value);
   bool is_leaf() override;
-  float descend(float cdf_dict, Node &prob_anc) override;
+  float descend(CdfDict cdf_dict, CurrentPath *prob_anc,
+                        float (*func)(CdfDict cdf_dict, CurrentPath *prob_anc,
+                                      float val, float baseline,
+                                      vector<Node *> trees),
+                        float baseline, vector<Node *> trees) override;
   void collect_thresholds(DataPoint &data_point, std::string perturbed_feature,
                           float current_ub, float result) override;
   float eval(DataPoint &x) override;

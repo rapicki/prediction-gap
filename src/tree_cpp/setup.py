@@ -16,9 +16,15 @@ __version__ = "0.0.1"
 ext_modules = [
     Pybind11Extension(
         "tree_package",
-        ["tree_package.cpp", "Leaf.cpp", 
-         "Split.cpp", "TreeParser.cpp",
-         "NormalDistribution.cpp","PointDistribution.cpp"],
+        [
+            "tree_package.cpp",
+            "Leaf.cpp",
+            "Split.cpp",
+            "TreeParser.cpp",
+            "NormalDistribution.cpp",
+            "PointDistribution.cpp",
+            "CurrentPath.cpp",
+        ],
         # Example: passing in the version to the compiled code
         define_macros=[("VERSION_INFO", __version__)],
     ),

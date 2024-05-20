@@ -2,7 +2,6 @@
 #include "Leaf.h"
 #include "Node.h"
 #include "Split.h"
-#include "Leaf.h"
 // #include "tree_helpers.cpp"
 #include <algorithm>
 #include <array>
@@ -23,6 +22,9 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
+#include "NormalDistribution.h"
+#include "PointDistribution.h"
+
 
 namespace py = pybind11;
 using namespace std;
@@ -54,4 +56,7 @@ public:
   float eval(DataPoint &x);
   float eval_numpy(const py::array_t<float> input1, list<string> &input2);
   DataPoint convert_to_data_point(list<string> &names, float *values);
+  float expected_diff_squared(const py::array_t<float> input1,
+                              list<string> &input2,
+                              list<string> &perturbed_names, float std);
 };
