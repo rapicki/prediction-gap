@@ -27,9 +27,7 @@ float CurrentPath::last_ub(string feature) {
 };
 
 void CurrentPath::descend_left(string feature, float t) {
-  std::cout << "descend left: " << feature << t << endl;
   float new_ = min(last_ub(feature), t);
-  cout << "new: " << new_ << endl;
   if (ub.find(feature) == ub.end()) {
     ub.insert({feature, vector<float>()});
   };

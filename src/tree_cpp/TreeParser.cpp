@@ -14,7 +14,6 @@ void TreeParser::parse_tree(string filename) {
     string line;
     while (std::getline(file, line)) {
       if (regex_match(line, sm, header)) {
-        cout << line << endl;
         Node *tmp = parse_subtree(file);
 
         // Node *tmp_ptr = &tmp;
@@ -173,7 +172,6 @@ CdfDict construct_cdf_dict(DataPoint &data_point, list<string> &perturbed_names,
       cdf_dict.insert({feature.first, norm});
 
     } else {
-        cout<<"Point distribution"<<endl;
       PointDistribution *point = new PointDistribution(feature.second);
       cdf_dict.insert({feature.first, point});
     };
@@ -197,10 +195,6 @@ float TreeParser::expected_diff_squared(const pybind11::array_t<float> input1,
   baseline -= bias;
 
   CdfDict cdf_dict = construct_cdf_dict(d, perturbed_names, std);
-  cout << "xd:" << cdf_dict.at("fixed_acidity")->get_value(2.0f) << endl;
-  cout << "xd:"
-       << cdf_dict.at("fixed_acidity")->get_value(d.at("fixed_acidity"))
-       << endl;
 
   float result = baseline * baseline;
   CurrentPath *path_pointer = new CurrentPath();
