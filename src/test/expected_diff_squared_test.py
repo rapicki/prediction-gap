@@ -1,11 +1,10 @@
+import time
 from pathlib import Path
 
 import pandas as pd
 from src.decision_tree.prediction_gap import PerturbPredictionGap
 from src.decision_tree.tree import TreeEnsemble, parse_xgboost_dump
 from src.tree_cpp.cpp_tree_wrapper import TreeWrapper
-
-import time
 
 
 def load_trees(models_path: Path, model_name: str, df: pd.Series):
@@ -26,20 +25,17 @@ def test_trees(models_path: Path, model_name: str, df: pd.DataFrame):
         array,
         names,
         [
-            "fixed_acidity",
-            "volatile_acidity",
-            "citric_acid",
-            "residual_sugar",
-            "chlorides",
-            "free_sulfur_dioxide",
-            "total_sulfur_dioxide",
-            "density",
-            "pH",
-            "sulphates",
-            "alcohol",
-            "quality",
+            "longitude",
+            "latitude",
+            "housing_median_age",
+            "total_rooms",
+            "total_bedrooms",
+            "population",
+            "households",
+            "median_income",
+            "median_house_value",
         ],
-        1.0,
+        0.3,
     )
 
     print("C++ pred_gap: ", s, f", time: {time.time() - t}")
@@ -48,33 +44,133 @@ def test_trees(models_path: Path, model_name: str, df: pd.DataFrame):
     python_tree = TreeEnsemble(
         trees_from_dump.trees, models_path / f"{model_name}_saved.json"
     )
-    predgap = PerturbPredictionGap(1.0)
+    predgap = PerturbPredictionGap(0.3)
     t = time.time()
     p_eval = python_tree.eval(df.iloc[0, :])
     s = predgap.prediction_gap_fixed(
         python_tree,
         wine_data.iloc[0, :],
         [
-            "fixed_acidity",
-            "volatile_acidity",
-            "citric_acid",
-            "residual_sugar",
-            "chlorides",
-            "free_sulfur_dioxide",
-            "total_sulfur_dioxide",
-            "density",
-            "pH",
-            "sulphates",
-            "alcohol",
-            "quality",
+            "longitude",
+            "latitude",
+            "housing_median_age",
+            "total_rooms",
+            "total_bedrooms",
+            "population",
+            "households",
+            "median_income",
+            "median_house_value",
         ],
         p_eval,
     )
     print("Python pred_gap: ", s, f", time: {time.time() - t}")
 
 
+def test_predgap_times(models_path: Path, model_name: str, df: pd.DataFrame):
+    cpp_tree = TreeWrapper(model_name, models_path)
+    t = time.time()
+    for i in range(1):
+        df_ = df.iloc[i, :]
+        array = df_.to_numpy()
+        names = list(df_.keys().values)
+        s = cpp_tree.t.expected_diff_squared(
+            array,
+            names,
+            [
+                "longitude",
+                "latitude",
+                "housing_median_age",
+                "total_rooms",
+                "total_bedrooms",
+                "population",
+                "households",
+                "median_income",
+                "median_house_value",
+            ],
+            1.0,
+        )
+
+    print("C++ pred_gap: ", s, f", time: {(time.time() - t)/10}")
+
+    trees_from_dump = parse_xgboost_dump(models_path / f"{model_name}_dumped.txt")
+    python_tree = TreeEnsemble(
+        trees_from_dump.trees, models_path / f"{model_name}_saved.json"
+    )
+    predgap = PerturbPredictionGap(1.0)
+    t = time.time()
+    for i in range(0):
+        p_eval = python_tree.eval(df.iloc[i, :])
+        s = predgap.prediction_gap_fixed(
+            python_tree,
+            wine_data.iloc[i, :],
+            [
+                "longitude",
+                "latitude",
+                "housing_median_age",
+                "total_rooms",
+                "total_bedrooms",
+                "population",
+                "households",
+                "median_income",
+                "median_house_value",
+            ],
+            p_eval,
+        )
+    # print("Python pred_gap: ", s, f", time: {(time.time() - t)/10}")
+
+
+def test_fast_eval(models_path: Path, model_name: str, df: pd.DataFrame):
+    cpp_tree = TreeWrapper(model_name, models_path)
+    t = time.time()
+    for i in range(1):
+        df_ = df.iloc[i, :]
+        s = cpp_tree.prediction_gap_sampling_fast(
+            df_,
+            {
+                "longitude",
+                "latitude",
+                "housing_median_age",
+                "total_rooms",
+                "total_bedrooms",
+                "population",
+                "households",
+                "median_income",
+                "median_house_value",
+            },
+            1.0,
+            num_iter=100,
+        )
+
+    print("C++ pred_gap_monte: ", s, f", time: {(time.time() - t)/10}")
+
+    cpp_tree = TreeWrapper(model_name, models_path)
+    t = time.time()
+    for i in range(1):
+        df_ = df.iloc[i, :]
+        s = cpp_tree.prediction_gap_sampling_fast_quasi(
+            df_,
+            {
+                "longitude",
+                "latitude",
+                "housing_median_age",
+                "total_rooms",
+                "total_bedrooms",
+                "population",
+                "households",
+                "median_income",
+                "median_house_value",
+            },
+            1.0,
+            num_iter=3000000,
+        )
+
+    print("C++ pred_gap_quasi: ", s, f", time: {(time.time() - t)/10}")
+
+
 if __name__ == "__main__":
     model_path = Path("./models")
-    model_name = "winequality_red"
-    wine_data = pd.read_csv(Path("./data/wine_quality/winequality_red_scaled.csv"))
-    test_trees(model_path, model_name, wine_data)
+    model_name = "housing_single"
+    wine_data = pd.read_csv(Path("./data/housing_data/test_housing_scaled.csv"))
+    # test_trees(model_path, model_name, wine_data)
+    test_predgap_times(model_path, model_name, wine_data)
+    test_fast_eval(model_path, model_name, wine_data)

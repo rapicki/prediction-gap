@@ -1,4 +1,5 @@
 #include "Split.h"
+#include <limits>
 
 Split::Split(int _id, float _value, std::string _feature, Node &_yes, Node &_no,
              Node &_missing) {
@@ -30,8 +31,8 @@ float Split::eval(DataPoint &x) {
   };
 };
 float Split::interval_prob(Distribution *d, tuple<float, float> intervals) {
-  return max((d->get_value(get<1>(intervals) - 1e-12) -
-              d->get_value(get<0>(intervals) - 1e-12)),
+  return max((d->get_value(get<1>(intervals) - 1e-12f) -
+              d->get_value(get<0>(intervals) - 1e-12f)),
              0.0f);
 };
 
@@ -64,6 +65,7 @@ float Split::descend(CdfDict cdf_dict, CurrentPath *prob_anc,
     };
     return result;
   } else {
+      cout<<"missing  "<<feature<<endl;
     return missing->descend(cdf_dict, prob_anc, func, baseline, trees);
   };
 };

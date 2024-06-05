@@ -3,6 +3,8 @@
 #include "Node.h"
 #include "Split.h"
 // #include "tree_helpers.cpp"
+#include "NormalDistribution.h"
+#include "PointDistribution.h"
 #include <algorithm>
 #include <array>
 #include <cmath>
@@ -22,9 +24,6 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
-#include "NormalDistribution.h"
-#include "PointDistribution.h"
-
 
 namespace py = pybind11;
 using namespace std;
@@ -59,4 +58,6 @@ public:
   float expected_diff_squared(const py::array_t<float> input1,
                               list<string> &input2,
                               list<string> &perturbed_names, float std);
+  float eval_on_array(list< py::array_t<float>> perturbed, const py::array_t<float> input1,
+                      list<string> &input2);
 };

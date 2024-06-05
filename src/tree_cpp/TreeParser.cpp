@@ -1,5 +1,6 @@
 #include "TreeParser.h"
 #include "Node.h"
+#include <ostream>
 
 TreeParser::TreeParser(string _filename, float _bias) {
   bias = _bias;
@@ -116,6 +117,18 @@ Node *TreeParser::parse_subtree(ifstream &file) {
   };
 };
 
+float TreeParser::eval_on_array(list<py::array_t<float>> perturbed,
+                                const py::array_t<float> input1,
+                                list<string> &input2) {
+  int count = 0.0f;
+  float sum = 0.0f;
+  float base = eval_numpy(input1, input2);
+  for (auto i : perturbed) {
+    sum += pow(eval_numpy(i, input2) - base, 2.0);
+    count += 1.0f;
+  };
+  return sum/count;
+};
 float TreeParser::eval(DataPoint &x) {
   float results = 0.0;
   for (auto t : trees) {
@@ -197,10 +210,17 @@ float TreeParser::expected_diff_squared(const pybind11::array_t<float> input1,
   CdfDict cdf_dict = construct_cdf_dict(d, perturbed_names, std);
 
   float result = baseline * baseline;
-  CurrentPath *path_pointer = new CurrentPath();
+  // cout<<"result"<<result<<endl;
+
   for (auto t : trees) {
-    result +=
+    CurrentPath *path_pointer = new CurrentPath();
+    float tmp =
         t->descend(cdf_dict, path_pointer, &contrib_outer, baseline, trees);
+    result += tmp;
+
+    // if (result < 0){cout<<result<<endl;};
+    delete path_pointer;
+    // cout<<tmp<<endl;
   }
   return result;
 };
