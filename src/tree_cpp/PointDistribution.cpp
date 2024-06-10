@@ -1,4 +1,7 @@
 #include "PointDistribution.h"
+#include "Split.h"
+#include <iomanip>
+using namespace std;
 
 PointDistribution::PointDistribution(float point_value) : value(point_value) {}
 

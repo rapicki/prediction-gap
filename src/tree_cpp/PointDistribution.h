@@ -7,6 +7,6 @@ public:
   float get_value(float x) override;
   float get_tresh();
 
-private:
   float value;
+private:
 };

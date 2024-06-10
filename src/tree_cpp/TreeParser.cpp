@@ -1,7 +1,7 @@
 #include "TreeParser.h"
 #include "Node.h"
+#include <iomanip>
 #include <ostream>
-
 TreeParser::TreeParser(string _filename, float _bias) {
   bias = _bias;
   parse_tree(_filename);
@@ -116,18 +116,18 @@ Node *TreeParser::parse_subtree(ifstream &file) {
     throw invalid_argument("recieved wrong tree file");
   };
 };
-
 float TreeParser::eval_on_array(list<py::array_t<float>> perturbed,
                                 const py::array_t<float> input1,
                                 list<string> &input2) {
   int count = 0.0f;
-  float sum = 0.0f;
+  double sum = 0.0f;
   float base = eval_numpy(input1, input2);
+  float number = perturbed.size();
   for (auto i : perturbed) {
     sum += pow(eval_numpy(i, input2) - base, 2.0);
     count += 1.0f;
   };
-  return sum/count;
+  return sum / count;
 };
 float TreeParser::eval(DataPoint &x) {
   float results = 0.0;
@@ -167,11 +167,17 @@ float value_function(CdfDict cdf_dict, CurrentPath *prob_anc, float val,
 
 float contrib_outer(CdfDict cdf_dict, CurrentPath *prob_anc, float val,
                     float baseline, vector<Node *> trees) {
-  float inner_sum = -1 * baseline * 2.0;
+  float inner_sum = 0.0f; //-1 * baseline * 2.0;
   for (auto inner_tree : trees) {
     inner_sum += inner_tree->descend(cdf_dict, prob_anc, &value_function,
                                      baseline, trees);
   };
+  // cout <<inner_sum<<" " << baseline<<endl;
+  inner_sum -= 2.0 * baseline;
+  // cout<<"size "<< trees.size()<<endl;
+  // cout <<inner_sum<<" " << baseline<<endl;
+  // cout <<"Testing "<< 2.0d *static_cast<double>(val) *
+  // static_cast<double>(inner_sum)<<endl;
   return val * inner_sum;
 };
 
@@ -214,13 +220,11 @@ float TreeParser::expected_diff_squared(const pybind11::array_t<float> input1,
 
   for (auto t : trees) {
     CurrentPath *path_pointer = new CurrentPath();
-    float tmp =
+    result +=
         t->descend(cdf_dict, path_pointer, &contrib_outer, baseline, trees);
-    result += tmp;
-
-    // if (result < 0){cout<<result<<endl;};
     delete path_pointer;
-    // cout<<tmp<<endl;
   }
+  cout << "Baseline eval: " << setprecision(25)<< baseline << endl;
+  cout << "Descend  eval: " << setprecision(25)<< result << endl;
   return result;
 };
