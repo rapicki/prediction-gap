@@ -1,6 +1,4 @@
-import os
 from pathlib import Path
-from pandas._libs.tslibs.parsing import try_parse_dates
 import xgboost as xgb
 import pandas as pd
 import numpy as np
@@ -21,7 +19,6 @@ def train_and_save_model(param: dict, steps: int, dtrain, dtest, droped_features
 
 
 def sample_noisy_feature(point, train_df, model, dropped_feature):
-    a = 1
     sum = 0
     count = 0
     for _ in range(0, 500):
@@ -30,7 +27,7 @@ def sample_noisy_feature(point, train_df, model, dropped_feature):
             X = train_df[name].values
             index = np.random.randint(0, len(X))
             point_cp[name] = X[index]
-        sum += model.predict(xgb.DMatrix(point_cp))
+        sum += model.predict(xgb.DMatrix(point_cp))[0]
         count += 1
     return sum / count
 
@@ -42,19 +39,18 @@ def get_shap_ranking(model, data):
 
 
 def run_features_noising(
-    param, steps, train_path, test_path, stddev, model_path, target_column, perturbed
+    param,
+    steps,
+    train_path,
+    test_path,
+    stddev,
+    model_path,
+    target_column,
+    perturbed,
+    point_index=None,
 ):
     train_df = pd.read_csv(train_path)
     test_df = pd.read_csv(test_path)
-
-    X_train = train_df.loc[:, train_df.columns != target_column]
-    y_train = train_df.loc[:, train_df.columns == target_column]
-
-    X_test = test_df.loc[:, test_df.columns != target_column]
-    y_test = test_df.loc[:, test_df.columns == target_column]
-
-    dtrain = xgb.DMatrix(X_train, label=y_train)
-    dtest = xgb.DMatrix(X_test, label=y_test)
 
     slash_indx = model_path.rfind("/")
     dot_indx = model_path.rfind("_")
@@ -65,14 +61,13 @@ def run_features_noising(
     model_xgb.load_model(model_path)
 
     cpp_tree = TreeWrapper(model_name, model_dir_path)
-    point_index = np.random.randint(0, len(test_df))
-    # point_index = 10
+    if point_index is None:
+        point_index = np.random.randint(0, len(test_df))
 
-    # point =test_df.sample(1)
     p = test_df.loc[point_index, test_df.columns != target_column]
     eval = cpp_tree.eval(p)
     print(f"True: {test_df.loc[point_index, :][target_column]}")
-    print(f"Predicted: {eval  }")
+    print(f"Predicted: {eval}")
     print(f"Bias: {cpp_tree.bias}")
 
     print(
@@ -82,49 +77,47 @@ def run_features_noising(
     X = test_df.iloc[[point_index], test_df.columns != target_column]
     shap_ranking = get_shap_ranking(model_xgb, X)[0]  # [point_index]
     print(shap_ranking)
-    for name in ranking[0:1]:
-        # dtrain = xgb.DMatrix(X_train.drop(columns=ranking[0:3]), label=y_train)
-        # dtest = xgb.DMatrix(X_test.drop(columns=ranking[0:3]), label=y_test)
-        # model = train_and_save_model(param, steps, dtrain, dtest, name)
-        # ev = model.predict(dtest)[point_index]
-        point_x = train_df.iloc[[point_index], train_df.columns != target_column]
-        point_y = train_df.iloc[point_index, train_df.columns == target_column]
-        print(point_y, point_x)
-        # dpoint = xgb.DMatrix(point_x, label=point_y)
+    point_x = train_df.iloc[[point_index], train_df.columns != target_column]
+    point_y = train_df.iloc[point_index, train_df.columns == target_column]
+    print(point_y, point_x)
+    # dpoint = xgb.DMatrix(point_x, label=point_y)
 
-        ev = sample_noisy_feature(
-            point_x,
-            train_df,
-            model_xgb,
-            ranking[0:perturbed],
-        )[0]
+    ev = sample_noisy_feature(
+        point_x,
+        train_df,
+        model_xgb,
+        ranking[0:perturbed],
+    )
 
-        print(ev)
-        print(f"Predicted: {eval  }")
-        print(test_df.loc[point_index, :][target_column])
+    print(ev)
+    print(f"Predicted: {eval  }")
+    print(test_df.loc[point_index, :][target_column])
 
-    for name in shap_ranking[0:1]:
-        # dtrain = xgb.DMatrix(X_train.drop(columns=shap_ranking[0:3]), label=y_train)
-        # dtest = xgb.DMatrix(X_test.drop(columns=shap_ranking[0:3]), label=y_test)
-        # model = train_and_save_model(param, steps, dtrain, dtest, name)
-        # ev_shap = model.predict(dtest)[point_index]
-        point_x = train_df.iloc[[point_index], train_df.columns != target_column]
-        ev_shap = sample_noisy_feature(
-            point_x,
-            train_df,
-            model_xgb,
-            shap_ranking[0:perturbed],
-        )[0]
+    point_x = train_df.iloc[[point_index], train_df.columns != target_column]
+    ev_shap = sample_noisy_feature(
+        point_x,
+        train_df,
+        model_xgb,
+        shap_ranking[0:perturbed],
+    )
 
-        print("SHAP ", ev_shap)
-        print(f"Predicted: {eval  }")
-        print(test_df.loc[point_index, :][target_column])
+    print("SHAP ", ev_shap)
+    print(f"Predicted: {eval  }")
+    print(test_df.loc[point_index, :][target_column])
 
     return [ev, ev_shap, eval, test_df.loc[point_index, :][target_column]]
 
 
 def run_retraining_experiment(
-    param, steps, train_path, test_path, stddev, model_path, target_column, perturbed=1
+    param,
+    steps,
+    train_path,
+    test_path,
+    stddev,
+    model_path,
+    target_column,
+    perturbed=1,
+    point_index=None,
 ):
     train_df = pd.read_csv(train_path)
     test_df = pd.read_csv(test_path)
@@ -147,10 +140,9 @@ def run_retraining_experiment(
     model_xgb.load_model(model_path)
 
     cpp_tree = TreeWrapper(model_name, model_dir_path)
-    point_index = np.random.randint(0, len(test_df))
-    # point_index = 10
+    if point_index is None:
+        point_index = np.random.randint(0, len(test_df))
 
-    # point =test_df.sample(1)
     p = test_df.loc[point_index, test_df.columns != target_column]
     eval = cpp_tree.eval(p)
     print(f"True: {test_df.loc[point_index, :][target_column]}")
@@ -164,29 +156,23 @@ def run_retraining_experiment(
     X = test_df.iloc[:, test_df.columns != target_column]
     shap_ranking = get_shap_ranking(model_xgb, X)[point_index]
     print(shap_ranking)
-    for name in ranking[0:1]:
-        dtrain = xgb.DMatrix(X_train.drop(columns=ranking[0:perturbed]), label=y_train)
-        dtest = xgb.DMatrix(X_test.drop(columns=ranking[0:perturbed]), label=y_test)
-        model = train_and_save_model(param, steps, dtrain, dtest, name)
-        ev = model.predict(dtest)[point_index]
+    dtrain = xgb.DMatrix(X_train.drop(columns=ranking[0:perturbed]), label=y_train)
+    dtest = xgb.DMatrix(X_test.drop(columns=ranking[0:perturbed]), label=y_test)
+    model = train_and_save_model(param, steps, dtrain, dtest, "")
+    ev = model.predict(dtest)[point_index]
 
-        print(ev)
-        print(f"Predicted: {eval  }")
-        print(test_df.loc[point_index, :][target_column])
+    print(ev)
+    print(f"Predicted: {eval  }")
+    print(test_df.loc[point_index, :][target_column])
 
-    for name in shap_ranking[0:1]:
-        dtrain = xgb.DMatrix(
-            X_train.drop(columns=shap_ranking[0:perturbed]), label=y_train
-        )
-        dtest = xgb.DMatrix(
-            X_test.drop(columns=shap_ranking[0:perturbed]), label=y_test
-        )
-        model = train_and_save_model(param, steps, dtrain, dtest, name)
-        ev_shap = model.predict(dtest)[point_index]
+    dtrain = xgb.DMatrix(X_train.drop(columns=shap_ranking[0:perturbed]), label=y_train)
+    dtest = xgb.DMatrix(X_test.drop(columns=shap_ranking[0:perturbed]), label=y_test)
+    model = train_and_save_model(param, steps, dtrain, dtest, "")
+    ev_shap = model.predict(dtest)[point_index]
 
-        print("SHAP ", ev_shap)
-        print(f"Predicted: {eval  }")
-        print(test_df.loc[point_index, :][target_column])
+    print("SHAP ", ev_shap)
+    print(f"Predicted: {eval  }")
+    print(test_df.loc[point_index, :][target_column])
     return [ev, ev_shap, eval, test_df.loc[point_index, :][target_column]]
 
 
@@ -203,7 +189,9 @@ def run_exp_for_wine(std, perturbed):
     shap_pred_list = []
     orig_pred_list = []
     true_pred_list = []
-    for i in range(0, 200):
+    df = pd.read_csv("data/wine_quality/test_winequality_red_scaled.csv")
+    test_len = len(df)
+    for i in range(0, test_len):
         pg_pred, shap_pred, orig_pred, true_pred = run_features_noising(
             param,
             steps,
@@ -213,6 +201,7 @@ def run_exp_for_wine(std, perturbed):
             "models/winequality_red_saved.json",
             target_column="quality",
             perturbed=perturbed,
+            point_index=i,
         )
         pg_pred_list.append(pg_pred)
         shap_pred_list.append(shap_pred)
@@ -232,7 +221,7 @@ def run_exp_for_wine(std, perturbed):
     orig_pred_list = []
     true_pred_list = []
 
-    for i in range(0, 200):
+    for i in range(0, test_len):
         pg_pred, shap_pred, orig_pred, true_pred = run_retraining_experiment(
             param,
             steps,
@@ -242,6 +231,7 @@ def run_exp_for_wine(std, perturbed):
             "models/winequality_red_saved.json",
             target_column="quality",
             perturbed=perturbed,
+            point_index=i,
         )
         pg_pred_list.append(pg_pred)
         shap_pred_list.append(shap_pred)
@@ -270,17 +260,20 @@ def run_exp_for_housing(std, perturbed):
     pg_pred_list = []
     shap_pred_list = []
     orig_pred_list = []
+    df = pd.read_csv("data/housing_data/test_housing_scaled.csv")
+    test_len = len(df)
     true_pred_list = []
-    for i in range(0, 200):
+    for i in range(0, test_len):
         pg_pred, shap_pred, orig_pred, true_pred = run_features_noising(
-            param,
-            steps,
-            "data/housing_data/train_housing_scaled.csv",
-            "data/housing_data/test_housing_scaled.csv",
-            std,
-            "models/housing_saved.json",
+            param=param,
+            steps=steps,
+            train_path="data/housing_data/train_housing_scaled.csv",
+            test_path="data/housing_data/test_housing_scaled.csv",
+            stddev=std,
+            model_path="models/housing_saved.json",
             target_column="median_house_value",
             perturbed=perturbed,
+            point_index=i,
         )
         pg_pred_list.append(pg_pred)
         shap_pred_list.append(shap_pred)
@@ -299,17 +292,17 @@ def run_exp_for_housing(std, perturbed):
     shap_pred_list = []
     orig_pred_list = []
     true_pred_list = []
-
-    for i in range(0, 200):
+    for i in range(0, test_len):
         pg_pred, shap_pred, orig_pred, true_pred = run_retraining_experiment(
-            param,
-            steps,
-            "data/housing_data/train_housing_scaled.csv",
-            "data/housing_data/test_housing_scaled.csv",
-            std,
-            "models/housing_saved.json",
+            param=param,
+            steps=steps,
+            train_path="data/housing_data/train_housing_scaled.csv",
+            test_path="data/housing_data/test_housing_scaled.csv",
+            stddev=std,
+            model_path="models/housing_saved.json",
             target_column="median_house_value",
             perturbed=perturbed,
+            point_index=i,
         )
         pg_pred_list.append(pg_pred)
         shap_pred_list.append(shap_pred)
@@ -328,4 +321,4 @@ def run_exp_for_housing(std, perturbed):
 if __name__ == "__main__":
     for f in [1, 2, 3]:
         for s in [0.1, 0.3, 1.0]:
-            run_exp_for_housing(s, s)
+            run_exp_for_housing(s, f)
