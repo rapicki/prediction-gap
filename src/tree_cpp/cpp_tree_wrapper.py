@@ -10,8 +10,9 @@ import pandas as pd
 
 class TreeWrapper:
     def __init__(self, model_name: str, model_path: Path) -> None:
-        b = self.get_bias_from_file(model_name, model_path) / 100000
+        b = self.get_bias_from_file(model_name, model_path)
         p = str(model_path.resolve()) + f"/{model_name}_dumped.txt"
+        self.bias = b
         self.t = TreeParser(p, b)
 
     @staticmethod
@@ -67,7 +68,6 @@ class TreeWrapper:
         seed: Optional[int] = None,
         num_iter: int = 100,
     ):
-
         indx = []
         for i, name in enumerate(data_point.keys().values):
             if name in perturbed_features:
@@ -115,7 +115,7 @@ class TreeWrapper:
     ):
         array = data_point.to_numpy()
         names = list(data_point.keys().values)
-        print(perturbed_features)
+        # print(perturbed_features)
         s = self.t.expected_diff_squared(
             array,
             names,
@@ -123,3 +123,64 @@ class TreeWrapper:
             stddev,
         )
         return s
+
+    def rank_features(self, data_point: pd.Series, stddev: float = 1.0):
+        ranked_features = []
+        array = data_point.to_numpy()
+        names = list(data_point.keys().values)
+        curr_features = set(names)
+
+        while len(curr_features) > 1:
+            predgap_dict = {}
+            for feature in curr_features:
+                tmp = self.t.expected_diff_squared(
+                    array,
+                    names,
+                    list(set(ranked_features) | {feature}),
+                    stddev,
+                )
+                predgap_dict[feature] = tmp
+                # print(feature, tmp)
+            best_feature = max(
+                predgap_dict, key=predgap_dict.get
+            )  # this is the current feature with max predgap
+            ranked_features.append(best_feature)
+            # print(f"Rank {len(ranked_features)}: {best_feature}.")
+            curr_features -= {best_feature}
+        ranked_features.append(
+            list(curr_features)[0]
+        )  # this appends the last (and thus lowest ranked) feature
+        # print(ranked_features)
+        return ranked_features
+
+    def rank_features_by_random(
+        self, data_point: pd.Series, stddev: float, num_iter: int
+    ):
+        ranked_features = []
+        names = list(data_point.keys().values)
+        curr_features = set(names)
+
+        while len(curr_features) > 1:
+            predgap_dict = {}
+
+            for feature in curr_features:
+                tmp = self.prediction_gap_sampling_fast_quasi(
+                    data_point,
+                    list(set(ranked_features) | {feature}),
+                    stddev,
+                    seed=None,
+                    num_iter=num_iter,
+                )
+                predgap_dict[feature] = tmp
+                # print(feature, tmp)
+            best_feature = max(
+                predgap_dict, key=predgap_dict.get
+            )  # this is the current feature with max predgap
+            ranked_features.append(best_feature)
+            # print(f"Rank {len(ranked_features)}: {best_feature}.")
+            curr_features -= {best_feature}
+        ranked_features.append(
+            list(curr_features)[0]
+        )  # this appends the last (and thus lowest ranked) feature
+        # print(ranked_features)
+        return ranked_features

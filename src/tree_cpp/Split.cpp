@@ -1,6 +1,7 @@
 #include "Split.h"
 #include <cmath>
 #include <iomanip>
+#include <iostream>
 #include <stdlib.h>
 using namespace std;
 #include <limits>
@@ -46,14 +47,15 @@ float Split::interval_prob(Distribution *d, tuple<float, float> intervals) {
 float Split::descend(CdfDict cdf_dict, CurrentPath *prob_anc,
                      float (*func)(CdfDict cdf_dict, CurrentPath *prob_anc,
                                    float val, float baseline,
-                                   vector<Node *> trees),
-                     float baseline, vector<Node *> trees) {
+                                   vector<Node *> trees, float cum_prob),
+                     float baseline, vector<Node *> trees, float cum_prob,
+                     bool outer_loop) {
 
   if (cdf_dict.find(feature) != cdf_dict.end()) {
     float cond_prob = interval_prob(cdf_dict.at(feature),
                                     prob_anc->current_interval(feature));
-    if (cond_prob == 0.0) {
-      cout << "Point prob 0" << endl;
+    if (cond_prob == 0.0 || (cum_prob < 0.0 && outer_loop)) {
+        cout << "Point prob 0" << endl;
       return 0.0;
     };
     prob_anc->descend_left(feature, value);
@@ -62,20 +64,21 @@ float Split::descend(CdfDict cdf_dict, CurrentPath *prob_anc,
                       cond_prob;
     float result = 0.0f;
     if (left_prob > 1e-12) {
-      result +=
-          left_prob * yes->descend(cdf_dict, prob_anc, func, baseline, trees);
+      result += left_prob * yes->descend(cdf_dict, prob_anc, func, baseline,
+                                            trees, cum_prob * left_prob, outer_loop);
     };
     prob_anc->revert_left(feature);
     if (1.0 - left_prob >= 1e-12) {
       prob_anc->descend_right(feature, value);
-      result += (1.0f - left_prob) *
-                no->descend(cdf_dict, prob_anc, func, baseline, trees);
+      result +=
+          (1.0f - left_prob) * no->descend(cdf_dict, prob_anc, func, baseline,
+                                           trees, cum_prob * (1.0 - left_prob), outer_loop);
       prob_anc->revert_right(feature);
     };
 
     return result;
   } else {
     cout << "missing  " << feature << endl;
-    return missing->descend(cdf_dict, prob_anc, func, baseline, trees);
+    return missing->descend(cdf_dict, prob_anc, func, baseline, trees, 1.0, outer_loop);
   };
 };

@@ -1,0 +1,12 @@
+booster[0]:
+0:[residual_sugar<-0.666061759] yes=1,no=2,missing=2,gain=3.93931699,cover=172
+    1:[fixed_acidity<-1.44760835] yes=3,no=4,missing=4,gain=0.160798073,cover=3
+		3:leaf=-0.0594512001,cover=1
+		4:leaf=-0.253070533,cover=2
+	2:[total_sulfur_dioxide<-1.10894787] yes=5,no=6,missing=6,gain=2.09430385,cover=169
+		5:[fixed_acidity<-0.356000483] yes=7,no=8,missing=8,gain=0.889327049,cover=7
+			7:leaf=-0.186914042,cover=3
+			8:leaf=-0.0398952886,cover=4
+	    6:[total_sulfur_dioxide<-0.926494122] yes=9,no=10,missing=10,gain=2.37850928,cover=162
+			9:leaf=0.0410171449,cover=26
+			10:leaf=-0.0239909273,cover=136

@@ -45,7 +45,11 @@ if __name__ == "__main__":
     dir_paths = ["results/wine_model_single/pgi", 
                  "results/wine_model/pgi",
                  "results/housing_model_single/pgi",
-                 "results/housing_model/pgi",]
+                 "results/housing_model/pgi",
+                 "results/telemetry_model_single/pgi",
+                 "results/telemetry_model/pgi",
+
+                 ]
 
     for d in dir_paths:
         d = Path(d)

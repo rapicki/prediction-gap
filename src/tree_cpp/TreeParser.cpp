@@ -161,16 +161,16 @@ DataPoint TreeParser::convert_to_data_point(list<string> &names,
   return d;
 };
 float value_function(CdfDict cdf_dict, CurrentPath *prob_anc, float val,
-                     float baseline, vector<Node *> trees) {
+                     float baseline, vector<Node *> trees, float cum_prob) {
   return val;
 }
 
 float contrib_outer(CdfDict cdf_dict, CurrentPath *prob_anc, float val,
-                    float baseline, vector<Node *> trees) {
+                    float baseline, vector<Node *> trees, float cum_prob) {
   float inner_sum = 0.0f; //-1 * baseline * 2.0;
   for (auto inner_tree : trees) {
     inner_sum += inner_tree->descend(cdf_dict, prob_anc, &value_function,
-                                     baseline, trees);
+                                     baseline, trees, cum_prob, false );
   };
   // cout <<inner_sum<<" " << baseline<<endl;
   inner_sum -= 2.0 * baseline;
@@ -221,10 +221,10 @@ float TreeParser::expected_diff_squared(const pybind11::array_t<float> input1,
   for (auto t : trees) {
     CurrentPath *path_pointer = new CurrentPath();
     result +=
-        t->descend(cdf_dict, path_pointer, &contrib_outer, baseline, trees);
+        t->descend(cdf_dict, path_pointer, &contrib_outer, baseline, trees, 1.0, true);
     delete path_pointer;
   }
-  cout << "Baseline eval: " << setprecision(25)<< baseline << endl;
-  cout << "Descend  eval: " << setprecision(25)<< result << endl;
+  //cout << "Baseline eval: " << setprecision(25)<< baseline << endl;
+  //cout << "Descend  eval: " << setprecision(25)<< result << endl;
   return result;
 };

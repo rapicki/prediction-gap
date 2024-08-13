@@ -1,0 +1,16 @@
+booster[0]:
+0:[PPE<-0.0394485854] yes=1,no=2,missing=2,gain=8878.08398,cover=4195
+	1:[DFA<-0.251913577] yes=3,no=4,missing=4,gain=8254.14844,cover=2278
+		3:[HNR<1.30828631] yes=7,no=8,missing=8,gain=3705.64795,cover=1340
+			7:leaf=0.93457514,cover=1119
+			8:leaf=-3.09046817,cover=221
+		4:[HNR<0.217330068] yes=9,no=10,missing=10,gain=6032.58496,cover=938
+			9:leaf=-0.442768157,cover=380
+			10:leaf=-5.0916338,cover=558
+	2:[Jitter_Abs_<-0.0763506293] yes=5,no=6,missing=6,gain=6284.14697,cover=1917
+		5:[Shimmer_APQ11<-0.358822137] yes=11,no=12,missing=12,gain=2724.31543,cover=538
+			11:leaf=0.877825141,cover=155
+			12:leaf=5.35454845,cover=383
+		6:[PPE<0.76489538] yes=13,no=14,missing=14,gain=3261.31055,cover=1379
+			13:leaf=-0.938230276,cover=690
+			14:leaf=1.8279984,cover=689

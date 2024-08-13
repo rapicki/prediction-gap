@@ -13,7 +13,7 @@ def create_plot(results_path: Path, model_name: str, pgi_name: str, k: str):
     k="mean"
     """
     name = model_name.split("_")[0]
-    stddevs = ["0.01", "0.03", "0.1", "0.3", "1.0"]
+    stddevs = ["0.1", "0.3", "1.0"]
     # if "single" in model_name:
     #    stddevs.append("1.0")
     exact_ranking_names = [f"{name}_exact_ranking_std_{s}" for s in stddevs]
@@ -54,12 +54,12 @@ if __name__ == "__main__":
 
     # medium models
     results_path = Path("results")
-    for s in ["0.01", "0.03", "0.1", "0.3", "1.0"]:
+    for s in ["0.1", "0.3", "1.0"]:
         create_plot(results_path, "wine_model", f"pgi_std_{s}", "mean")
         create_plot(results_path, "housing_model", f"pgi_std_{s}", "mean") # no data yet
 
     # single models
     results_path = Path("results")
-    for s in ["0.01", "0.03", "0.1", "0.3", "1.0"]:
+    for s in ["0.1", "0.3", "1.0"]:
         create_plot(results_path, "wine_model_single", f"pgi_std_{s}", "mean")
         create_plot(results_path, "housing_model_single", f"pgi_std_{s}", "mean")

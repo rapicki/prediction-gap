@@ -11,6 +11,8 @@ def get_features(data_name: str) -> list:
         fp = Path("data/wine_quality/test_winequality_red_scaled.csv")
     if data_name == "housing":
         fp = Path("data/housing_data/test_housing_scaled.csv")
+    if data_name == "telemetry":
+        fp = Path("data/telemetry/test_telemetry_scaled.csv")
     data = pd.read_csv(fp)
     return list(data.columns[:-1])
 
@@ -43,19 +45,9 @@ def get_rewards_dict(model_name: str, ranking_name: str, entropy_mode: str) -> f
 
 def main(model_name):
     name = model_name.split("_")[0]
-    stddevs = ["0.01", "0.03", "0.1", "0.3", "1.0"]
+    stddevs = ["0.1", "0.3", "1.0"]
     shap_name = f"{name}_shap_ranking"
     exact_names = [f"{name}_exact_ranking_std_{s}" for s in stddevs]
-    approx_names = [
-        f"{name}_approx_ranking_{s}_stddev"
-        for s in [
-            "100_iter_0.01",
-            "100_iter_0.03",
-            "100_iter_0.1",
-            "100_iter_0.3",
-            "1000_iter_1.0",
-        ]
-    ]
     all_names = [shap_name] + exact_names  # + approx_names
     entropy_results = {ranking_name: [] for ranking_name in all_names}
     entropy_modes = ["geometric", "top_1", "top_2", "top_3"]
@@ -74,6 +66,8 @@ if __name__ == "__main__":
         "wine_model_single",
         "housing_model",
         "housing_model_single",
+        "telemetry_model_single",
+        "telemetry_model",
     ]
     for n in model_names:
         main(n)

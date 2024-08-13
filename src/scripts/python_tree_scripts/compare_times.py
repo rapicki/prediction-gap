@@ -35,7 +35,7 @@ def test_differences_between_approx_and_exact(
 
     random_point = wine_data.iloc[[point_ind], :]
     # random_point['sulphates'] += 0.01
-    print(random_point)
+    #print(random_point)
     t1 = time.time()
     tmp = prediction_gap_by_random_sampling_single_datapoint(
         trees=wine_trees,

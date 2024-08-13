@@ -1,6 +1,8 @@
 import argparse
 
 from src.scripts.cpp_tree_scripts.compare_times import compare_times_main
+from src.scripts.cpp_tree_scripts.calculate_ranking import calculate_ranking_main
+from src.scripts.cpp_tree_scripts.calculate_pgi import calculate_pgi_main
 
 
 def get_parser():
@@ -60,3 +62,7 @@ def main(args=None):
     experiment_type = args.experiment_type
     if experiment_type == "compare":
         compare_times_main(args)
+    elif experiment_type == "ranking":
+        calculate_ranking_main(args)
+    elif experiment_type == "pgi":
+        calculate_pgi_main(args)

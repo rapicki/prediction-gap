@@ -1,0 +1,8 @@
+booster[0]:
+0:[median_income<0.64914453] yes=1,no=2,missing=2,gain=2.70157952e+13,cover=6541
+	1:[median_income<-0.423561066] yes=3,no=4,missing=4,gain=7.5943725e+12,cover=5199
+		3:leaf=-64391.9453,cover=2468
+		4:leaf=4482.65137,cover=2731
+	2:[median_income<1.65257883] yes=5,no=6,missing=6,gain=4.75133483e+12,cover=1342
+		5:leaf=81781.8906,cover=972
+		6:leaf=201690.5,cover=370

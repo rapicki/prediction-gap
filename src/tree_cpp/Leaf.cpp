@@ -16,14 +16,16 @@ void Leaf::collect_thresholds(DataPoint &data_point,
   // Implement collect_thresholds if needed
 }
 
-float Leaf::eval(DataPoint &x) { 
-//cout << "Leaf val " << setprecision(25)<< value << endl;
-    return value; }
+float Leaf::eval(DataPoint &x) {
+  // cout << "Leaf val " << setprecision(25)<< value << endl;
+  return value;
+}
 
 float Leaf::descend(CdfDict cdf_dict, CurrentPath *prob_anc,
                     float (*func)(CdfDict cdf_dict, CurrentPath *prob_anc,
                                   float val, float baseline,
-                                  vector<Node *> trees),
-                    float baseline, vector<Node *> trees) {
-  return func(cdf_dict, prob_anc, value, baseline, trees);
+                                  vector<Node *> trees, float cum_prob),
+                    float baseline, vector<Node *> trees, float cum_prob,
+                    bool outer_loop) {
+  return func(cdf_dict, prob_anc, value, baseline, trees, cum_prob);
 };

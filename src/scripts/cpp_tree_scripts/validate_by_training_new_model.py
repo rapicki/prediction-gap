@@ -12,7 +12,7 @@ def train_and_save_model(param: dict, steps: int, dtrain, dtest, droped_features
         dtrain,
         evals=[(dtest, "test"), (dtrain, "train")],
         verbose_eval=50,
-        early_stopping_rounds=1,
+        early_stopping_rounds=10,
         num_boost_round=steps,
     )
     return gbdt_model
@@ -318,7 +318,80 @@ def run_exp_for_housing(std, perturbed):
     )
 
 
+def run_exp_for_telemetry(std, perturbed):
+    # training hyperparameters
+    param = {
+        "eta": 0.2,
+        "max_depth": 4,
+        "objective": "reg:squarederror",
+        "seed": 42,
+        "subsample": 0.8,
+    }
+    steps = 40
+    pg_pred_list = []
+    shap_pred_list = []
+    orig_pred_list = []
+
+    df = pd.read_csv("data/telemetry/test_telemetry_scaled.csv")
+    test_len = len(df)
+    true_pred_list = []
+    for i in range(0, 2):#test_len):
+        pg_pred, shap_pred, orig_pred, true_pred = run_features_noising(
+            param=param,
+            steps=steps,
+            train_path="data/telemetry/train_telemetry_scaled.csv",
+            test_path="data/telemetry/test_telemetry_scaled.csv",
+            stddev=std,
+            model_path="models/telemetry_saved.json",
+            target_column="motor_UPDRS",
+            perturbed=perturbed,
+            point_index=i,
+        )
+        pg_pred_list.append(pg_pred)
+        shap_pred_list.append(shap_pred)
+        orig_pred_list.append(orig_pred)
+        true_pred_list.append(true_pred)
+
+    results = [pg_pred_list, shap_pred_list, orig_pred_list, true_pred_list]
+    arr = np.array(results)
+    print(arr)
+    np.save(
+        f"results/telemetry_model/ranking_comparision/ranking_comparision_noising_std_{std}_tested_features_{perturbed}",
+        arr,
+    )
+
+    pg_pred_list = []
+    shap_pred_list = []
+    orig_pred_list = []
+    true_pred_list = []
+    for i in range(0, 2):#test_len):
+        pg_pred, shap_pred, orig_pred, true_pred = run_retraining_experiment(
+            param=param,
+            steps=steps,
+            train_path="data/telemetry/train_telemetry_scaled.csv",
+            test_path="data/telemetry/test_telemetry_scaled.csv",
+            stddev=std,
+            model_path="models/telemetry_saved.json",
+            target_column="motor_UPDRS",
+            perturbed=perturbed,
+            point_index=i,
+        )
+        pg_pred_list.append(pg_pred)
+        shap_pred_list.append(shap_pred)
+        orig_pred_list.append(orig_pred)
+        true_pred_list.append(true_pred)
+
+    results = [pg_pred_list, shap_pred_list, orig_pred_list, true_pred_list]
+    arr = np.array(results)
+    print(arr)
+    np.save(
+        f"results/telemetry_model/ranking_comparision/ranking_comparision_retraining_std_{std}_tested_features_{perturbed}",
+        arr,
+    )
+
+
 if __name__ == "__main__":
-    for f in [1, 2, 3]:
-        for s in [0.1, 0.3, 1.0]:
+    for f in [1]:
+        for s in [0.1]:
+            run_exp_for_telemetry(s, f)
             run_exp_for_housing(s, f)
