@@ -1,0 +1,4 @@
+booster[0]:
+0:[median_income<0.612666547] yes=1,no=2,missing=2,gain=6.18966066e+13,cover=14855
+	1:leaf=-30101.709,cover=11703
+	2:leaf=111971.547,cover=3152
